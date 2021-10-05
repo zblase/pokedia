@@ -1,0 +1,151 @@
+{
+    "data": {
+        "dict": {
+            "bug": {
+                "fontSize": 13.5,
+                "name": "Bug",
+                "namedColor": "ColorBug",
+                "systemImage": "ant.fill"
+            },
+            "dark":     {
+                "fontSize": 14,
+                "name": "Dark",
+                "namedColor": "ColorDark",
+                "systemImage": "moon.fill"
+            },
+            "dragon":     {
+                
+                "bottom": 7,
+                "image": "DragonIcon",
+                "left": 7,
+                "name": "Dragon",
+                "namedColor": "ColorDragon",
+                "right": 7,
+                "top": 7
+                
+            },
+            "electric": {
+                "color": "systemYellow",
+                "fontSize": 15,
+                "name": "Electric",
+                "systemImage": "bolt.fill"
+            },
+            "fairy": {
+                "name": "Fairy",
+                "namedColor": "ColorFairy",
+                "systemImage": "sparkles"
+            },
+            "fighting": {
+                "color": "systemRed",
+                "fontSize": 15,
+                "name": "Fighting",
+                "systemImage": "hand.wave.fill"
+            },
+            "fire": {
+                "color": "systemOrange",
+                "fontSize": 14,
+                "name": "Fire",
+                "systemImage": "flame.fill"
+            },
+            "flying": {
+                "bottom": 6,
+                "image": "FlyingIcon",
+                "left": 6,
+                "name": "Flying",
+                "namedColor": "ColorFlying",
+                "right": 6,
+                "top": 7
+            },
+            "ghost": {
+                "bottom": 7,
+                "color": "systemIndigo",
+                "image": "GhostIcon",
+                "left": 0,
+                "name": "Ghost",
+                "right": 0,
+                "top": 8
+            },
+            "grass": {
+                "bottom": 0,
+                "color": "systemGreen",
+                "fontSize": 13.5,
+                "left": 0,
+                "name": "Grass",
+                "right": 0,
+                "systemImage": "leaf.fill"
+            },
+            "ground": {
+                "bottom": 1,
+                "color": "brown",
+                "image": "GroundIcon",
+                "left": 6,
+                "name": "Ground",
+                "right": 6,
+                "top": 0
+            },
+            "ice": {
+                "bottom": 0,
+                "color": "systemTeal",
+                "fontSize": 17,
+                "left": 0,
+                "name": "Ice",
+                "right": 0,
+                "systemImage": "snow",
+                "top": 1
+            },
+            "normal": {
+                "color": "gray",
+                "name": "Normal",
+                "systemImage": "circle.circle"
+            },
+            "poison": {
+                "color": "systemPurple",
+                "name": "Poison",
+                "systemImage": "burn"
+            },
+            "psychic": {
+                "bottom": 0,
+                "fontSize": 13,
+                "left": 0,
+                "name": "Psychic",
+                "namedColor": "ColorPsychic",
+                "right": 0,
+                "systemImage": "eye.fill"
+            },
+            "rock": {
+                "bottom": 0,
+                "image": "RockIcon",
+                "left": 6,
+                "name": "Rock",
+                "namedColor": "ColorRock",
+                "right": 6,
+                "top": 1
+            },
+            "steel": {
+                "bottom": 0,
+                "fontSize": 15,
+                "left": 0,
+                "name": "Steel",
+                "namedColor": "ColorSteel",
+                "right": 0,
+                "systemImage": "gearshape.fill"
+            },
+            "water": {
+                "color": "systemBlue",
+                "fontSize": 15,
+                "name": "Water",
+                "systemImage": "drop.fill"
+            },
+            "unknown": {
+                "color": "magenta",
+                "name": "Unknown",
+                "systemImage": "questionmark"
+            },
+            "shadow": {
+                "color": "black",
+                "name": "Shadow",
+                "systemImage": "hurricane"
+            }
+        }
+    }
+}

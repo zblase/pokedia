@@ -1,0 +1,607 @@
+{
+    "data": {
+        "array": [
+            {
+                "name": "Bulbasaur",
+                "number": 1,
+                "gen": "1",
+                "region": "Kanto",
+                "hp": 45,
+                "maxHp": 294,
+                "atk": 49,
+                "maxAtk": 216,
+                "def": 49,
+                "maxDef": 216,
+                "spAtk": 65,
+                "maxSpAtk": 251,
+                "spDef": 65,
+                "maxSpDef": 251,
+                "speed": 45,
+                "maxSpeed": 207,
+                "types": [
+                    "grass",
+                    "poison"
+                ],
+                "evolution": 2,
+                "evLevel": 16
+                
+            },
+            {
+                "name": "Ivysaur",
+                "number": 2,
+                "gen": "1",
+                "region": "Kanto",
+                "hp": 60,
+                "maxHp": 324,
+                "atk": 62,
+                "maxAtk": 245,
+                "def": 63,
+                "maxDef": 247,
+                "spAtk": 80,
+                "maxSpAtk": 284,
+                "spDef": 80,
+                "maxSpDef": 284,
+                "speed": 60,
+                "maxSpeed": 240,
+                "types": [
+                    "grass",
+                    "poison"
+                ],
+                "evolution": 3
+                
+            },
+            {
+                "name": "Venusaur",
+                "number": 3,
+                "gen": "1",
+                "region": "Kanto",
+                "hp": 80,
+                "maxHp": 364,
+                "atk": 82,
+                "maxAtk": 289,
+                "def": 83,
+                "maxDef": 291,
+                "spAtk": 100,
+                "maxSpAtk": 328,
+                "spDef": 100,
+                "maxSpDef": 328,
+                "speed": 80,
+                "maxSpeed": 284,
+                "types": [
+                    "grass",
+                    "poison"
+                ]
+                
+            },
+            {
+                "name": "Charmander",
+                "number": 4,
+                "gen": "1",
+                "region": "Kanto",
+                "hp": 39,
+                "maxHp": 282,
+                "atk": 52,
+                "maxAtk": 223,
+                "def": 43,
+                "maxDef": 203,
+                "spAtk": 60,
+                "maxSpAtk": 240,
+                "spDef": 50,
+                "maxSpDef": 218,
+                "speed": 65,
+                "maxSpeed": 251,
+                "types": [
+                    "fire"
+                ],
+                "evolution": 5
+                
+            },
+            {
+                "name": "Charmeleon",
+                "number": 5,
+                "gen": "1",
+                "region": "Kanto",
+                "hp": 58,
+                "maxHp": 320,
+                "atk": 64,
+                "maxAtk": 249,
+                "def": 58,
+                "maxDef": 236,
+                "spAtk": 80,
+                "maxSpAtk": 284,
+                "spDef": 65,
+                "maxSpDef": 251,
+                "speed": 80,
+                "maxSpeed": 284,
+                "types": [
+                    "fire"
+                ],
+                "evolution": 6
+                
+            },
+            {
+                "name": "Charizard",
+                "number": 6,
+                "gen": "1",
+                "region": "Kanto",
+                "hp": 78,
+                "maxHp": 360,
+                "atk": 84,
+                "maxAtk": 293,
+                "def": 78,
+                "maxDef": 280,
+                "spAtk": 109,
+                "maxSpAtk": 348,
+                "spDef": 85,
+                "maxSpDef": 295,
+                "speed": 100,
+                "maxSpeed": 328,
+                "types": [
+                    "fire",
+                    "flying"
+                ]
+                
+            },
+            {
+                "name": "Squirtle",
+                "number": 7,
+                "gen": "1",
+                "region": "Kanto",
+                "hp": 44,
+                "maxHp": 292,
+                "atk": 48,
+                "maxAtk": 214,
+                "def": 65,
+                "maxDef": 251,
+                "spAtk": 50,
+                "maxSpAtk": 218,
+                "spDef": 64,
+                "maxSpDef": 249,
+                "speed": 43,
+                "maxSpeed": 203,
+                "types": [
+                    "water"
+                ],
+                "evolution": 8
+                
+            },
+            {
+                "name": "Wartortle",
+                "number": 8,
+                "gen": "1",
+                "region": "Kanto",
+                "hp": 59,
+                "maxHp": 322,
+                "atk": 63,
+                "maxAtk": 247,
+                "def": 80,
+                "maxDef": 284,
+                "spAtk": 65,
+                "maxSpAtk": 251,
+                "spDef": 80,
+                "maxSpDef": 284,
+                "speed": 58,
+                "maxSpeed": 236,
+                "types": [
+                    "water"
+                ], "evolution": 9
+                
+            },
+            {
+                "name": "Blastoise",
+                "number": 9,
+                "gen": "1",
+                "region": "Kanto",
+                "hp": 79,
+                "maxHp": 362,
+                "atk": 83,
+                "maxAtk": 291,
+                "def": 100,
+                "maxDef": 328,
+                "spAtk": 85,
+                "maxSpAtk": 295,
+                "spDef": 105,
+                "maxSpDef": 339,
+                "speed": 78,
+                "maxSpeed": 280,
+                "types": [
+                    "water"
+                ]
+                
+            },
+            {
+                "name": "Caterpie",
+                "number": 10,
+                "gen": "1",
+                "region": "Kanto",
+                "hp": 45,
+                "maxHp": 294,
+                "atk": 30,
+                "maxAtk": 174,
+                "def": 35,
+                "maxDef": 185,
+                "spAtk": 20,
+                "maxSpAtk": 152,
+                "spDef": 20,
+                "maxSpDef": 152,
+                "speed": 45,
+                "maxSpeed": 207,
+                "types": [
+                    "bug"
+                ],
+                "evolution": 11
+                
+            },
+            {
+                "name": "Metapod",
+                "number": 11,
+                "gen": "1",
+                "region": "Kanto",
+                "hp": 50,
+                "maxHp": 304,
+                "atk": 20,
+                "maxAtk": 152,
+                "def": 55,
+                "maxDef": 229,
+                "spAtk": 25,
+                "maxSpAtk": 163,
+                "spDef": 25,
+                "maxSpDef": 163,
+                "speed": 30,
+                "maxSpeed": 174,
+                "types": [
+                    "bug"
+                ],
+                "evolution": 12
+                
+            },
+            {
+                "name": "Butterfree",
+                "number": 12,
+                "gen": "1",
+                "region": "Kanto",
+                "hp": 60,
+                "maxHp": 324,
+                "atk": 45,
+                "maxAtk": 207,
+                "def": 50,
+                "maxDef": 218,
+                "spAtk": 90,
+                "maxSpAtk": 306,
+                "spDef": 80,
+                "maxSpDef": 284,
+                "speed": 70,
+                "maxSpeed": 262,
+                "types": [
+                    "bug",
+                    "flying"
+                ]
+                
+            },
+            {
+                "name": "Weedle",
+                "number": 13,
+                "gen": "1",
+                "region": "Kanto",
+                "hp": 40,
+                "maxHp": 284,
+                "atk": 35,
+                "maxAtk": 185,
+                "def": 30,
+                "maxDef": 174,
+                "spAtk": 20,
+                "maxSpAtk": 152,
+                "spDef": 20,
+                "maxSpDef": 152,
+                "speed": 218,
+                "maxSpeed": 185,
+                "types": [
+                    "bug",
+                    "poison"
+                ],
+                "evolution": 14
+                
+            },
+            {
+                "name": "Kakuna",
+                "number": 14,
+                "gen": "1",
+                "region": "Kanto",
+                "hp": 45,
+                "maxHp": 294,
+                "atk": 25,
+                "maxAtk": 163,
+                "def": 50,
+                "maxDef": 218,
+                "spAtk": 25,
+                "maxSpAtk": 163,
+                "spDef": 25,
+                "maxSpDef": 163,
+                "speed": 35,
+                "maxSpeed": 185,
+                "types": [
+                    "bug",
+                    "poison"
+                ],
+                "evolution": 15
+                
+            },
+            {
+                "name": "Beedrill",
+                "number": 15,
+                "gen": "1",
+                "region": "Kanto",
+                "hp": 65,
+                "maxHp": 334,
+                "atk": 90,
+                "maxAtk": 306,
+                "def": 40,
+                "maxDef": 196,
+                "spAtk": 45,
+                "maxSpAtk": 207,
+                "spDef": 80,
+                "maxSpDef": 284,
+                "speed": 75,
+                "maxSpeed": 273,
+                "types": [
+                    "bug",
+                    "poison"
+                ]
+                
+            },
+            {
+                "name": "Pidgey",
+                "number": 16,
+                "gen": "1",
+                "region": "Kanto",
+                "hp": 40,
+                "maxHp": 284,
+                "atk": 45,
+                "maxAtk": 207,
+                "def": 40,
+                "maxDef": 196,
+                "spAtk": 35,
+                "maxSpAtk": 185,
+                "spDef": 35,
+                "maxSpDef": 185,
+                "speed": 56,
+                "maxSpeed": 232,
+                "types": [
+                    "normal",
+                    "flying"
+                ],
+                "evolution": 17
+                
+            },
+            {
+                "name": "Pidgeotto",
+                "number": 17,
+                "gen": "1",
+                "region": "Kanto",
+                "hp": 63,
+                "maxHp": 330,
+                "atk": 60,
+                "maxAtk": 240,
+                "def": 55,
+                "maxDef": 229,
+                "spAtk": 50,
+                "maxSpAtk": 218,
+                "spDef": 50,
+                "maxSpDef": 218,
+                "speed": 71,
+                "maxSpeed": 265,
+                "types": [
+                    "normal",
+                    "flying"
+                ],
+                "evolution": 18
+                
+            },
+            {
+                "name": "Pidgeot",
+                "number": 18,
+                "gen": "1",
+                "region": "Kanto",
+                "hp": 83,
+                "maxHp": 370,
+                "atk": 80,
+                "maxAtk": 284,
+                "def": 75,
+                "maxDef": 273,
+                "spAtk": 70,
+                "maxSpAtk": 262,
+                "spDef": 70,
+                "maxSpDef": 262,
+                "speed": 101,
+                "maxSpeed": 331,
+                "types": [
+                    "normal",
+                    "flying"
+                ]
+                
+            },
+            {
+                "name": "Rattata",
+                "number": 19,
+                "gen": "1",
+                "region": "Kanto",
+                "hp": 30,
+                "maxHp": 264,
+                "atk": 56,
+                "maxAtk": 232,
+                "def": 35,
+                "maxDef": 185,
+                "spAtk": 25,
+                "maxSpAtk": 163,
+                "spDef": 35,
+                "maxSpDef": 185,
+                "speed": 72,
+                "maxSpeed": 267,
+                "types": [
+                    "normal"
+                ],
+                "evolution": 20
+                
+            },
+            {
+                "name": "Raticate",
+                "number": 20,
+                "gen": "1",
+                "region": "Kanto",
+                "hp": 55,
+                "maxHp": 314,
+                "atk": 81,
+                "maxAtk": 287,
+                "def": 60,
+                "maxDef": 240,
+                "spAtk": 50,
+                "maxSpAtk": 218,
+                "spDef": 70,
+                "maxSpDef": 262,
+                "speed": 97,
+                "maxSpeed": 322,
+                "types": [
+                    "normal"
+                ]
+                
+            },
+            {
+                "name": "Spearow",
+                "number": 21,
+                "gen": "1",
+                "region": "Kanto",
+                "hp": 40,
+                "maxHp": 284,
+                "atk": 60,
+                "maxAtk": 240,
+                "def": 30,
+                "maxDef": 174,
+                "spAtk": 31,
+                "maxSpAtk": 177,
+                "spDef": 31,
+                "maxSpDef": 177,
+                "speed": 70,
+                "maxSpeed": 262,
+                "types": [
+                    "normal",
+                    "flying"
+                ],
+                "evolution": 22
+                
+            },
+            {
+                "name": "Fearow",
+                "number": 22,
+                "gen": "1",
+                "region": "Kanto",
+                "hp": 65,
+                "maxHp": 334,
+                "atk": 90,
+                "maxAtk": 306,
+                "def": 65,
+                "maxDef": 251,
+                "spAtk": 61,
+                "maxSpAtk": 243,
+                "spDef": 61,
+                "maxSpDef": 243,
+                "speed": 100,
+                "maxSpeed": 328,
+                "types": [
+                    "normal",
+                    "flying"
+                ]
+                
+            },
+            {
+                "name": "Ekans",
+                "number": 23,
+                "gen": "1",
+                "region": "Kanto",
+                "hp": 35,
+                "maxHp": 274,
+                "atk": 60,
+                "maxAtk": 240,
+                "def": 44,
+                "maxDef": 205,
+                "spAtk": 40,
+                "maxSpAtk": 196,
+                "spDef": 54,
+                "maxSpDef": 227,
+                "speed": 55,
+                "maxSpeed": 229,
+                "types": [
+                    "poison"
+                ],
+                "evolution": 24
+                
+            },
+            {
+                "name": "Arbok",
+                "number": 24,
+                "gen": "1",
+                "region": "Kanto",
+                "hp": 60,
+                "maxHp": 324,
+                "atk": 95,
+                "maxAtk": 317,
+                "def": 69,
+                "maxDef": 260,
+                "spAtk": 65,
+                "maxSpAtk": 251,
+                "spDef": 79,
+                "maxSpDef": 282,
+                "speed": 80,
+                "maxSpeed": 284,
+                "types": [
+                    "poison"
+                ]
+                
+            },
+            {
+                "name": "Pikachu",
+                "number": 25,
+                "gen": "1",
+                "region": "Kanto",
+                "hp": 35,
+                "maxHp": 274,
+                "atk": 55,
+                "maxAtk": 229,
+                "def": 40,
+                "maxDef": 196,
+                "spAtk": 50,
+                "maxSpAtk": 218,
+                "spDef": 50,
+                "maxSpDef": 218,
+                "speed": 90,
+                "maxSpeed": 306,
+                "types": [
+                    "electric"
+                ],
+                "evolution": 26
+                
+            },
+            {
+                "name": "Raichu",
+                "number": 26,
+                "gen": "1",
+                "region": "Kanto",
+                "hp": 60,
+                "maxHp": 324,
+                "atk": 90,
+                "maxAtk": 306,
+                "def": 55,
+                "maxDef": 229,
+                "spAtk": 90,
+                "maxSpAtk": 306,
+                "spDef": 80,
+                "maxSpDef": 284,
+                "speed": 110,
+                "maxSpeed": 350,
+                "types": [
+                    "electric"
+                ]
+                
+            }
+        ]
+    }
+}
