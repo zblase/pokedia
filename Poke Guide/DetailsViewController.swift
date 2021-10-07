@@ -104,12 +104,12 @@ class DetailsViewController: UIViewController, UIViewControllerTransitioningDele
         }
         
         suggestedStrong.sort {
-            ($0.score, $0.pokemon.data.stats.first(where: { $0.stat.name == "attack" })!.base_stat) >
-            ($1.score, $1.pokemon.data.stats.first(where: { $0.stat.name == "attack" })!.base_stat)
+            ($0.score * -1, $0.pokemon.data.stats.first(where: { $0.stat.name == "attack" })!.base_stat) >
+            ($1.score * -1, $1.pokemon.data.stats.first(where: { $0.stat.name == "attack" })!.base_stat)
         }
         
         suggestedWeak.sort {
-            ($0.score, $0.pokemon.data.stats.first(where: { $0.stat.name == "attack" })!.base_stat) <
+            ($0.score, $0.pokemon.data.stats.first(where: { $0.stat.name == "attack" })!.base_stat) >
             ($1.score, $1.pokemon.data.stats.first(where: { $0.stat.name == "attack" })!.base_stat)
         }
         
@@ -135,12 +135,12 @@ class DetailsViewController: UIViewController, UIViewControllerTransitioningDele
         }
         
         strongFavs.sort {
-            ($0.score, $0.pokemon.data.stats.first(where: { $0.stat.name == "attack" })!.base_stat) >
-            ($1.score, $1.pokemon.data.stats.first(where: { $0.stat.name == "attack" })!.base_stat)
+            ($0.score * -1, $0.pokemon.data.stats.first(where: { $0.stat.name == "attack" })!.base_stat) >
+            ($1.score * -1, $1.pokemon.data.stats.first(where: { $0.stat.name == "attack" })!.base_stat)
         }
         
         weakFavs.sort {
-            ($0.score, $0.pokemon.data.stats.first(where: { $0.stat.name == "attack" })!.base_stat) <
+            ($0.score, $0.pokemon.data.stats.first(where: { $0.stat.name == "attack" })!.base_stat) >
             ($1.score, $1.pokemon.data.stats.first(where: { $0.stat.name == "attack" })!.base_stat)
         }
         

@@ -52,6 +52,8 @@
 		86780D0F26FE7BC900512D06 /* TypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86780D0E26FE7BC900512D06 /* TypesViewController.swift */; };
 		86780D1126FE802E00512D06 /* TypeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86780D1026FE802E00512D06 /* TypeCollectionCell.swift */; };
 		86780D1326FE8E5300512D06 /* TypeCollectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86780D1226FE8E5300512D06 /* TypeCollectionHeader.swift */; };
+		86841AE0270D00BC00F78F0E /* SuggestedButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86841ADE270D00BC00F78F0E /* SuggestedButtonCell.swift */; };
+		86841AE1270D00BC00F78F0E /* SuggestedButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86841ADF270D00BC00F78F0E /* SuggestedButtonCell.xib */; };
 		8693921826F06D7800694069 /* StrongSuggestedCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8693921726F06D7800694069 /* StrongSuggestedCollectionView.swift */; };
 		8693921A26F073B500694069 /* SuggestedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8693921926F073B500694069 /* SuggestedCell.swift */; };
 		86AB198F26C0FA2200AAB46E /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AB198E26C0FA2200AAB46E /* MyCollectionViewCell.swift */; };
@@ -130,6 +132,8 @@
 		86780D0E26FE7BC900512D06 /* TypesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesViewController.swift; sourceTree = "<group>"; };
 		86780D1026FE802E00512D06 /* TypeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCollectionCell.swift; sourceTree = "<group>"; };
 		86780D1226FE8E5300512D06 /* TypeCollectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCollectionHeader.swift; sourceTree = "<group>"; };
+		86841ADE270D00BC00F78F0E /* SuggestedButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedButtonCell.swift; sourceTree = "<group>"; };
+		86841ADF270D00BC00F78F0E /* SuggestedButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestedButtonCell.xib; sourceTree = "<group>"; };
 		8693921726F06D7800694069 /* StrongSuggestedCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrongSuggestedCollectionView.swift; sourceTree = "<group>"; };
 		8693921926F073B500694069 /* SuggestedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedCell.swift; sourceTree = "<group>"; };
 		86AB198E26C0FA2200AAB46E /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -254,6 +258,8 @@
 				8654FFC227078297005EEB27 /* RemoveFavoriteTableCell.swift */,
 				8654FFC4270B8DD2005EEB27 /* TypeButtonCell.swift */,
 				8654FFC5270B8DD2005EEB27 /* TypeButtonCell.xib */,
+				86841ADE270D00BC00F78F0E /* SuggestedButtonCell.swift */,
+				86841ADF270D00BC00F78F0E /* SuggestedButtonCell.xib */,
 			);
 			path = "Poke Guide";
 			sourceTree = "<group>";
@@ -386,6 +392,7 @@
 				860358F226F4138600EAA2AA /* DefenseEffects.json in Resources */,
 				8656387526BCD60D0082D528 /* Assets.xcassets in Resources */,
 				860358F426F4215200EAA2AA /* PokemonData.json in Resources */,
+				86841AE1270D00BC00F78F0E /* SuggestedButtonCell.xib in Resources */,
 				8656387326BCD60C0082D528 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,6 +451,7 @@
 				8611641626C44CE300295333 /* DetailMainSubView.swift in Sources */,
 				8611642426CC5B1000295333 /* EffectiveTypeCell.swift in Sources */,
 				8693921826F06D7800694069 /* StrongSuggestedCollectionView.swift in Sources */,
+				86841AE0270D00BC00F78F0E /* SuggestedButtonCell.swift in Sources */,
 				8603590426F97EA400EAA2AA /* MoveDM.swift in Sources */,
 				86DC67F127023BF800843A23 /* FavoritesViewController.swift in Sources */,
 				8654FFBF2703A8E0005EEB27 /* AddFavoriteTypeCell.swift in Sources */,
