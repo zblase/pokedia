@@ -1,41 +1,49 @@
 //
-//  MyCollectionViewCell.swift
+//  MainButtonCell.swift
 //  Poke Guide
 //
-//  Created by Zack Blase on 8/8/21.
+//  Created by Zack Blase on 10/8/21.
 //
 
 import UIKit
 
-class MyCollectionViewCell: UICollectionViewCell {
-    static let identifier = "MyCollectionViewCell"
-    
+class MainButtonCell: UICollectionViewCell {
+
     var pokeUrl: PokemonArrayResult.PokemonUrl?
     var pokemon: Pokemon?
+    var favTypes: [String]?
     
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var cellImage: UIImageView!
     @IBOutlet var cellName: UILabel!
-    @IBOutlet var cellSubName: UILabel!
+    //@IBOutlet var cellSubName: UILabel!
     @IBOutlet var cellNumber: UILabel!
-    @IBOutlet var pokemonButton: PokemonButton!
-    @IBOutlet var typeBtnA: UIButton!
-    @IBOutlet var typeBtnB: UIButton!
+    //@IBOutlet var pokemonButton: PokemonButton!
+    @IBOutlet var typeBtnA: UIImageView!
+    @IBOutlet var typeBtnB: UIImageView!
+    @IBOutlet var typeBtnC: UIImageView!
     
-    func configureCellIdentity(pokeUrl: PokemonArrayResult.PokemonUrl) {
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+    
+    func configureCellIdentity(pokeUrl: PokemonArrayResult.PokemonUrl, favTypes: [String]? = nil) {
         self.activityIndicator.startAnimating()
         self.activityIndicator.hidesWhenStopped = true
         self.pokeUrl = pokeUrl
-        self.pokemonButton.pokeUrl = pokeUrl
+        //self.pokemonButton.pokeUrl = pokeUrl
+        self.favTypes = favTypes
         
         let names = pokeUrl.name.split(separator: "-")
         cellName.text = String(names[0]).capitalizingFirstLetter()
         if names.count > 1 {
-            cellSubName.text = String(names[1]).capitalizingFirstLetter()
-            cellSubName.isHidden = false
+            //cellSubName.text = String(names[1]).capitalizingFirstLetter()
+            //cellSubName.isHidden = false
         }
         else {
-            cellSubName.isHidden = true
+            //cellSubName.isHidden = true
         }
         
         cellNumber.text = "#\(pokeUrl.getId())"
@@ -44,6 +52,7 @@ class MyCollectionViewCell: UICollectionViewCell {
         contentView.layer.cornerRadius = 12.0
         contentView.layer.borderWidth = 0.75
         contentView.layer.borderColor = UIColor(named: "ColorHomeCellBorder")!.cgColor
+        contentView.backgroundColor = .tertiarySystemBackground
         contentView.layer.masksToBounds = true
         
         layer.shadowColor = UIColor.black.cgColor
@@ -78,11 +87,11 @@ class MyCollectionViewCell: UICollectionViewCell {
         let names = poke.data.name.split(separator: "-")
         cellName.text = String(names[0]).capitalizingFirstLetter()
         if names.count > 1 {
-            cellSubName.text = String(names[1]).capitalizingFirstLetter()
-            cellSubName.isHidden = false
+            //cellSubName.text = String(names[1]).capitalizingFirstLetter()
+            //cellSubName.isHidden = false
         }
         else {
-            cellSubName.isHidden = true
+            //cellSubName.isHidden = true
         }
         
         contentView.layer.cornerRadius = 12.0
@@ -105,47 +114,48 @@ class MyCollectionViewCell: UICollectionViewCell {
         
         self.activityIndicator.stopAnimating()
         self.pokemon = poke
-        self.pokemonButton.pokemon = poke
+        //self.pokemonButton.pokemon = poke
         cellImage.image = poke.image
         cellNumber.text = "#\(poke.data.id)"
         
         typeBtnA.isHidden = true
         typeBtnB.isHidden = true
         
-        if poke.data.types.count > 0 {
-            let typeARef = poke.data.types.first(where: { $0.slot == 1 })!
-            let typeA: TypeStruct = typeDict[typeARef.type.name]!
-            configureTypeButton(button: typeBtnA, type: typeA.appearance)
+        let typeArray = favTypes != nil ? favTypes : poke.data.types.sorted(by: { $0.slot < $1.slot }).map({ $0.type.name })
+        
+        if typeArray!.count > 0 {
+            let type: TypeStruct = typeDict[typeArray![0]]!
+            configureTypeButton(imgView: typeBtnA, type: type.appearance)
         }
         
-        if poke.data.types.count > 1 {
-            let typeBRef = poke.data.types.first(where: { $0.slot == 2 })
-            let typeB: TypeStruct = typeDict[typeBRef!.type.name]!
-            configureTypeButton(button: typeBtnB, type: typeB.appearance)
+        if typeArray!.count > 1 {
+            let type: TypeStruct = typeDict[typeArray![1]]!
+            configureTypeButton(imgView: typeBtnB, type: type.appearance)
+        }
+        
+        if typeArray!.count > 2 {
+            let type: TypeStruct = typeDict[typeArray![2]]!
+            configureTypeButton(imgView: typeBtnC, type: type.appearance)
         }
     }
     
     
-    func configureTypeButton(button: UIButton, type: TypeAppearance) {
+    func configureTypeButton(imgView: UIImageView, type: TypeAppearance) {
         
         let fSize = type.fontSize != nil ? type.fontSize : 16.0
         let symConfig: UIImage.SymbolConfiguration = UIImage.SymbolConfiguration(font: UIFont(name: "Helvetica Neue", size: CGFloat(fSize!))!)
         
-        button.isHidden = false
-        button.imageView?.tintColor = type.getColor()
-        button.setImage(type.getImage().withConfiguration(symConfig).withRenderingMode(.alwaysTemplate), for: .normal)
-        button.tintColor = .clear
-        button.imageView?.contentMode = .scaleAspectFit
-        button.imageEdgeInsets = UIEdgeInsets(top: 1, left: 1, bottom: 0, right: 1)
+        imgView.isHidden = false
+        imgView.tintColor = type.getColor()
+        imgView.image = type.getImage().withConfiguration(symConfig).withRenderingMode(.alwaysTemplate)
+        imgView.contentMode = .scaleAspectFit
+        //button.imageEdgeInsets = UIEdgeInsets(top: 1, left: 1, bottom: 0, right: 1)
         
-        if #available(iOS 15.0, *) {
-            var config = UIButton.Configuration.plain()
-            config.image = type.getImage().withConfiguration(symConfig).withRenderingMode(.alwaysTemplate)
-            config.contentInsets = NSDirectionalEdgeInsets(top: 1, leading: 1, bottom: 1, trailing: 1)
-            
-        } else {
-            // Fallback on earlier versions
-        }
+    }
+    
+    func configureAsFav(fav: FavPokemonJson.FavJson) {
+        //configure types and maybe name
+        tryGetPokemon(name: fav.name)
     }
     
     func tryGetPokemon(name: String) {

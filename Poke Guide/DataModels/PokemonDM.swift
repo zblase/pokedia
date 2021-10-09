@@ -19,6 +19,7 @@ struct Pokemon {
     let data: PokemonData
     let image: UIImage
     let moveTypes: [String]
+    var favTypes: [String] = []
 }
 
 struct PokemonArrayResult: Codable {
@@ -31,6 +32,12 @@ struct PokemonArrayResult: Codable {
     struct PokemonUrl: Codable {
         let name: String
         let url: String
+        
+        func getId() -> String {
+            let trimmedUrl = String(self.url.dropLast())
+            let startSuffix = trimmedUrl.index(trimmedUrl.lastIndex(of: "/")!, offsetBy: 1)
+            return String(trimmedUrl[startSuffix...])
+        }
     }
 }
 
@@ -155,14 +162,16 @@ class PokemonDataController {
     
     var genUrls: GenerationArrayResult?
     
-    func getAllPokemonData(homeController: HomeCollectionViewController, completion: @escaping(_ success: Bool) -> Void) {
+    func getAllPokemonData(homeController: HomeCollectionViewController) {
         fetchPokemonUrls()
         fetchGenUrls()
         
         mainGroup.notify(queue: .main) {
+            homeController.currentResults = pokeUrlArray!.urlArray
             homeController.collectionView.dataSource = homeController.self
             homeController.collectionView.delegate = homeController.self
-            homeController.updateResultsList()
+            homeController.activityIndicator.stopAnimating()
+            //homeController.updateResultsList()
             
             for url in self.genUrls!.results {
                 self.fetchGeneration(urlStr: url.url)
@@ -174,7 +183,7 @@ class PokemonDataController {
             
             self.groupA.notify(queue: .main) {
                 pokemonArray.sort(by: { $0.data.id < $1.data.id })
-                homeController.updateResultsList()
+                //homeController.updateResultsList()
                 
                 for i in 21...60 {
                     self.fetchPokemonData(group: self.groupB, url: pokeUrlArray!.urlArray[i].url, index: i)
@@ -182,7 +191,7 @@ class PokemonDataController {
                 
                 self.groupB.notify(queue: .main) {
                     pokemonArray.sort(by: { $0.data.id < $1.data.id })
-                    homeController.updateResultsList()
+                    //homeController.updateResultsList()
                     
                     for i in 61...200 {
                         self.fetchPokemonData(group: self.groupC, url: pokeUrlArray!.urlArray[i].url, index: i)
@@ -190,7 +199,7 @@ class PokemonDataController {
                     
                     self.groupC.notify(queue: .main) {
                         pokemonArray.sort(by: { $0.data.id < $1.data.id })
-                        homeController.updateResultsList()
+                        //homeController.updateResultsList()
                         
                         for i in 201...pokeUrlArray!.urlArray.count - 1 {
                             self.fetchPokemonData(group: self.groupD, url: pokeUrlArray!.urlArray[i].url, index: i)
@@ -198,7 +207,6 @@ class PokemonDataController {
                         
                         self.groupD.notify(queue: .main) {
                             pokemonArray.sort(by: { $0.data.id < $1.data.id })
-                            completion(true)
                         }
                     }
                 }

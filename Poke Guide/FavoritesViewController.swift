@@ -13,84 +13,90 @@ class FavoritesViewController: UIViewController, UICollectionViewDataSource, UIC
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var emptyView: UIView!
     
-    var favPokemon: [Pokemon] = []
-
+    //var favUrlArray: [PokemonArrayResult.PokemonUrl] = []
+    var favPokemon: [FavPokemonJson.FavJson] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addFavTapped))
         
-        /*let favArray = FavoriteJsonParser().readJson()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         
-        for poke in favArray.favArray {
-            self.favPokemon.append(pokemonDict[poke.name]!)
-        }
+        tryGetUrlArray()
         
-        if self.favPokemon.count > 0 {
-            self.emptyView.isHidden = true
-        }*/
-        
+        let sNib = UINib(nibName: "MainButtonCell", bundle: nil)
+        self.collectionView.register(sNib, forCellWithReuseIdentifier: "MainButtonCell")
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        let favArray = FavoriteJsonParser().readJson()
+    func configure() {
         
-        self.favPokemon.removeAll()
+        self.favPokemon = FavoriteJsonParser().readJson().favArray
         
-        for poke in favArray.favArray {
-            self.favPokemon.append(pokemonDict[poke.name]!)
-        }
-        
-        if self.favPokemon.count > 0 {
-            self.emptyView.isHidden = true
-        }
+        self.emptyView.isHidden = self.favPokemon.count > 0
         
         self.collectionView.reloadData()
+        
     }
     
-        
-    @objc func addFavTapped() {
-        
-    }
-
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return favPokemon.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyCollectionViewCell.identifier, for: indexPath) as! MyCollectionViewCell
-        
-        if indexPath.row < favPokemon.count {
-            cell.configureCellIdentity(pokeUrl: pokeUrlArray!.urlArray.first(where: { $0.name == favPokemon[indexPath.row].data.name})!)
-        }
-        
-        return cell
+        return collectionView.dequeueReusableCell(withReuseIdentifier: "MainButtonCell", for: indexPath) as! MainButtonCell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.size.width / 3.5, height: view.frame.size.width / 3.5)
+        return CGSize(width: (collectionView.frame.size.width - 70) / 3, height: (collectionView.frame.size.width - 70) / 3)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let cell = cell as! MainButtonCell
+        let url = pokeUrlArray!.urlArray.first(where: { $0.name == favPokemon[indexPath.row].name })
+        cell.configureCellIdentity(pokeUrl: url!, favTypes: favPokemon[indexPath.row].types)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        let width: CGFloat = view.frame.size.width / 3.5
-        let spacing = (view.frame.size.width - (width * 3)) / 2
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! MainButtonCell
         
-        return spacing - 10
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    {
-        if segue.destination is DetailsViewController {
-            let vc = segue.destination as? DetailsViewController
-            let pButton = sender as! PokemonButton
-            vc?.pokemon = pButton.pokemon
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController {
+            vc.pokeUrl = cell.pokeUrl
+            vc.favTypes = cell.favTypes
+            self.show(vc, sender: self)
         }
     }
-
+    
+    func tryGetUrlArray() {
+        if pokeUrlArray != nil {
+            self.configure()
+        }
+        else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                self.tryGetUrlArray()
+            })
+        }
+    }
+    
+    /*func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+     return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+     }
+     
+     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+     let width: CGFloat = view.frame.size.width / 3.5
+     let spacing = (view.frame.size.width - (width * 3)) / 2
+     
+     return spacing - 10
+     }*/
+    
+    /*func showNextVC(pokemon: Pokemon) {
+     if let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController {
+     //vc.pokemon = pokemon
+     vc.pokeUrl = pokeUrlArray?.urlArray.first(where: { $0.name == pokemon.data.name })
+     self.show(vc, sender: self)
+     }
+     }*/
+    
 }

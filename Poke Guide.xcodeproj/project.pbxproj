@@ -19,6 +19,8 @@
 		8603590026F97E8300EAA2AA /* PokemonDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860358FF26F97E8300EAA2AA /* PokemonDM.swift */; };
 		8603590226F97E9400EAA2AA /* TypeDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603590126F97E9400EAA2AA /* TypeDM.swift */; };
 		8603590426F97EA400EAA2AA /* MoveDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603590326F97EA400EAA2AA /* MoveDM.swift */; };
+		86045B31271103AB0020C585 /* MainButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86045B2F271103AB0020C585 /* MainButtonCell.swift */; };
+		86045B32271103AB0020C585 /* MainButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86045B30271103AB0020C585 /* MainButtonCell.xib */; };
 		8606ACC626F2E9D6000D53A9 /* ToggleViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8606ACC526F2E9D6000D53A9 /* ToggleViewButton.swift */; };
 		860CC50126FFBD7E0060BEED /* TypeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860CC50026FFBD7E0060BEED /* TypeDetailsViewController.swift */; };
 		860CC50326FFBE450060BEED /* TypeCellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860CC50226FFBE450060BEED /* TypeCellButton.swift */; };
@@ -93,6 +95,8 @@
 		860358FF26F97E8300EAA2AA /* PokemonDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDM.swift; sourceTree = "<group>"; };
 		8603590126F97E9400EAA2AA /* TypeDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeDM.swift; sourceTree = "<group>"; };
 		8603590326F97EA400EAA2AA /* MoveDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveDM.swift; sourceTree = "<group>"; };
+		86045B2F271103AB0020C585 /* MainButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonCell.swift; sourceTree = "<group>"; };
+		86045B30271103AB0020C585 /* MainButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainButtonCell.xib; sourceTree = "<group>"; };
 		8606ACC526F2E9D6000D53A9 /* ToggleViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleViewButton.swift; sourceTree = "<group>"; };
 		860CC50026FFBD7E0060BEED /* TypeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeDetailsViewController.swift; sourceTree = "<group>"; };
 		860CC50226FFBE450060BEED /* TypeCellButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCellButton.swift; sourceTree = "<group>"; };
@@ -260,6 +264,8 @@
 				8654FFC5270B8DD2005EEB27 /* TypeButtonCell.xib */,
 				86841ADE270D00BC00F78F0E /* SuggestedButtonCell.swift */,
 				86841ADF270D00BC00F78F0E /* SuggestedButtonCell.xib */,
+				86045B2F271103AB0020C585 /* MainButtonCell.swift */,
+				86045B30271103AB0020C585 /* MainButtonCell.xib */,
 			);
 			path = "Poke Guide";
 			sourceTree = "<group>";
@@ -389,6 +395,7 @@
 				8654FFC7270B8DD2005EEB27 /* TypeButtonCell.xib in Resources */,
 				860358F026F4083C00EAA2AA /* AttackEffects.json in Resources */,
 				8656387826BCD60D0082D528 /* LaunchScreen.storyboard in Resources */,
+				86045B32271103AB0020C585 /* MainButtonCell.xib in Resources */,
 				860358F226F4138600EAA2AA /* DefenseEffects.json in Resources */,
 				8656387526BCD60D0082D528 /* Assets.xcassets in Resources */,
 				860358F426F4215200EAA2AA /* PokemonData.json in Resources */,
@@ -426,6 +433,7 @@
 				8654FFC6270B8DD2005EEB27 /* TypeButtonCell.swift in Sources */,
 				8611642226C5E1BA00295333 /* StrongAttackView.swift in Sources */,
 				8656387026BCD60C0082D528 /* ViewController.swift in Sources */,
+				86045B31271103AB0020C585 /* MainButtonCell.swift in Sources */,
 				86780D0D26FD4D5000512D06 /* DetailMovesetSubView.swift in Sources */,
 				8654FFC327078297005EEB27 /* RemoveFavoriteTableCell.swift in Sources */,
 				8611641C26C586D500295333 /* DetailEvolutionsSubView.swift in Sources */,

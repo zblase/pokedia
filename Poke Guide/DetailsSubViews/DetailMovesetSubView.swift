@@ -42,25 +42,20 @@ class DetailMovesetSubView: ToggleViewButton, UICollectionViewDataSource, UIColl
             moveTypes.append(typeDict[type]!)
         }
         
-        for type in pokemon.data.types {
-            selectedTypes.append(typeDict[type.type.name]!)
+        let types = detailVC.favTypes != nil ? detailVC.favTypes : pokemon.data.types.map({ $0.type.name })
+        for type in types! {
+            selectedTypes.append(typeDict[type]!)
         }
         
         
-        moveViewA.superview?.backgroundColor = .secondarySystemBackground
         moveViewA.superview?.layer.masksToBounds = false
         moveViewA.superview?.layer.cornerRadius = 8
-        moveViewA.superview?.layer.borderWidth = 1
         moveViewA.superview?.layer.borderColor = UIColor.gray.cgColor
-        moveViewB.superview?.backgroundColor = .secondarySystemBackground
         moveViewB.superview?.layer.masksToBounds = false
         moveViewB.superview?.layer.cornerRadius = 8
-        moveViewB.superview?.layer.borderWidth = 1
         moveViewB.superview?.layer.borderColor = UIColor.gray.cgColor
-        moveViewC.superview?.backgroundColor = .secondarySystemBackground
         moveViewC.superview?.layer.masksToBounds = false
         moveViewC.superview?.layer.cornerRadius = 8
-        moveViewC.superview?.layer.borderWidth = 1
         moveViewC.superview?.layer.borderColor = UIColor.gray.cgColor
         
         refreshSelectedTypes()
@@ -76,14 +71,6 @@ class DetailMovesetSubView: ToggleViewButton, UICollectionViewDataSource, UIColl
         self.suggestedCollection.delegate = self
         self.suggestedCollection.dataSource = self
         self.suggestedCollection.layer.masksToBounds = false
-        
-        var newFrame = self.frame
-
-        newFrame.size.width = self.frame.width
-        newFrame.size.height = 400
-        self.frame = newFrame
-        
-        self.layer.frame.size = CGSize(width: self.layer.frame.size.width, height: self.typeCollection.layer.frame.size.height + 20)
         
         self.suggestedCollection.reloadData()
     }
@@ -106,13 +93,22 @@ class DetailMovesetSubView: ToggleViewButton, UICollectionViewDataSource, UIColl
             configureSelectedType(cell: moveViewA, type: self.selectedTypes[0])
             configureSelectedTypeBase(view: moveViewA)
         }
+        else {
+            configureUnselectedType(cell: moveViewA)
+        }
         if self.selectedTypes.count > 1 {
             configureSelectedType(cell: moveViewB, type: self.selectedTypes[1])
             configureSelectedTypeBase(view: moveViewB)
         }
+        else {
+            configureUnselectedType(cell: moveViewB)
+        }
         if self.selectedTypes.count > 2 {
             configureSelectedType(cell: moveViewC, type: self.selectedTypes[2])
             configureSelectedTypeBase(view: moveViewC)
+        }
+        else {
+            configureUnselectedType(cell: moveViewC)
         }
         
         self.suggestedPokemon.removeAll()
@@ -177,7 +173,7 @@ class DetailMovesetSubView: ToggleViewButton, UICollectionViewDataSource, UIColl
         cell.layer.cornerRadius = 8
         cell.layer.borderWidth = 1
         cell.layer.borderColor = type.appearance.getColor().cgColor
-        cell.layer.backgroundColor = type.appearance.getColor().withAlphaComponent(0.35).cgColor
+        cell.layer.backgroundColor = type.appearance.getColor().withAlphaComponent(0.45).cgColor
         
         let icon = cell.subviews[0] as! UIImageView
         let label = cell.subviews[1] as! UILabel
@@ -185,10 +181,11 @@ class DetailMovesetSubView: ToggleViewButton, UICollectionViewDataSource, UIColl
         icon.image = type.appearance.getImage().withRenderingMode(.alwaysTemplate)
         label.text = type.appearance.name
         
+        cell.superview?.backgroundColor = .secondarySystemBackground
         cell.superview?.layer.borderWidth = 0
         cell.superview?.layer.shadowColor = UIColor.black.cgColor
-        cell.superview?.layer.shadowOffset = CGSize(width: 2, height: 2)
-        cell.superview?.layer.shadowRadius = 1.0
+        cell.superview?.layer.shadowOffset = CGSize(width: 1.5, height: 1.5)
+        cell.superview?.layer.shadowRadius = 0.75
         cell.superview?.layer.shadowOpacity = traitCollection.userInterfaceStyle == .light ? 0.15 : 0.4
         cell.superview?.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.layer.cornerRadius).cgPath
         cell.isHidden = false
@@ -202,12 +199,15 @@ class DetailMovesetSubView: ToggleViewButton, UICollectionViewDataSource, UIColl
     func configureUnselectedType(cell: UIView) {
         cell.superview?.layer.borderWidth = 1
         cell.superview?.layer.shadowOpacity = 0
+        cell.superview?.backgroundColor = .clear
         cell.isHidden = true
         
         
         let index = cell.tag
-        self.selectedTypes.remove(at: index)
-        refreshSelectedTypes()
+        if index < self.selectedTypes.count {
+            self.selectedTypes.remove(at: index)
+            refreshSelectedTypes()
+        }
     }
     
     @IBAction func toggleView(sender: Any?) {
@@ -252,12 +252,13 @@ class DetailMovesetSubView: ToggleViewButton, UICollectionViewDataSource, UIColl
         if collectionView == self.suggestedCollection {
             let sCell = cell as! SuggestedButtonCell
             let types = suggestedPokemon[indexPath.row].pokemon.data.types.map({ $0.type.name })
-            sCell.configure(pokemon: suggestedPokemon[indexPath.row].pokemon, color: self.primaryColor!, types: types, msView: self)
+            sCell.configure(pokemon: suggestedPokemon[indexPath.row].pokemon, color: self.primaryColor!, types: types, vC: self.detailVC)
         }
         else {
             let tCell = cell as! TypeButtonCell
             let type = moveTypes[indexPath.row]
-            tCell.configure(type: type, text: type.appearance.name, msView: self, isSel: self.selectedTypes.contains(where: { $0.appearance.name == type.appearance.name }))
+            tCell.configure(type: type, detailVC: self.detailVC, isSel: self.selectedTypes.contains(where: { $0.appearance.name == type.appearance.name }))
+            tCell.configureToggle(name: type.appearance.name)
         }
     }
     

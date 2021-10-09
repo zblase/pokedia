@@ -9,24 +9,46 @@ import UIKit
 
 class DetailsViewController: UIViewController, UIViewControllerTransitioningDelegate {
     
+    @IBOutlet var activityView: UIActivityIndicatorView!
+    @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var mainView: DetailMainSubView!
     @IBOutlet var statView: DetailStatsSubView!
     @IBOutlet var evolutionView: DetailEvolutionsSubView!
     @IBOutlet var strongView: DetailStrongSubView!
     @IBOutlet var weakView: DetailWeakSubView!
-    @IBOutlet var strongSuggestedView: StrongSuggestedCollectionView!
-    @IBOutlet var weakSuggestedView: WeakSuggestedCollectionView!
     @IBOutlet var movesetView: DetailMovesetSubView!
     @IBOutlet var movesetHeight: NSLayoutConstraint!
     
+    var pokeUrl: PokemonArrayResult.PokemonUrl?
     var pokemon: Pokemon?
     var attackEffects: [Move] = []
     var defenseEffects: [TypeEffect] = []
     var moveTypes: [String] = []
+    var favTypes: [String]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        scrollView.isUserInteractionEnabled = false
+        self.view.bringSubviewToFront(activityView)
+        activityView.isHidden = false
+        activityView.hidesWhenStopped = true
+        activityView.startAnimating()
+        
+        self.mainView.rightView.backgroundColor = UIColor.systemGray.withAlphaComponent(0.1)
+        self.mainView.rightView.layer.cornerRadius = 10
+        self.mainView.rightView.layer.borderWidth = 1
+        self.mainView.rightView.layer.borderColor = UIColor.systemGray.cgColor
+        
+        self.mainView.numberLabel.text = "#\(pokeUrl!.getId())"
+        self.mainView.nameLabel.text = String(pokeUrl!.name.split(separator: "-")[0]).capitalizingFirstLetter()
+        
+        self.tryGetPokemon()
+    }
+    
+    func configure() {
+        activityView.stopAnimating()
+        scrollView.isUserInteractionEnabled = true
         
         let rows = ceil(Double(pokemon!.moveTypes.count) / 4.0)
         
@@ -172,10 +194,12 @@ class DetailsViewController: UIViewController, UIViewControllerTransitioningDele
         mainView.configure(pokemon: pokemon!)
         statView.configure(pokemon: pokemon!)
         evolutionView.configure(pokemon: pokemon!)
-        strongView.configure(pokemon: pokemon!, effects: fromArray.filter({ $0.value < 100 }).sorted(by: { $0.value < $1.value }))
-        strongSuggestedView.configure(pokemon: suggestedStrong, favPokemon: strongFavs)
-        weakView.configure(pokemon: pokemon!, effects: fromArray.filter({ $0.value > 100 }).sorted(by: { $0.value > $1.value }))
-        weakSuggestedView.configure(pokemon: suggestedWeak, favPokemon: weakFavs)
+        strongView.configure(pokemon: pokemon!, effects: fromArray.filter({ $0.value < 100 }).sorted(by: { $0.value < $1.value }), suggAll: suggestedStrong, suggFav: strongFavs, detailVC: self)
+        //strongView.configure(pokemon: pokemon!, effects: fromArray.filter({ $0.value < 100 }).sorted(by: { $0.value < $1.value }))
+        //strongSuggestedView.configure(pokemon: suggestedStrong, favPokemon: strongFavs)
+        weakView.configure(pokemon: pokemon!, effects: fromArray.filter({ $0.value > 100 }).sorted(by: { $0.value < $1.value }), suggAll: suggestedWeak, suggFav: weakFavs, detailVC: self)
+        //weakView.configure(pokemon: pokemon!, effects: fromArray.filter({ $0.value > 100 }).sorted(by: { $0.value < $1.value }))
+        //weakSuggestedView.configure(pokemon: suggestedWeak, favPokemon: weakFavs)
         movesetView.configure(pokemon: pokemon!, detailVC: self)
     }
     
@@ -184,6 +208,7 @@ class DetailsViewController: UIViewController, UIViewControllerTransitioningDele
         
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController, pb.pokemon!.data.id != self.pokemon!.data.id {
             vc.pokemon = pb.pokemon
+            vc.pokeUrl = pb.pokeUrl
             self.show(vc, sender: self)
         }
     }
@@ -191,6 +216,7 @@ class DetailsViewController: UIViewController, UIViewControllerTransitioningDele
     func showNextVC(pokemon: Pokemon) {
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController, pokemon.data.id != self.pokemon!.data.id {
             vc.pokemon = pokemon
+            vc.pokeUrl = pokeUrlArray?.urlArray.first(where: { $0.name == pokemon.data.name })
             self.show(vc, sender: self)
         }
     }
@@ -208,6 +234,10 @@ class DetailsViewController: UIViewController, UIViewControllerTransitioningDele
             vc.type = type
             self.show(vc, sender: self)
         }
+    }
+    
+    func toggleTypeCell(cell: TypeButtonCell) {
+        self.movesetView.typeCellTapped(cell: cell)
     }
     
     func showAddFavoriteModal() {
@@ -270,6 +300,20 @@ class DetailsViewController: UIViewController, UIViewControllerTransitioningDele
         navItem.tintColor = .link
         
         self.navigationItem.rightBarButtonItem = navItem
+    }
+    
+    
+    
+    func tryGetPokemon() {
+        if let poke = pokemonDict[pokeUrl!.name] {
+            self.pokemon = poke
+            configure()
+        }
+        else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                self.tryGetPokemon()
+            })
+        }
     }
 }
 

@@ -14,7 +14,8 @@ class TypeButtonCell: UICollectionViewCell {
     @IBOutlet var cellButton: UIButton!
     
     var type: TypeStruct!
-    var movesetView: DetailMovesetSubView!
+    var detailVC: DetailsViewController!
+    var isToggle: Bool = false
     var isSel: Bool = false
     
     override func awakeFromNib() {
@@ -22,35 +23,52 @@ class TypeButtonCell: UICollectionViewCell {
         // Initialization code
     }
 
-    func configure(type: TypeStruct, text: String, msView: DetailMovesetSubView, isSel: Bool) {
+    func configure(type: TypeStruct, detailVC: DetailsViewController, isSel: Bool) {
         self.type = type
-        self.movesetView = msView
+        self.detailVC = detailVC
         self.isSel = isSel
         
         contentView.layer.masksToBounds = true
         contentView.contentMode = .scaleAspectFit
         typeIcon.image = type.appearance.getImage().withRenderingMode(.alwaysTemplate)
+        typeIcon.tintColor = isSel ? typeIcon.tintColor.withAlphaComponent(1) : typeIcon.tintColor.withAlphaComponent(0.75)
         typeIcon.contentMode = .scaleAspectFit
         
-        typeLabel.adjustsFontSizeToFitWidth = true
-        typeLabel.text = text
-        
-        cellButton.backgroundColor = type.appearance.getColor().withAlphaComponent(isSel ? 0.35 : 0.15)
+        cellButton.backgroundColor = type.appearance.getColor().withAlphaComponent(isSel ? 0.45 : 0.1)
         cellButton.layer.cornerRadius = 8
-        cellButton.layer.borderColor = type.appearance.getColor().cgColor
+        cellButton.layer.borderColor = isSel ? type.appearance.getColor().withAlphaComponent(0.75).cgColor : type.appearance.getColor().withAlphaComponent(0.5).cgColor
         cellButton.layer.borderWidth = 1
         
         self.layer.masksToBounds = false
+        self.clipsToBounds = false
         self.layer.cornerRadius = 8
         self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowOffset = CGSize(width: 2, height: 2)
-        self.layer.shadowRadius = 1.0
+        self.layer.shadowOffset = CGSize(width: 1.5, height: 1.5)
+        self.layer.shadowRadius = 0.75
         self.layer.shadowOpacity = traitCollection.userInterfaceStyle == .light ? 0.15 : 0.4
         self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.layer.cornerRadius).cgPath
         
     }
     
+    func configureToggle(name: String) {
+        self.isToggle = true
+        
+        typeLabel.adjustsFontSizeToFitWidth = true
+        typeLabel.text = name
+        typeLabel.textColor = isSel ? typeLabel.textColor.withAlphaComponent(1) : typeLabel.textColor.withAlphaComponent(0.75)
+    }
+    
+    func configureEffect(value: String) {
+        typeLabel.text = value
+        typeLabel.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+    }
+    
     @IBAction func typeClicked(_ sender: Any?) {
-        self.movesetView.typeCellTapped(cell: self)
+        if self.isToggle {
+            self.detailVC.toggleTypeCell(cell: self)
+        }
+        else {
+            self.detailVC.typeCellTapped(type: self.type)
+        }
     }
 }

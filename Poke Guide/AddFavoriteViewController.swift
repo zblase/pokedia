@@ -122,7 +122,7 @@ class AddFavoriteViewController: UIViewController, UICollectionViewDataSource, U
         
         var typeArray: [String] = []
         for type in self.selectedTypes {
-            typeArray.append(type.appearance.name)
+            typeArray.append(type.appearance.name.lowercased())
         }
         
         //self.navItem!.image = UIImage(systemName: "star.fill")

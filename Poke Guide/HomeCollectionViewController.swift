@@ -14,7 +14,7 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
     let searchController = UISearchController(searchResultsController: nil)
     
     //var currentResults: [PokemonArrayResult.PokemonUrl] = []
-    var currentResults: [Pokemon] = []
+    var currentResults: [PokemonArrayResult.PokemonUrl] = []
     
     let dispatchGroup = DispatchGroup()
     let dataDispatchGroup = DispatchGroup()
@@ -30,30 +30,23 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         activityIndicator.hidesWhenStopped = true
         activityIndicator.startAnimating()
+        
+        let sNib = UINib(nibName: "MainButtonCell", bundle: nil)
+        self.collectionView.register(sNib, forCellWithReuseIdentifier: "MainButtonCell")
         
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
         searchController.searchBar.delegate = self
-        
-        self.collectionView.dataSource = self
-        self.collectionView.delegate = self
         
         let typeController = TypeDataController()
         typeController.getAllTypeData{ (success) -> Void in
             if success {
                 
                 let pokeController = PokemonDataController()
-                pokeController.getAllPokemonData(homeController: self) { (success) -> Void in
-                    if success && !self.searchActive {
-                        //self.currentResults = pokeUrlArray!.urlArray
-                        self.currentResults = pokemonArray
-                        self.collectionView.reloadData()
-                        
-                        self.activityIndicator.stopAnimating()
-                    }
-                }
+                pokeController.getAllPokemonData(homeController: self)
             }
         }
     }
@@ -67,8 +60,8 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
     
     func updateResultsList() {
         if !searchActive {
-            //self.currentResults = pokeUrlArray!.urlArray
-            self.currentResults = pokemonArray
+            self.currentResults = pokeUrlArray!.urlArray
+            //self.currentResults = pokemonArray
             self.collectionView.reloadData()
         }
         else {
@@ -82,29 +75,29 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.searchText = searchText
         guard let text = searchBar.text, !text.isEmpty else {
-            //self.currentResults = pokeUrlArray!.urlArray
-            self.currentResults = pokemonArray
+            self.currentResults = pokeUrlArray!.urlArray
+            //self.currentResults = pokemonArray
             self.collectionView.reloadData()
             return
         }
         
         searchActive = true
-        //self.currentResults = pokeUrlArray!.urlArray.filter({ $0.name.contains(searchText.lowercased()) })
-        self.currentResults = pokemonArray.filter({ $0.data.name.contains(searchText.lowercased()) })
+        self.currentResults = pokeUrlArray!.urlArray.filter({ $0.name.contains(searchText.lowercased()) })
+        //self.currentResults = pokemonArray.filter({ $0.data.name.contains(searchText.lowercased()) })
         self.collectionView.reloadData()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let text = searchBar.text, !text.isEmpty else {
-            //self.currentResults = pokeUrlArray!.urlArray
-            self.currentResults = pokemonArray
+            self.currentResults = pokeUrlArray!.urlArray
+            //self.currentResults = pokemonArray
             self.collectionView.reloadData()
             return
         }
         
         searchActive = true
-        //self.currentResults = pokeUrlArray!.urlArray.filter({ $0.name.contains(searchText.lowercased()) })
-        self.currentResults = pokemonArray.filter({ $0.data.name.contains(searchText.lowercased()) })
+        self.currentResults = pokeUrlArray!.urlArray.filter({ $0.name.contains(searchText.lowercased()) })
+        //self.currentResults = pokemonArray.filter({ $0.data.name.contains(searchText.lowercased()) })
         self.collectionView.reloadData()
         
         self.searchController.dismiss(animated: true, completion: nil)
@@ -112,44 +105,47 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         self.searchText = ""
-        //self.currentResults = pokeUrlArray!.urlArray
-        self.currentResults = pokemonArray
+        self.currentResults = pokeUrlArray!.urlArray
+        //self.currentResults = pokemonArray
         self.collectionView.reloadData()
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         searchBar.text = self.searchText
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return currentResults.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyCollectionViewCell.identifier, for: indexPath) as! MyCollectionViewCell
-        
-        if indexPath.row < currentResults.count {
-            //cell.configureCellIdentity(pokeUrl: currentResults[indexPath.row])
-            //let test = collectionView.cellForItem(at: <#T##IndexPath#>)
-            cell.configureCellData(poke: currentResults[indexPath.row])
-        }
-        
-        return cell
+        return collectionView.dequeueReusableCell(withReuseIdentifier: "MainButtonCell", for: indexPath) as! MainButtonCell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.size.width / 3.5, height: view.frame.size.width / 3.5)
+        return CGSize(width: (collectionView.frame.size.width - 70) / 3, height: (collectionView.frame.size.width - 70) / 3)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let pCell = cell as! MainButtonCell
+        pCell.configureCellIdentity(pokeUrl: self.currentResults[indexPath.row])
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        let width: CGFloat = view.frame.size.width / 3.5
-        let spacing = (view.frame.size.width - (width * 3)) / 2
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! MainButtonCell
         
-        return spacing - 10
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController {
+            vc.pokeUrl = cell.pokeUrl
+            self.show(vc, sender: self)
+        }
+    }
+    
+    func showNextVC(pokemon: Pokemon) {
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController {
+            //vc.pokemon = pokemon
+            //vc.pokeUrl = pokeUrlArray?.urlArray.first(where: { $0.name == pokemon.data.name })
+            self.show(vc, sender: self)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
@@ -157,7 +153,8 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
         if segue.destination is DetailsViewController {
             let vc = segue.destination as? DetailsViewController
             let pButton = sender as! PokemonButton
-            vc?.pokemon = pButton.pokemon
+            
+            vc?.pokeUrl = pButton.pokeUrl
         }
     }
 }

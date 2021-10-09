@@ -28,6 +28,7 @@ class DetailMainSubView: UIView {
     @IBOutlet var typeButtonB: UIButton!
     @IBOutlet var typeButtonC: UIButton!
     
+    
     public func configure(pokemon: Pokemon) {
         
         layer.shadowColor = UIColor.black.cgColor
@@ -50,6 +51,9 @@ class DetailMainSubView: UIView {
         rightView.layer.borderColor = typeA.appearance.getColor().withAlphaComponent(0.2).cgColor
         rightView.layer.borderWidth = 1
         rightView.layer.cornerRadius = 10
+        
+        genLabel.isHidden = false
+        regionLabel.isHidden = false
         
         for gen in genArray {
             if gen.pokemon_species.contains(where: { $0.name == pokemon.data.name }) {

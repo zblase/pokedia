@@ -18,16 +18,16 @@ class SuggestedButtonCell: UICollectionViewCell {
     @IBOutlet var typeImgC: UIImageView!
     
     var pokemon: Pokemon!
-    var movesetView: DetailMovesetSubView!
+    var rootVC: Any!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    func configure(pokemon: Pokemon, color: UIColor, types: [String], msView: DetailMovesetSubView) {
+    func configure(pokemon: Pokemon, color: UIColor, types: [String], vC: Any) {
         self.pokemon = pokemon
-        self.movesetView = msView
+        self.rootVC = vC
         
         self.cellIcon.image = pokemon.image
         
@@ -54,20 +54,20 @@ class SuggestedButtonCell: UICollectionViewCell {
             typeImgC.tintColor = type.appearance.getColor()
         }
         
-        self.cellButton.backgroundColor = color.withAlphaComponent(0.35)
+        self.cellButton.backgroundColor = color.withAlphaComponent(0.45)
         self.cellButton.layer.cornerRadius = 10
         self.cellButton.layer.borderWidth = 1
-        self.cellButton.layer.borderColor = color.cgColor
-        
-        self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowOffset = CGSize(width: 2, height: 2)
-        self.layer.shadowRadius = 1.0
-        self.layer.shadowOpacity = traitCollection.userInterfaceStyle == .light ? 0.15 : 0.4
-        self.layer.masksToBounds = false
-        self.layer.shadowPath = UIBezierPath(roundedRect: self.cellButton.bounds, cornerRadius: self.cellButton.layer.cornerRadius).cgPath
+        self.cellButton.layer.borderColor = color.withAlphaComponent(0.75).cgColor
         
         self.layer.masksToBounds = false
+        self.clipsToBounds = false
         self.layer.cornerRadius = 10
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOffset = CGSize(width: 1.5, height: 1.5)
+        self.layer.shadowRadius = 0.75
+        self.layer.shadowOpacity = traitCollection.userInterfaceStyle == .light ? 0.15 : 0.4
+        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.layer.cornerRadius).cgPath
+        
         
         let names = pokemon.data.name.split(separator: "-")
         self.cellName.text = String(names[0]).capitalizingFirstLetter()
@@ -86,6 +86,14 @@ class SuggestedButtonCell: UICollectionViewCell {
     }
     
     @IBAction func pokemonTapped(_ sender: Any?) {
-        self.movesetView.pokeCellTapped(poke: self.pokemon)
+        if let homeVC = self.rootVC as? HomeCollectionViewController {
+            homeVC.showNextVC(pokemon: self.pokemon)
+        }
+        else if let detailVC = self.rootVC as? DetailsViewController {
+            detailVC.showNextVC(pokemon: self.pokemon)
+        }
+        else if let favVC = self.rootVC as? FavoritesViewController {
+            //favVC.showNextVC(pokemon: self.pokemon)
+        }
     }
 }
