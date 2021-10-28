@@ -36,15 +36,25 @@ class MainButtonCell: UICollectionViewCell {
         //self.pokemonButton.pokeUrl = pokeUrl
         self.favTypes = favTypes
         
-        let names = pokeUrl.name.split(separator: "-")
-        cellName.text = String(names[0]).capitalizingFirstLetter()
-        if names.count > 1 {
-            //cellSubName.text = String(names[1]).capitalizingFirstLetter()
-            //cellSubName.isHidden = false
+        if pokeUrl.name == "nidoran-f" {
+            cellName.text = "Nidoran (F)"
+        }
+        else if pokeUrl.name == "nidoran-m" {
+            cellName.text = "Nidoran (M)"
         }
         else {
-            //cellSubName.isHidden = true
+            let names = pokeUrl.name.split(separator: "-")
+            cellName.text = String(names[0]).capitalizingFirstLetter()
+            if names.count > 1 {
+                //cellSubName.text = String(names[1]).capitalizingFirstLetter()
+                //cellSubName.isHidden = false
+            }
+            else {
+                //cellSubName.isHidden = true
+            }
         }
+        
+        
         
         cellNumber.text = "#\(pokeUrl.getId())"
         
@@ -58,7 +68,7 @@ class MainButtonCell: UICollectionViewCell {
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOffset = CGSize(width: 3, height: 3)
         layer.shadowRadius = 1.0
-        layer.shadowOpacity = traitCollection.userInterfaceStyle == .light ? 0.15 : 0.4
+        layer.shadowOpacity = traitCollection.userInterfaceStyle == .light ? 0.2 : 0.4
         layer.masksToBounds = false
         layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
         
@@ -84,15 +94,36 @@ class MainButtonCell: UICollectionViewCell {
         self.activityIndicator.startAnimating()
         self.activityIndicator.hidesWhenStopped = true
         
-        let names = poke.data.name.split(separator: "-")
-        cellName.text = String(names[0]).capitalizingFirstLetter()
-        if names.count > 1 {
-            //cellSubName.text = String(names[1]).capitalizingFirstLetter()
-            //cellSubName.isHidden = false
+        
+        if poke.data.name == "nidoran-f" {
+            cellName.text = "Nidoran (F)"
+        }
+        else if poke.data.name == "nidoran-m" {
+            cellName.text = "Nidoran (M)"
+        }
+        else if poke.data.name == "mr-mime" {
+            cellName.text = "Mr. Mime"
+        }
+        else if poke.data.name == "porygon-z" {
+            cellName.text = "Porygon-Z"
+        }
+        else if poke.data.name == "ho-oh" {
+            cellName.text = "Ho-Oh"
         }
         else {
-            //cellSubName.isHidden = true
+            let names = poke.data.name.split(separator: "-")
+            cellName.text = String(names[0]).capitalizingFirstLetter()
+            if names.count > 1 {
+                //cellSubName.text = String(names[1]).capitalizingFirstLetter()
+                //cellSubName.isHidden = false
+            }
+            else {
+                //cellSubName.isHidden = true
+            }
         }
+        
+        
+        
         
         contentView.layer.cornerRadius = 12.0
         contentView.layer.borderWidth = 0.75
@@ -124,17 +155,17 @@ class MainButtonCell: UICollectionViewCell {
         let typeArray = favTypes != nil ? favTypes : poke.data.types.sorted(by: { $0.slot < $1.slot }).map({ $0.type.name })
         
         if typeArray!.count > 0 {
-            let type: TypeStruct = typeDict[typeArray![0]]!
+            let type: TypeStruct = typeDict[typeArray![0].lowercased()]!
             configureTypeButton(imgView: typeBtnA, type: type.appearance)
         }
         
         if typeArray!.count > 1 {
-            let type: TypeStruct = typeDict[typeArray![1]]!
+            let type: TypeStruct = typeDict[typeArray![1].lowercased()]!
             configureTypeButton(imgView: typeBtnB, type: type.appearance)
         }
         
         if typeArray!.count > 2 {
-            let type: TypeStruct = typeDict[typeArray![2]]!
+            let type: TypeStruct = typeDict[typeArray![2].lowercased()]!
             configureTypeButton(imgView: typeBtnC, type: type.appearance)
         }
     }
@@ -159,6 +190,10 @@ class MainButtonCell: UICollectionViewCell {
     }
     
     func tryGetPokemon(name: String) {
+        if name != self.pokeUrl!.name {
+            return
+        }
+        
         if let poke = pokemonDict[name] {
             configureCellData(poke: poke)
         }

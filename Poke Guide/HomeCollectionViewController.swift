@@ -11,6 +11,8 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
     
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var backToTopBtn: UIView!
+    
     let searchController = UISearchController(searchResultsController: nil)
     
     //var currentResults: [PokemonArrayResult.PokemonUrl] = []
@@ -33,6 +35,8 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
         
         activityIndicator.hidesWhenStopped = true
         activityIndicator.startAnimating()
+        
+        backToTopBtn.isHidden = true
         
         let sNib = UINib(nibName: "MainButtonCell", bundle: nil)
         self.collectionView.register(sNib, forCellWithReuseIdentifier: "MainButtonCell")
@@ -60,7 +64,7 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
     
     func updateResultsList() {
         if !searchActive {
-            self.currentResults = pokeUrlArray!.urlArray
+            self.currentResults = baseUrlArray
             //self.currentResults = pokemonArray
             self.collectionView.reloadData()
         }
@@ -75,28 +79,28 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.searchText = searchText
         guard let text = searchBar.text, !text.isEmpty else {
-            self.currentResults = pokeUrlArray!.urlArray
+            self.currentResults = baseUrlArray
             //self.currentResults = pokemonArray
             self.collectionView.reloadData()
             return
         }
         
         searchActive = true
-        self.currentResults = pokeUrlArray!.urlArray.filter({ $0.name.contains(searchText.lowercased()) })
+        self.currentResults = baseUrlArray.filter({ $0.name.contains(searchText.lowercased()) })
         //self.currentResults = pokemonArray.filter({ $0.data.name.contains(searchText.lowercased()) })
         self.collectionView.reloadData()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let text = searchBar.text, !text.isEmpty else {
-            self.currentResults = pokeUrlArray!.urlArray
+            self.currentResults = baseUrlArray
             //self.currentResults = pokemonArray
             self.collectionView.reloadData()
             return
         }
         
         searchActive = true
-        self.currentResults = pokeUrlArray!.urlArray.filter({ $0.name.contains(searchText.lowercased()) })
+        self.currentResults = baseUrlArray.filter({ $0.name.contains(searchText.lowercased()) })
         //self.currentResults = pokemonArray.filter({ $0.data.name.contains(searchText.lowercased()) })
         self.collectionView.reloadData()
         
@@ -105,7 +109,7 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         self.searchText = ""
-        self.currentResults = pokeUrlArray!.urlArray
+        self.currentResults = baseUrlArray
         //self.currentResults = pokemonArray
         self.collectionView.reloadData()
     }
@@ -127,6 +131,9 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+        self.backToTopBtn.isHidden = collectionView.visibleCells.contains(where: { collectionView.indexPath(for: $0)?.row == 0 })
+        
         let pCell = cell as! MainButtonCell
         pCell.configureCellIdentity(pokeUrl: self.currentResults[indexPath.row])
     }
@@ -138,6 +145,12 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
             vc.pokeUrl = cell.pokeUrl
             self.show(vc, sender: self)
         }
+    }
+    
+    @IBAction func scrollToTop(_ sender: Any?) {
+        self.collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+        
+        //self.backToTopBtn.isHidden = true
     }
     
     func showNextVC(pokemon: Pokemon) {

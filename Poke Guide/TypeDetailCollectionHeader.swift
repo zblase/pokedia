@@ -22,10 +22,12 @@ class TypeDetailCollectionHeader: UICollectionReusableView, UICollectionViewData
     
     var defEffects: [TypeEffect] = []
     var atkEffects: [TypeEffect] = []
+    var selectFunc: ((TypeButtonCell) -> Void)!
     
-    func configure(type: TypeStruct) {
+    func configure(type: TypeStruct, sFunc: @escaping (TypeButtonCell) -> Void) {
         
         self.type = type
+        self.selectFunc = sFunc
         
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowRadius = 3.0
@@ -63,20 +65,30 @@ class TypeDetailCollectionHeader: UICollectionReusableView, UICollectionViewData
             atkEffects.append(TypeEffect(name: rel.name, value: 0))
         }
         
+        let dNib = UINib(nibName: "TypeButtonCell", bundle: nil)
+        self.defCollection.register(dNib, forCellWithReuseIdentifier: "TypeButtonCell")
         defCollection.dataSource = self
         defCollection.delegate = self
+        
+        let aNib = UINib(nibName: "TypeButtonCell", bundle: nil)
+        self.atkCollection.register(aNib, forCellWithReuseIdentifier: "TypeButtonCell")
         atkCollection.delegate = self
         atkCollection.dataSource = self
         
-        print("\(UIScreen.main.bounds.width)")
-        if defEffects.count < 8 {
+        let defRows = ceil(Double(defEffects.count) / 4)
+        //print(defRows)
+        let cellHeight = (UIScreen.main.bounds.width - 32) / 10
+        
+        defHeight.constant = defRows * cellHeight + ((defRows - 1) * 8) + 31
+        
+        /*if defEffects.count < 8 {
             defHeight.constant = (UIScreen.main.bounds.width / 7) + 26
             //defHeight.constant = 83
         }
         else {
             defHeight.constant = (UIScreen.main.bounds.width / 3.5) + 22
             //defHeight.constant = 132
-        }
+        }*/
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -89,34 +101,28 @@ class TypeDetailCollectionHeader: UICollectionReusableView, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        //return collectionView.dequeueReusableCell(withReuseIdentifier: MyCollectionViewCell.identifier, for: indexPath)
-        if collectionView == self.defCollection {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TypeEffectCellDefense.identifier, for: indexPath) as! TypeEffectCellDefense
-            
-            cell.configure(effect: self.defEffects[indexPath.row])
-            
-            return cell
-        }
-        else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TypeEffectCellAttack.identifier, for: indexPath) as! TypeEffectCellAttack
-            
-            cell.configure(effect: self.atkEffects[indexPath.row])
-            
-            return cell
-        }
         
+        return collectionView.dequeueReusableCell(withReuseIdentifier: "TypeButtonCell", for: indexPath) as! TypeButtonCell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        var size: CGFloat = 0
+        return CGSize(width: (collectionView.frame.size.width - 30) / 4, height: (collectionView.frame.size.width - 30) / 10)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let tCell = cell as! TypeButtonCell
         
         if collectionView == self.defCollection {
-            size = self.defCollection.frame.size.width / 7
+            let type = typeDict[defEffects[indexPath.row].name]!
+            tCell.configure(type: type, isSel: true, sFunc: self.selectFunc)
+            let color = self.defEffects[indexPath.row].value > 100 ? UIColor.systemRed : UIColor.systemGreen
+            tCell.configureEffect(value: "\(Int(self.defEffects[indexPath.row].value))%", type: type, labelCol: color)
         }
         else {
-            size = self.atkCollection.frame.size.width / 7
+            let type = typeDict[atkEffects[indexPath.row].name]!
+            tCell.configure(type: type, isSel: true, sFunc: self.selectFunc)
+            let color = self.atkEffects[indexPath.row].value < 100 ? UIColor.systemRed : UIColor.systemGreen
+            tCell.configureEffect(value: "\(Int(self.atkEffects[indexPath.row].value))%", type: type, labelCol: color)
         }
-        
-        return CGSize(width: size, height: size)
     }
 }

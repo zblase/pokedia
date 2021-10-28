@@ -24,7 +24,7 @@ class DetailStatsSubView: ToggleViewButton, UICollectionViewDataSource, UICollec
     var secondaryColor: UIColor?
     
     public func configure(pokemon: Pokemon) {
-        self.isHidden = true;
+        //self.isHidden = true;
         
         self.pokemon = pokemon
         primaryColor = pokemon.data.getTypeStruct(slot: 1).appearance.getColor()
@@ -34,8 +34,14 @@ class DetailStatsSubView: ToggleViewButton, UICollectionViewDataSource, UICollec
         
         configureSubView(subView: subView, color: secondaryColor!)
         
+        if !self.isHidden {
+            highlightButton(button: viewButton, color: primaryColor!)
+        }
+        
         collectionView.dataSource = self
         collectionView.delegate = self
+        
+        animateCells()
     }
     
     @IBAction func toggleView(sender: Any?) {
@@ -45,15 +51,22 @@ class DetailStatsSubView: ToggleViewButton, UICollectionViewDataSource, UICollec
             
             setOpenButton(button: viewButton, color: primaryColor!, chevron: chevron)
             
-            for i in 0...5 {
-                let cell = collectionView.visibleCells[i] as! StatCollectionViewCell
-                cell.configure(stat: pokemon!.data.stats[i], color: secondaryColor!)
-                cell.doAnimation()
-            }
+            animateCells()
         }
         else {
             
             setClosedButton(button: viewButton, color: primaryColor!, chevron: chevron)
+        }
+    }
+    
+    func animateCells() {
+        for i in 0...5 {
+            if i > collectionView.visibleCells.count - 1 {
+                return
+            }
+            let cell = collectionView.visibleCells[i] as! StatCollectionViewCell
+            cell.configure(stat: pokemon!.data.stats[i], color: secondaryColor!)
+            cell.doAnimation()
         }
     }
     

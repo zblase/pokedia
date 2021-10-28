@@ -15,7 +15,8 @@ class ToggleViewButton: UIView {
     public func configureButton(button: UIButton, color: UIColor, chevron: UIImageView, divider: UIImageView) {
         button.layer.cornerRadius = 10
         button.layer.borderWidth = 1
-        chevron.tintColor = color.withAlphaComponent(0.5)
+        //chevron.tintColor = color.withAlphaComponent(0.5)
+        //chevron.tintColor = UIColor(named: "ColorLabelPrimary")
         divider.backgroundColor = color.withAlphaComponent(0.5)
         
         unhighlightButton(button: button, color: color)
@@ -25,7 +26,8 @@ class ToggleViewButton: UIView {
         
         subView.backgroundColor = color.withAlphaComponent(0.1)
         subView.layer.borderWidth = 1
-        subView.layer.borderColor = color.withAlphaComponent(0.35).cgColor
+        //subView.layer.borderColor = color.withAlphaComponent(0.35).cgColor
+        subView.layer.borderColor = color.cgColor
         subView.layer.cornerRadius = 10
         subView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
     }
@@ -49,14 +51,18 @@ class ToggleViewButton: UIView {
     }
     
     func highlightButton(button: UIButton, color: UIColor) {
-        button.backgroundColor = color.withAlphaComponent(0.25)
-        button.layer.borderColor = color.withAlphaComponent(0.35).cgColor
+        //button.backgroundColor = .tertiarySystemBackground
+        button.backgroundColor = color.withAlphaComponent(0.5)
+        //button.layer.borderColor = UIColor(named: "ColorHomeCellBorder")!.cgColor
+        button.layer.borderColor = color.cgColor
         button.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
     }
     
     func unhighlightButton(button: UIButton, color: UIColor) {
-        button.backgroundColor = color.withAlphaComponent(0.1)
-        button.layer.borderColor = color.withAlphaComponent(0.15).cgColor
+        button.backgroundColor = color.withAlphaComponent(0.35)
+        //button.backgroundColor = .tertiarySystemBackground
+        button.layer.borderColor = color.withAlphaComponent(0.5).cgColor
+        //button.layer.borderColor = UIColor(named: "ColorHomeCellBorder")!.cgColor
         button.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMinXMaxYCorner]
     }
     

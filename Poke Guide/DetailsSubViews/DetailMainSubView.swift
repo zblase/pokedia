@@ -16,7 +16,8 @@ class DetailMainSubView: UIView {
         // Drawing code
     }
     */
-
+    
+    @IBOutlet var backgroundView: UIView!
     @IBOutlet var mainImage: UIImageView!
     @IBOutlet var rightView: UIView!
     @IBOutlet var nameLabel: UILabel!
@@ -28,8 +29,17 @@ class DetailMainSubView: UIView {
     @IBOutlet var typeButtonB: UIButton!
     @IBOutlet var typeButtonC: UIButton!
     
+    let test = ["Normal", "Galar"]
+    var primaryColor: UIColor!
+    var pokemon: Pokemon!
+    var formUrls: [PokemonArrayResult.PokemonUrl]!
+    var switchForms: ((PokemonArrayResult.PokemonUrl) -> Void)!
     
-    public func configure(pokemon: Pokemon) {
+    
+    public func configure(pokemon: Pokemon, forms: [PokemonArrayResult.PokemonUrl], fFunc: ((PokemonArrayResult.PokemonUrl) -> Void)?) {
+        self.pokemon = pokemon
+        self.formUrls = forms
+        self.switchForms = fFunc
         
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowRadius = 3.0
@@ -46,9 +56,16 @@ class DetailMainSubView: UIView {
         
         let typeARef = pokemon.data.types.first(where: { $0.slot == 1 })!
         let typeA: TypeStruct = typeDict[typeARef.type.name]!
+        self.primaryColor = typeA.appearance.getColor()
         
-        rightView.layer.backgroundColor = typeA.appearance.getColor().withAlphaComponent(0.05).cgColor
-        rightView.layer.borderColor = typeA.appearance.getColor().withAlphaComponent(0.2).cgColor
+        
+        
+        
+        
+        self.backgroundView.backgroundColor = typeA.appearance.getColor().withAlphaComponent(0.08)
+        
+        rightView.layer.backgroundColor = typeA.appearance.getColor().withAlphaComponent(0.08).cgColor
+        rightView.layer.borderColor = typeA.appearance.getColor().withAlphaComponent(0.5).cgColor
         rightView.layer.borderWidth = 1
         rightView.layer.cornerRadius = 10
         
@@ -90,6 +107,8 @@ class DetailMainSubView: UIView {
             let typeBRef = pokemon.data.types.first(where: { $0.slot == 2 })
             let typeB: TypeStruct = typeDict[typeBRef!.type.name]!
             configureTypeButton(button: typeButtonB, type: typeB.appearance)
+            
+            self.backgroundView.backgroundColor = typeB.appearance.getColor().withAlphaComponent(0.08)
         }
         
         
@@ -119,4 +138,6 @@ class DetailMainSubView: UIView {
         
         return menuItems
     }
+    
+    
 }

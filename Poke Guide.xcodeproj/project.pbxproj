@@ -58,6 +58,7 @@
 		86841AE1270D00BC00F78F0E /* SuggestedButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86841ADF270D00BC00F78F0E /* SuggestedButtonCell.xib */; };
 		8693921826F06D7800694069 /* StrongSuggestedCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8693921726F06D7800694069 /* StrongSuggestedCollectionView.swift */; };
 		8693921A26F073B500694069 /* SuggestedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8693921926F073B500694069 /* SuggestedCell.swift */; };
+		869A7210272A360E00A97974 /* TypeFilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A720F272A360E00A97974 /* TypeFilterController.swift */; };
 		86AB198F26C0FA2200AAB46E /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AB198E26C0FA2200AAB46E /* MyCollectionViewCell.swift */; };
 		86AB199326C1B2D200AAB46E /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AB199226C1B2D200AAB46E /* DetailsViewController.swift */; };
 		86DC67F127023BF800843A23 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DC67F027023BF800843A23 /* FavoritesViewController.swift */; };
@@ -140,6 +141,7 @@
 		86841ADF270D00BC00F78F0E /* SuggestedButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestedButtonCell.xib; sourceTree = "<group>"; };
 		8693921726F06D7800694069 /* StrongSuggestedCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrongSuggestedCollectionView.swift; sourceTree = "<group>"; };
 		8693921926F073B500694069 /* SuggestedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedCell.swift; sourceTree = "<group>"; };
+		869A720F272A360E00A97974 /* TypeFilterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeFilterController.swift; sourceTree = "<group>"; };
 		86AB198E26C0FA2200AAB46E /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
 		86AB199226C1B2D200AAB46E /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		86DC67F027023BF800843A23 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				86841ADF270D00BC00F78F0E /* SuggestedButtonCell.xib */,
 				86045B2F271103AB0020C585 /* MainButtonCell.swift */,
 				86045B30271103AB0020C585 /* MainButtonCell.xib */,
+				869A720F272A360E00A97974 /* TypeFilterController.swift */,
 			);
 			path = "Poke Guide";
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 				8656389C26BCE0780082D528 /* HomeCollectionViewController.swift in Sources */,
 				86780D1126FE802E00512D06 /* TypeCollectionCell.swift in Sources */,
 				8656386C26BCD60C0082D528 /* AppDelegate.swift in Sources */,
+				869A7210272A360E00A97974 /* TypeFilterController.swift in Sources */,
 				860358FC26F57DE800EAA2AA /* WeakEffectCell.swift in Sources */,
 				8611641E26C5DEB500295333 /* DetailStrongSubView.swift in Sources */,
 				8603590026F97E8300EAA2AA /* PokemonDM.swift in Sources */,
@@ -645,12 +649,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 6L8WV29F9Z;
 				INFOPLIST_FILE = "Poke Guide/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Blase.Poke-Guide";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -664,12 +670,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 6L8WV29F9Z;
 				INFOPLIST_FILE = "Poke Guide/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Blase.Poke-Guide";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

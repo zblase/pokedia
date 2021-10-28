@@ -17,6 +17,7 @@ class AddFavoriteViewController: UIViewController, UICollectionViewDataSource, U
     @IBOutlet var moveViewB: UIView!
     @IBOutlet var moveViewC: UIView!
     @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var modalHeight: NSLayoutConstraint!
     
     var pokemon: Pokemon?
     var selectedTypes: [TypeStruct] = []
@@ -52,9 +53,21 @@ class AddFavoriteViewController: UIViewController, UICollectionViewDataSource, U
         moveViewC.superview?.layer.borderWidth = 1
         moveViewC.superview?.layer.borderColor = UIColor.gray.cgColor
         
-        collectionView.dataSource = self
-        collectionView.delegate = self
         
+        
+        let tNib = UINib(nibName: "TypeButtonCell", bundle: nil)
+        self.collectionView.register(tNib, forCellWithReuseIdentifier: "TypeButtonCell")
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
+        self.collectionView.layer.masksToBounds = false
+        
+        refreshSelectedTypes()
+        
+        let movesetRows = ceil(Double(pokemon!.moveTypes.count) / 4.0)
+        
+        let rowHeight = (UIScreen.main.bounds.width) / 10
+        
+        self.modalHeight.constant = 182 + (rowHeight) * movesetRows + 16 + (movesetRows * 4)
     }
     
     func refreshSelectedTypes() {
@@ -85,14 +98,22 @@ class AddFavoriteViewController: UIViewController, UICollectionViewDataSource, U
     func configureSelectedType(cell: UIView, type: TypeStruct) {
         cell.layer.cornerRadius = 8
         cell.layer.borderWidth = 1
-        cell.layer.borderColor = type.appearance.getColor().cgColor
-        cell.layer.backgroundColor = type.appearance.getColor().withAlphaComponent(0.75).cgColor
+        cell.layer.borderColor = UIColor(named: "ColorButtonBorder")!.cgColor
+        cell.layer.backgroundColor = type.appearance.getColor().cgColor
         
         let icon = cell.subviews[0] as! UIImageView
         let label = cell.subviews[1] as! UILabel
         
         icon.image = type.appearance.getImage().withRenderingMode(.alwaysTemplate)
         label.text = type.appearance.name
+        
+        cell.superview?.backgroundColor = .secondarySystemBackground
+        cell.superview?.layer.borderWidth = 0
+        cell.superview?.layer.shadowColor = UIColor.black.cgColor
+        cell.superview?.layer.shadowOffset = CGSize(width: 1.5, height: 1.5)
+        cell.superview?.layer.shadowRadius = 0.75
+        cell.superview?.layer.shadowOpacity = traitCollection.userInterfaceStyle == .light ? 0.15 : 0.4
+        cell.superview?.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.layer.cornerRadius).cgPath
         
         cell.superview?.layer.borderWidth = 0
         cell.isHidden = false
@@ -139,20 +160,46 @@ class AddFavoriteViewController: UIViewController, UICollectionViewDataSource, U
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AddFavoriteTypeCell.identifier, for: indexPath) as! AddFavoriteTypeCell
-        
-        let isSel = self.selectedTypes.contains(where: { $0.appearance.name.lowercased() == pokemon!.moveTypes[indexPath.row] })
-        cell.configure(typeName: pokemon!.moveTypes[indexPath.row], isSel: isSel)
-        
-        return cell
+        return collectionView.dequeueReusableCell(withReuseIdentifier: "TypeButtonCell", for: indexPath) as! TypeButtonCell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.frame.size.width - 64) / 6, height: (collectionView.frame.size.width - 64) / 6)
+        return CGSize(width: (collectionView.frame.size.width - 30) / 4, height: (collectionView.frame.size.width - 30) / 10)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let tCell = cell as! TypeButtonCell
+        let type = typeDict[pokemon!.moveTypes[indexPath.row]]!
+        
+        
+        let isSel = self.selectedTypes.contains(where: { $0.appearance.name.lowercased() == pokemon!.moveTypes[indexPath.row] })
+        //cell.configure(typeName: pokemon!.moveTypes[indexPath.row], isSel: isSel)
+        
+        
+        tCell.configure(type: type, isSel: self.selectedTypes.contains(where: { $0.appearance.name == type.appearance.name }), sFunc: self.typeCellTapped(cell:))
+        tCell.configureToggle(type: type)
+    }
+    
+    func typeCellTapped(cell: TypeButtonCell) {
+        if !cell.isSel {
+            
+            if self.selectedTypes.count < 3 {
+                self.selectedTypes.append(cell.type!)
+            }
+            else {
+                self.selectedTypes[2] = cell.type!
+            }
+        }
+        else {
+            
+            self.selectedTypes.removeAll(where: { $0.appearance.name == cell.type!.appearance.name })
+        }
+        
+        refreshSelectedTypes()
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! AddFavoriteTypeCell
+        let cell = collectionView.cellForItem(at: indexPath) as! TypeButtonCell
         
         if !cell.isSel {
             

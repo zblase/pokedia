@@ -38,6 +38,8 @@ class TypeDetailsViewController: UIViewController, UICollectionViewDataSource, U
         
         self.navigationItem.titleView = navView
         
+        let sNib = UINib(nibName: "MainButtonCell", bundle: nil)
+        self.collectionView.register(sNib, forCellWithReuseIdentifier: "MainButtonCell")
         collectionView.delegate = self
         collectionView.dataSource = self
     }
@@ -45,7 +47,7 @@ class TypeDetailsViewController: UIViewController, UICollectionViewDataSource, U
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TypeDetailCollectionHeader.identifier, for: indexPath) as! TypeDetailCollectionHeader
-        header.configure(type: type!)
+        header.configure(type: type!, sFunc: self.typeCellTapped(cell:))
         return header
     }
 
@@ -54,41 +56,65 @@ class TypeDetailsViewController: UIViewController, UICollectionViewDataSource, U
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyCollectionViewCell.identifier, for: indexPath) as! MyCollectionViewCell
+        return collectionView.dequeueReusableCell(withReuseIdentifier: "MainButtonCell", for: indexPath) as! MainButtonCell
+        /*let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyCollectionViewCell.identifier, for: indexPath) as! MyCollectionViewCell
         
         if indexPath.row < type!.data.pokemon.count {
             cell.configureCellIdentity(pokeUrl: type!.data.pokemon[indexPath.row].pokemon)
         }
         
-        return cell
+        return cell*/
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.size.width / 3.5, height: view.frame.size.width / 3.5)
+        return CGSize(width: (collectionView.frame.size.width - 70) / 3, height: (collectionView.frame.size.width - 70) / 3)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let pCell = cell as! MainButtonCell
+        pCell.configureCellIdentity(pokeUrl: self.type!.data.pokemon[indexPath.row].pokemon)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        let width: CGFloat = view.frame.size.width / 3.5
-        let spacing = (view.frame.size.width - (width * 3)) / 2
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! MainButtonCell
         
-        return spacing - 10 
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController {
+            vc.pokeUrl = cell.pokeUrl
+            self.show(vc, sender: self)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         
-        var height: CGFloat = 76 + (self.view.frame.size.width / 3.5)
-        if (type!.data.damage_relations.double_damage_from + type!.data.damage_relations.half_damage_from + type!.data.damage_relations.no_damage_from).count > 7 {
+        //var height: CGFloat = 76 + (self.view.frame.size.width / 3.5)
+        
+        let cellHeight = (UIScreen.main.bounds.width - 32) / 10
+        
+        let defEffects = type!.data.damage_relations.double_damage_from + type!.data.damage_relations.half_damage_from + type!.data.damage_relations.no_damage_from
+        let defRows = ceil(Double(defEffects.count) / 4)
+        let defHeight = defRows * cellHeight + ((defRows - 1) * 8) + 28
+        
+        let atkEffects = type!.data.damage_relations.double_damage_to + type!.data.damage_relations.half_damage_to + type!.data.damage_relations.no_damage_to
+        let atkRows = ceil(Double(atkEffects.count) / 4)
+        print(atkRows)
+        let atkHeight = atkRows * cellHeight + ((atkRows - 1) * 8) + 28
+        
+        /*if (type!.data.damage_relations.double_damage_from + type!.data.damage_relations.half_damage_from + type!.data.damage_relations.no_damage_from).count > 7 {
             height += (self.view.frame.size.width / 7) - 2
         }
         if (type!.data.damage_relations.double_damage_to + type!.data.damage_relations.half_damage_to + type!.data.damage_relations.no_damage_to).count > 7 {
             height += (self.view.frame.size.width / 7) - 2
-        }
+        }*/
         
-        return CGSize(width: self.collectionView.frame.size.width, height: height)
+        return CGSize(width: self.collectionView.frame.size.width, height: defHeight + atkHeight + 34)
+    }
+    
+    func typeCellTapped(cell: TypeButtonCell) {
+        
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "TypeDetailsViewController") as? TypeDetailsViewController {
+            vc.type = cell.type
+            self.show(vc, sender: self)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)

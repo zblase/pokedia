@@ -18,20 +18,25 @@ class DetailWeakSubView: ToggleViewButton, UICollectionViewDataSource, UICollect
     @IBOutlet var subView: UIView!
     @IBOutlet var checkbox: UIButton!
     @IBOutlet var noFavLabel: UILabel!
+    @IBOutlet var toggleView: UIView!
     
     var primaryColor: UIColor?
     var secondaryColor: UIColor?
     var typeEffects: [TypeEffect] = []
     var suggestedPokemon: [PokemonEffectScore] = []
+    var suggestedAll: [PokemonEffectScore] = []
+    var suggestedFav: [PokemonEffectScore] = []
     var detailVC: DetailsViewController!
     var selectedTypes: [TypeStruct] = []
     
     var suggestAll: Bool = true
     
     public func configure(pokemon: Pokemon, effects: [TypeEffect], suggAll: [PokemonEffectScore], suggFav: [PokemonEffectScore], detailVC: DetailsViewController) {
-        self.isHidden = true
+        //self.isHidden = true
         self.typeEffects = effects
         self.suggestedPokemon = suggAll
+        self.suggestedAll = suggAll
+        self.suggestedFav = suggFav
         self.detailVC = detailVC
         
         self.subView.layer.masksToBounds = true
@@ -39,12 +44,28 @@ class DetailWeakSubView: ToggleViewButton, UICollectionViewDataSource, UICollect
         primaryColor = pokemon.data.getTypeStruct(slot: 1).appearance.getColor()
         secondaryColor = pokemon.data.types.count > 1 ? pokemon.data.getTypeStruct(slot: 2).appearance.getColor() : primaryColor
         
+        self.toggleView.layer.cornerRadius = 15
+        self.toggleView.layer.borderColor = primaryColor?.cgColor
+        self.toggleView.layer.borderWidth = 1
+        let allBtn = self.toggleView.subviews[0] as! UIButton
+        allBtn.layer.cornerRadius = 12
+        allBtn.backgroundColor = primaryColor
+        allBtn.tintColor = .white
+        let favBtn = self.toggleView.subviews[1] as! UIButton
+        favBtn.layer.cornerRadius = 12
+        favBtn.backgroundColor = .clear
+        favBtn.tintColor = primaryColor
+        
         self.suggestedBackground.backgroundColor = secondaryColor?.withAlphaComponent(0.075)
         self.suggestedBackground.subviews[0].backgroundColor = secondaryColor?.withAlphaComponent(0.2)
         self.suggestedBackground.subviews[1].backgroundColor = secondaryColor?.withAlphaComponent(0.2)
         
         configureButton(button: viewButton, color: primaryColor!, chevron: chevron, divider: divider)
         configureSubView(subView: subView, color: secondaryColor!)
+        
+        if !self.isHidden {
+            highlightButton(button: viewButton, color: primaryColor!)
+        }
         
         self.checkbox.layer.cornerRadius = 4.5
         self.checkbox.layer.borderWidth = 1
@@ -65,7 +86,8 @@ class DetailWeakSubView: ToggleViewButton, UICollectionViewDataSource, UICollect
         self.suggestedCollection.dataSource = self
         self.suggestedCollection.layer.masksToBounds = false
         
-        //effectView.configure(pokemon: pokemon, effects: effects)
+        self.typeCollection.reloadData()
+        self.suggestedCollection.reloadData()
     }
     
     @IBAction func toggleView(sender: Any?) {
@@ -81,20 +103,20 @@ class DetailWeakSubView: ToggleViewButton, UICollectionViewDataSource, UICollect
     
     @IBAction func toggleFavorites(sender: Any?) {
         if suggestAll {
-            //self.suggestedCollection.currentExamples = self.suggestedCollection.favPokemon
+            self.suggestedPokemon = self.suggestedFav
             self.checkbox.backgroundColor = primaryColor
             self.checkbox.setImage(UIImage(systemName: "checkmark"), for: .normal)
             //self.checkbox.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
         }
         else {
-            //self.suggestedCollection.currentExamples = self.suggestedCollection.allPokemon
+            self.suggestedPokemon = self.suggestedAll
             self.checkbox.backgroundColor = primaryColor!.withAlphaComponent(0.1)
             self.checkbox.setImage(nil, for: .normal)
             //self.checkbox.setImage(UIImage(systemName: "square"), for: .normal)
         }
         
         suggestAll = !suggestAll
-        //self.noFavLabel.isHidden = self.suggestedCollection.currentExamples.count > 0
+        self.noFavLabel.isHidden = self.suggestedPokemon.count > 0
         self.suggestedCollection.reloadData()
     }
     
@@ -129,14 +151,47 @@ class DetailWeakSubView: ToggleViewButton, UICollectionViewDataSource, UICollect
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if collectionView == self.suggestedCollection {
             let sCell = cell as! SuggestedButtonCell
-            let types = suggestedPokemon[indexPath.row].pokemon.data.types.map({ $0.type.name })
-            sCell.configure(pokemon: suggestedPokemon[indexPath.row].pokemon, color: self.primaryColor!, types: types, vC: self.detailVC)
+            sCell.configure(pokemon: suggestedPokemon[indexPath.row].pokemon, color: self.primaryColor!, types: suggestedPokemon[indexPath.row].types, sFunc: self.detailVC.showNextVC(pokemon:types:))
         }
         else {
             let tCell = cell as! TypeButtonCell
             let type = typeDict[typeEffects[indexPath.row].name]!
-            tCell.configure(type: type, detailVC: self.detailVC, isSel: true)
-            tCell.configureEffect(value: "\(Int(typeEffects[indexPath.row].value))%")
+            tCell.configure(type: type, isSel: true, sFunc: self.detailVC.typeCellTapped(cell: ))
+            tCell.configureEffect(value: "\(Int(typeEffects[indexPath.row].value))%", type: type, labelCol: UIColor.systemRed)
         }
+    }
+    
+    @IBAction func showAll(_ sender: Any) {
+        self.suggestedPokemon = self.suggestedAll
+        
+        let allBtn = self.toggleView.subviews[0] as! UIButton
+        allBtn.backgroundColor = primaryColor
+        allBtn.tintColor = .white
+        
+        let favBtn = self.toggleView.subviews[1] as! UIButton
+        favBtn.backgroundColor = .clear
+        favBtn.tintColor = primaryColor
+        
+        self.noFavLabel.isHidden = self.suggestedPokemon.count > 0
+        self.suggestedCollection.reloadData()
+        
+        self.suggestedCollection.scrollToItem(at: IndexPath(row: 0, section: 0), at: .left, animated: true)
+    }
+    
+    @IBAction func showFavorite(_ sender: Any) {
+        self.suggestedPokemon = self.suggestedFav
+        
+        let allBtn = self.toggleView.subviews[0] as! UIButton
+        allBtn.backgroundColor = .clear
+        allBtn.tintColor = primaryColor
+        
+        let favBtn = self.toggleView.subviews[1] as! UIButton
+        favBtn.backgroundColor = primaryColor
+        favBtn.tintColor = .white
+        
+        self.noFavLabel.isHidden = self.suggestedPokemon.count > 0
+        self.suggestedCollection.reloadData()
+        
+        self.suggestedCollection.scrollToItem(at: IndexPath(row: 0, section: 0), at: .left, animated: true)
     }
 }

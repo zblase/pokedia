@@ -29,15 +29,15 @@
                     </button>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RUV-HS-8uo">
                         <rect key="frame" x="4" y="8" width="37.5" height="34"/>
-                        <color key="tintColor" name="ColorLabelPrimary"/>
+                        <color key="tintColor" name="ColorButtonLabel"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="RUV-HS-8uo" secondAttribute="height" multiplier="11:10" id="DLk-KY-nrx"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200%" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NaQ-zb-diJ">
-                        <rect key="frame" x="45.5" y="0.0" width="99.5" height="50"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NaQ-zb-diJ">
+                        <rect key="frame" x="45.5" y="1" width="99.5" height="49"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                        <color key="textColor" name="ColorLabelPrimary"/>
+                        <color key="textColor" name="ColorButtonLabel"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -51,7 +51,7 @@
                 <constraint firstAttribute="bottom" secondItem="l4y-qn-0NU" secondAttribute="bottom" id="Ima-44-flb"/>
                 <constraint firstAttribute="bottom" secondItem="RUV-HS-8uo" secondAttribute="bottom" constant="8" id="Wfg-ip-Ii6"/>
                 <constraint firstItem="NaQ-zb-diJ" firstAttribute="leading" secondItem="RUV-HS-8uo" secondAttribute="trailing" constant="4" id="X7n-YK-8go"/>
-                <constraint firstItem="NaQ-zb-diJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="X9I-V1-rdy"/>
+                <constraint firstItem="NaQ-zb-diJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="1" id="X9I-V1-rdy"/>
                 <constraint firstAttribute="bottom" secondItem="NaQ-zb-diJ" secondAttribute="bottom" id="j3z-ET-fRH"/>
                 <constraint firstItem="RUV-HS-8uo" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="lJQ-ky-m45"/>
                 <constraint firstAttribute="trailing" secondItem="l4y-qn-0NU" secondAttribute="trailing" id="tfe-KM-afp"/>
@@ -67,8 +67,8 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <namedColor name="ColorLabelPrimary">
-            <color red="0.25" green="0.25" blue="0.25" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="ColorButtonLabel">
+            <color red="0.97993457935474537" green="0.97993457935474537" blue="0.97993457935474537" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

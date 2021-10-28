@@ -19,13 +19,13 @@ class TypeCollectionCell: UICollectionViewCell {
     func configureCell(appearance: TypeAppearance) {
         
         typeButton.type = typeDict[appearance.name.lowercased()]
-        backImage.layer.backgroundColor = appearance.getColor().withAlphaComponent(0.5).cgColor
+        backImage.layer.backgroundColor = appearance.getColor().cgColor
         cellImage.image = appearance.getImage().withRenderingMode(.alwaysTemplate)
         cellName.text = appearance.name
         contentView.layer.backgroundColor = UIColor.tertiarySystemBackground.cgColor
         contentView.layer.cornerRadius = 12.0
-        contentView.layer.borderWidth = 0.75
-        contentView.layer.borderColor = appearance.getColor().withAlphaComponent(0.99).cgColor
+        contentView.layer.borderWidth = 1
+        contentView.layer.borderColor = UIColor(named: "ColorButtonBorder")!.cgColor
         contentView.layer.masksToBounds = true
         
         layer.shadowColor = UIColor.black.cgColor

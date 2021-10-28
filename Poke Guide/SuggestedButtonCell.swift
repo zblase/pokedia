@@ -18,16 +18,18 @@ class SuggestedButtonCell: UICollectionViewCell {
     @IBOutlet var typeImgC: UIImageView!
     
     var pokemon: Pokemon!
-    var rootVC: Any!
+    var types: [String]?
+    var selectFunc: ((Pokemon, [String]?) -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    func configure(pokemon: Pokemon, color: UIColor, types: [String], vC: Any) {
+    func configure(pokemon: Pokemon, color: UIColor, types: [String], sFunc: ((Pokemon, [String]?) -> Void)?) {
         self.pokemon = pokemon
-        self.rootVC = vC
+        self.types = types
+        self.selectFunc = sFunc
         
         self.cellIcon.image = pokemon.image
         
@@ -54,10 +56,10 @@ class SuggestedButtonCell: UICollectionViewCell {
             typeImgC.tintColor = type.appearance.getColor()
         }
         
-        self.cellButton.backgroundColor = color.withAlphaComponent(0.45)
+        self.cellButton.backgroundColor = color.withAlphaComponent(0.5)
         self.cellButton.layer.cornerRadius = 10
         self.cellButton.layer.borderWidth = 1
-        self.cellButton.layer.borderColor = color.withAlphaComponent(0.75).cgColor
+        self.cellButton.layer.borderColor = UIColor(named: "ColorButtonBorder")?.cgColor
         
         self.layer.masksToBounds = false
         self.clipsToBounds = false
@@ -65,7 +67,7 @@ class SuggestedButtonCell: UICollectionViewCell {
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOffset = CGSize(width: 1.5, height: 1.5)
         self.layer.shadowRadius = 0.75
-        self.layer.shadowOpacity = traitCollection.userInterfaceStyle == .light ? 0.15 : 0.4
+        self.layer.shadowOpacity = traitCollection.userInterfaceStyle == .light ? 0.2 : 0.4
         self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.layer.cornerRadius).cgPath
         
         
@@ -86,7 +88,11 @@ class SuggestedButtonCell: UICollectionViewCell {
     }
     
     @IBAction func pokemonTapped(_ sender: Any?) {
-        if let homeVC = self.rootVC as? HomeCollectionViewController {
+        
+        if self.selectFunc != nil {
+            self.selectFunc!(self.pokemon, self.types)
+        }
+        /*if let homeVC = self.rootVC as? HomeCollectionViewController {
             homeVC.showNextVC(pokemon: self.pokemon)
         }
         else if let detailVC = self.rootVC as? DetailsViewController {
@@ -94,6 +100,6 @@ class SuggestedButtonCell: UICollectionViewCell {
         }
         else if let favVC = self.rootVC as? FavoritesViewController {
             //favVC.showNextVC(pokemon: self.pokemon)
-        }
+        }*/
     }
 }

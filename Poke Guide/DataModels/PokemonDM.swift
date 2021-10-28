@@ -10,6 +10,7 @@ import UIKit
 
 
 var pokeUrlArray: PokemonArrayResult?
+var baseUrlArray: [PokemonArrayResult.PokemonUrl] = []
 var pokemonDict: [String: Pokemon] = [:]
 var pokemonArray: [Pokemon] = []
 var favPokemon: FavPokemonJson?
@@ -142,10 +143,12 @@ struct Evolution: Codable {
 
 struct PokemonEffectScore {
     let pokemon: Pokemon
+    var types: [String]
     var score: Double = 0.0
     
-    init(poke: Pokemon) {
+    init(poke: Pokemon, types: [String] = []) {
         self.pokemon = poke
+        self.types = types
     }
 }
 
@@ -167,7 +170,7 @@ class PokemonDataController {
         fetchGenUrls()
         
         mainGroup.notify(queue: .main) {
-            homeController.currentResults = pokeUrlArray!.urlArray
+            homeController.currentResults = baseUrlArray
             homeController.collectionView.dataSource = homeController.self
             homeController.collectionView.delegate = homeController.self
             homeController.activityIndicator.stopAnimating()
@@ -227,11 +230,15 @@ class PokemonDataController {
                 
                 let blackList: [Int] = [10080, 10081, 10082, 10083, 10084, 10094, 10095, 10096, 10097, 10098, 10099, 10148, 10117,  10030, 10031, 10032, 10118, 10119, 10120, 10086, 10151, 10126, 10152, 10127, 772, 10155, 10156, 10157, 10178, 10179, 10183, 10184, 10185, 10218, 10219, 10220, 10022, 10023]
                 
+                let hyphNames: [String] = ["porygon-z", "ho-oh", "mr-mime", "nidoran-f", "nidoran-m"]
+                
                 pokeUrlArray?.urlArray.removeAll(where: { $0.name.contains("-gmax") || $0.name.contains("-totem")})
                 
                 for id in blackList {
                     pokeUrlArray!.urlArray.removeAll(where: { $0.url == "https://pokeapi.co/api/v2/pokemon/\(id)/"})
                 }
+                
+                baseUrlArray.append(contentsOf: pokeUrlArray!.urlArray.filter({ !$0.name.contains("-") || hyphNames.contains($0.name) }))
                 
                 self.mainGroup.leave()
             }

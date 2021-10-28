@@ -25,7 +25,7 @@
                 
             },
             "electric": {
-                "color": "systemYellow",
+                "namedColor": "ColorElectric",
                 "fontSize": 15,
                 "name": "Electric",
                 "systemImage": "bolt.fill"
@@ -36,13 +36,13 @@
                 "systemImage": "sparkles"
             },
             "fighting": {
-                "color": "systemRed",
+                "namedColor": "ColorFighting",
                 "fontSize": 15,
                 "name": "Fighting",
                 "systemImage": "hand.wave.fill"
             },
             "fire": {
-                "color": "systemOrange",
+                "namedColor": "ColorFire",
                 "fontSize": 14,
                 "name": "Fire",
                 "systemImage": "flame.fill"
@@ -58,7 +58,7 @@
             },
             "ghost": {
                 "bottom": 7,
-                "color": "systemIndigo",
+                "namedColor": "ColorGhost",
                 "image": "GhostIcon",
                 "left": 0,
                 "name": "Ghost",
@@ -67,7 +67,7 @@
             },
             "grass": {
                 "bottom": 0,
-                "color": "systemGreen",
+                "namedColor": "ColorGrass",
                 "fontSize": 13.5,
                 "left": 0,
                 "name": "Grass",
@@ -76,7 +76,7 @@
             },
             "ground": {
                 "bottom": 1,
-                "color": "brown",
+                "namedColor": "ColorGround",
                 "image": "GroundIcon",
                 "left": 6,
                 "name": "Ground",
@@ -85,7 +85,7 @@
             },
             "ice": {
                 "bottom": 0,
-                "color": "systemTeal",
+                "namedColor": "ColorIce",
                 "fontSize": 17,
                 "left": 0,
                 "name": "Ice",
@@ -99,7 +99,7 @@
                 "systemImage": "circle.circle"
             },
             "poison": {
-                "color": "systemPurple",
+                "namedColor": "ColorPoison",
                 "name": "Poison",
                 "systemImage": "burn"
             },
@@ -131,7 +131,7 @@
                 "systemImage": "gearshape.fill"
             },
             "water": {
-                "color": "systemBlue",
+                "namedColor": "ColorWater",
                 "fontSize": 15,
                 "name": "Water",
                 "systemImage": "drop.fill"
