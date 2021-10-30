@@ -64,7 +64,9 @@ class DetailsViewController: UIViewController, UIViewControllerTransitioningDele
         
         if self.formNames.count == 0 {
             
-            self.formNames.append(self.pokeUrl!)
+            if self.pokeUrl!.name != "pumpkaboo-average" {
+                self.formNames.append(self.pokeUrl!)
+            }
             self.formNames.append(contentsOf: pokeUrlArray!.urlArray.filter({ $0.name.contains("\(self.pokemon!.data.species!.name)-") }))
             
             activityView.stopAnimating()
@@ -92,7 +94,13 @@ class DetailsViewController: UIViewController, UIViewControllerTransitioningDele
                     if formNames[i].name == pokemon!.data.name {
                         btn.backgroundColor = self.primaryColor
                         btn.tintColor = .white
-                        btn.setTitle("Normal", for: .normal)
+                        if self.pokeUrl!.name != "pumpkaboo-average" {
+                            btn.setTitle("Normal", for: .normal)
+                        }
+                        else {
+                            btn.setTitle("Average", for: .normal)
+                            btn.setAttributedTitle(NSAttributedString(string: "Average", attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12, weight: .regular) ]), for: .normal)
+                        }
                     }
                     else {
                         btn.backgroundColor = .clear
@@ -107,11 +115,12 @@ class DetailsViewController: UIViewController, UIViewControllerTransitioningDele
                             form = String(form.dropLast())
                         }
                         btn.setTitle(form, for: .normal)
+                        btn.setAttributedTitle(NSAttributedString(string: form, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12, weight: .regular) ]), for: .normal)
                     }
                     
-                    btn.titleLabel!.font = UIFont.systemFont(ofSize: 8, weight: .regular)
+                    btn.titleLabel!.font = UIFont.systemFont(ofSize: 12, weight: .regular)
                     
-                    if let str = btn.titleLabel?.attributedText {
+                    /*if let str = btn.titleLabel?.attributedText {
                         let attributedString = NSMutableAttributedString( attributedString: str  )
                         attributedString.removeAttribute(.font, range: NSRange.init(location: 0, length: attributedString.length))
                         attributedString.addAttributes(
@@ -119,7 +128,7 @@ class DetailsViewController: UIViewController, UIViewControllerTransitioningDele
                             range: NSRange.init(location: 0, length: attributedString.length)
                         )
                         btn.setAttributedTitle(attributedString, for: .normal)
-                    }
+                    }*/
                     
                     btn.isHidden = false
                 }

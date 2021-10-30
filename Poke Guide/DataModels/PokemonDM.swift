@@ -228,9 +228,11 @@ class PokemonDataController {
             do {
                 pokeUrlArray = try JSONDecoder().decode(PokemonArrayResult.self, from: data)
                 
-                let blackList: [Int] = [10080, 10081, 10082, 10083, 10084, 10094, 10095, 10096, 10097, 10098, 10099, 10148, 10117,  10030, 10031, 10032, 10118, 10119, 10120, 10086, 10151, 10126, 10152, 10127, 772, 10155, 10156, 10157, 10178, 10179, 10183, 10184, 10185, 10218, 10219, 10220, 10022, 10023]
+                //let blackList: [Int] = [10080, 10081, 10082, 10083, 10084, 10094, 10095, 10096, 10097, 10098, 10099, 10148, 10117,  10030, 10031, 10032, 10118, 10119, 10120, 10086, 10151, 10126, 10152, 10127, 772, 10155, 10156, 10157, 10178, 10179, 10183, 10184, 10185, 10218, 10219, 10220, 10022, 10023]
                 
-                let hyphNames: [String] = ["porygon-z", "ho-oh", "mr-mime", "nidoran-f", "nidoran-m"]
+                let blackList: [Int] = []
+                
+                let hyphNames: [String] = ["porygon-z", "ho-oh", "mr-mime", "nidoran-f", "nidoran-m", "pumpkaboo-average"]
                 
                 pokeUrlArray?.urlArray.removeAll(where: { $0.name.contains("-gmax") || $0.name.contains("-totem")})
                 
@@ -390,7 +392,7 @@ struct FavPokemonJson: Encodable, Decodable {
     
     struct FavJson: Encodable, Decodable, Equatable {
         let name: String
-        let types: [String]
+        var types: [String]
     }
 }
 
@@ -432,6 +434,11 @@ class FavoriteJsonParser {
             let inputData = try Data(contentsOf: inputFileURL)
             let decoder = JSONDecoder()
             favJson = try decoder.decode(FavPokemonJson.self, from: inputData)
+            
+            for var poke in favJson.favArray {
+                poke.types = poke.types.compactMap({ $0.lowercased() })
+            }
+            
             favPokemon = favJson
         } catch {
             print("Failed to open file contents for display!")

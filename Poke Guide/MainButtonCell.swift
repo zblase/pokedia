@@ -42,6 +42,9 @@ class MainButtonCell: UICollectionViewCell {
         else if pokeUrl.name == "nidoran-m" {
             cellName.text = "Nidoran (M)"
         }
+        else if pokeUrl.name == "pumpkaboo-average" {
+            cellName.text = "Pumpkaboo"
+        }
         else {
             let names = pokeUrl.name.split(separator: "-")
             cellName.text = String(names[0]).capitalizingFirstLetter()
@@ -76,6 +79,7 @@ class MainButtonCell: UICollectionViewCell {
             cellImage.image = UIImage()
             typeBtnA.isHidden = true
             typeBtnB.isHidden = true
+            typeBtnC.isHidden = true
             activityIndicator.startAnimating()
         }
         else {

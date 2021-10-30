@@ -18,6 +18,7 @@ class FavoritesViewController: UIViewController, UICollectionViewDataSource, UIC
     @IBOutlet var toggleOrderView: UIStackView!
     @IBOutlet var attackFilterStack: UIStackView!
     @IBOutlet var defenseFilterStack: UIStackView!
+    @IBOutlet var collectionTopSpace: NSLayoutConstraint!
     
     
     struct orderVal {
@@ -39,7 +40,7 @@ class FavoritesViewController: UIViewController, UICollectionViewDataSource, UIC
     var selectedAtkFilters: [TypeStruct] = []
     var selectedDefFilters: [TypeStruct] = []
     
-    let gray = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.3)
+    let gray = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.4)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +48,18 @@ class FavoritesViewController: UIViewController, UICollectionViewDataSource, UIC
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3.decrease.circle"), style: .plain, target: self, action: #selector(self.toggleFilterView(_:)))
         
         let parser = FavoriteJsonParser()
-        favPokemon = parser.readJson().favArray.sorted(by: { $0.name < $1.name })
+        let test = parser.readJson().favArray
+        
+    pokeLoop: for poke in test {
+            for type in poke.types {
+                if type == type.capitalizingFirstLetter() {
+                    parser.removeFavorite(fav: poke)
+                    continue pokeLoop
+                }
+            }
+        }
+        
+        favPokemon = parser.readJson().favArray
         self.filteredResults.append(contentsOf: self.favPokemon)
         
         
@@ -67,7 +79,7 @@ class FavoritesViewController: UIViewController, UICollectionViewDataSource, UIC
         toggleOrderView.layer.borderColor = UIColor.link.cgColor
         shadowView.layer.shadowColor = UIColor.black.cgColor
         shadowView.layer.shadowRadius = 3
-        shadowView.layer.shadowOpacity = traitCollection.userInterfaceStyle == .light ? 0.2 : 1
+        shadowView.layer.shadowOpacity = traitCollection.userInterfaceStyle == .light ? 0.2 : 0.8
         shadowView.layer.shadowOffset = CGSize(width: 2, height: 3)
         shadowView.layer.masksToBounds = false
         
@@ -84,27 +96,58 @@ class FavoritesViewController: UIViewController, UICollectionViewDataSource, UIC
             btn.imageView?.image = nil
         }
         
-        filterViewHeight.constant = 0
+        collectionTopSpace.constant = 0
         filterView.isHidden = true
         filterView.layer.masksToBounds = true
         shadowView.isHidden = true
     }
     
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         let parser = FavoriteJsonParser()
-        favPokemon = parser.readJson().favArray.sorted(by: { $0.name < $1.name })
+        favPokemon = parser.readJson().favArray
+        
+        if dateOrderVal.selected {
+            if !dateOrderVal.ascending {
+                favPokemon = favPokemon.reversed()
+            }
+        }
+        if nameOrderVal.selected {
+            favPokemon.sort(by: { $0.name < $1.name })
+            if !nameOrderVal.ascending {
+                favPokemon = favPokemon.reversed()
+            }
+        }
+        
+        applyAllFilters()
+        self.collectionView.reloadData()
+    }
+    
+    
+    @IBAction func doneTapped(_ sender: Any) {
+        collectionTopSpace.constant = 0
+        filterView.isHidden = true
+        shadowView.isHidden = true
+    }
+    
+    @IBAction func clearTapped(_ sender: Any) {
+        self.selectedAtkFilters.removeAll()
+        self.selectedDefFilters.removeAll()
+        
+        applyAllFilters()
     }
     
     @objc func toggleFilterView(_ sender:UIBarButtonItem!) {
-        if filterViewHeight.constant > 0 {
-            filterViewHeight.constant = 0
+        if collectionTopSpace.constant > 0 {
+            collectionTopSpace.constant = 0
             filterView.isHidden = true
             shadowView.isHidden = true
         }
         else {
-            filterViewHeight.constant = 140
+            collectionTopSpace.constant = 175
             filterView.isHidden = false
-            filterView.backgroundColor = UIColor(named: "ColorHeaderDetailBackground")
+            //filterView.backgroundColor = UIColor(named: "ColorHeaderDetailBackground")
             shadowView.isHidden = false
         }
     }
@@ -127,6 +170,8 @@ class FavoritesViewController: UIViewController, UICollectionViewDataSource, UIC
             favPokemon = favPokemon.reversed()
         }
         
+        applyAllFilters()
+        
         self.collectionView.reloadData()
     }
     
@@ -147,6 +192,8 @@ class FavoritesViewController: UIViewController, UICollectionViewDataSource, UIC
         if !nameOrderVal.ascending {
             favPokemon = favPokemon.reversed()
         }
+        
+        applyAllFilters()
         
         self.collectionView.reloadData()
     }

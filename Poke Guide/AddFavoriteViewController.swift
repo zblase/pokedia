@@ -149,7 +149,7 @@ class AddFavoriteViewController: UIViewController, UICollectionViewDataSource, U
         //self.navItem!.image = UIImage(systemName: "star.fill")
         detailVC?.setAsFavorite()
         
-        FavoriteJsonParser().addFavorite(fav: FavPokemonJson.FavJson(name: pokemon!.data.name, types: typeArray))
+        FavoriteJsonParser().addFavorite(fav: FavPokemonJson.FavJson(name: pokemon!.data.name, types: typeArray.compactMap({ $0.lowercased() })))
         
         self.backgroundButton.isHidden = true
         dismiss(animated: true, completion: nil)
