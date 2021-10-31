@@ -65,7 +65,7 @@ class DetailEvolutionsSubView: ToggleViewButton {
         buttonA.pokemon = firstPoke
         buttonA.pokeUrl = urlA
         buttonA.setImage(firstPoke.image, for: .normal)
-        buttonA.contentMode = .center
+        buttonA.contentMode = .scaleAspectFit
         buttonA.imageView?.contentMode = .scaleAspectFit
         
         if ev.chain.evolves_to.count > 0 {
@@ -77,7 +77,7 @@ class DetailEvolutionsSubView: ToggleViewButton {
             buttonC.pokemon = secondPoke
             buttonC.pokeUrl = urlC
             buttonC.setImage(secondPoke.image, for: .normal)
-            buttonC.contentMode = .center
+            buttonC.contentMode = .scaleAspectFit
             buttonC.imageView?.contentMode = .scaleAspectFit
             
             if ev.chain.evolves_to[0].evolves_to.count > 0 {
@@ -89,7 +89,7 @@ class DetailEvolutionsSubView: ToggleViewButton {
                 buttonE.pokemon = thirdPoke
                 buttonE.pokeUrl = urlE
                 buttonE.setImage(thirdPoke.image, for: .normal)
-                buttonE.contentMode = .center
+                buttonE.contentMode = .scaleAspectFit
                 buttonE.imageView?.contentMode = .scaleAspectFit
             }
         }

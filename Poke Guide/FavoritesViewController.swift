@@ -218,6 +218,7 @@ class FavoritesViewController: UIViewController, UICollectionViewDataSource, UIC
         filterVC.titleStr = "Defense Filter"
         filterVC.saveCallback = self.applyDefFilters(types:)
         filterVC.selectedTypes = self.selectedDefFilters
+        filterVC.cellCount = 2
         filterVC.modalPresentationStyle = .custom
         filterVC.transitioningDelegate = self
         

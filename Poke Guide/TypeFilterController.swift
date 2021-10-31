@@ -10,20 +10,39 @@ import UIKit
 class TypeFilterController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet var backgroundButton: UIButton!
+    @IBOutlet var modalView: UIView!
     @IBOutlet var navTitle: UINavigationItem!
+    @IBOutlet var saveButton: UIBarButtonItem!
+    @IBOutlet var mainLabel: UILabel!
+    @IBOutlet var subLabel: UILabel!
     @IBOutlet var selectedTypeView: UIStackView!
     @IBOutlet var collectionView: UICollectionView!
     
     var titleStr: String = ""
+    var labelStr: String = "Selected types:"
     var selectedTypes: [TypeStruct]!
+    var cellCount = 3
+    var saveWithNone: Bool = true
     var saveCallback: (([TypeStruct]) -> Void)!
+    
     
     let typeNames: [String] = ["normal", "fire", "water", "grass", "electric", "ice", "fighting", "poison", "ground", "flying", "psychic", "bug", "rock", "ghost", "dark", "dragon", "steel", "fairy"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        modalView.layer.cornerRadius = 12.5
+        modalView.layer.masksToBounds = true
+        
         self.navTitle.title = titleStr
+        
+        self.mainLabel.text = labelStr
+        let countStr = cellCount == 2 ? "two" : "three"
+        self.subLabel.text = "Select up to \(countStr) types"
+        
+        for i in 0...self.selectedTypeView.subviews.count - 1 {
+            self.selectedTypeView.subviews[i].isHidden = i >= cellCount
+        }
         
         for view in self.selectedTypeView.subviews {
             view.layer.cornerRadius = 12.5
@@ -119,8 +138,8 @@ class TypeFilterController: UIViewController, UICollectionViewDataSource, UIColl
             name.textColor = type.appearance.getColor()
         }
         else {
-            if self.selectedTypes.count == 3 {
-                self.selectedTypes[2] = type
+            if self.selectedTypes.count == cellCount {
+                self.selectedTypes[cellCount - 1] = type
             }
             else {
                 self.selectedTypes.append(type)
@@ -172,6 +191,10 @@ class TypeFilterController: UIViewController, UICollectionViewDataSource, UIColl
                 iconView.tintColor = type.appearance.getColor()
                 nameLabel.textColor = type.appearance.getColor()
             }
+        }
+        
+        if !self.saveWithNone {
+            self.saveButton.isEnabled = self.selectedTypes.count > 0
         }
     }
     

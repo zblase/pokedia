@@ -13,8 +13,8 @@ class ToggleViewButton: UIView {
 
     
     public func configureButton(button: UIButton, color: UIColor, chevron: UIImageView, divider: UIImageView) {
-        button.layer.cornerRadius = 10
-        button.layer.borderWidth = 1
+        button.layer.cornerRadius = 17.5
+        button.layer.borderWidth = 0
         //chevron.tintColor = color.withAlphaComponent(0.5)
         //chevron.tintColor = UIColor(named: "ColorLabelPrimary")
         divider.backgroundColor = color.withAlphaComponent(0.5)
@@ -52,14 +52,14 @@ class ToggleViewButton: UIView {
     
     func highlightButton(button: UIButton, color: UIColor) {
         //button.backgroundColor = .tertiarySystemBackground
-        button.backgroundColor = color.withAlphaComponent(0.5)
+        button.backgroundColor = color
         //button.layer.borderColor = UIColor(named: "ColorHomeCellBorder")!.cgColor
         button.layer.borderColor = color.cgColor
         button.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
     }
     
     func unhighlightButton(button: UIButton, color: UIColor) {
-        button.backgroundColor = color.withAlphaComponent(0.35)
+        button.backgroundColor = color.withAlphaComponent(0.75)
         //button.backgroundColor = .tertiarySystemBackground
         button.layer.borderColor = color.withAlphaComponent(0.5).cgColor
         //button.layer.borderColor = UIColor(named: "ColorHomeCellBorder")!.cgColor

@@ -36,6 +36,7 @@
 		8611641E26C5DEB500295333 /* DetailStrongSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8611641D26C5DEB500295333 /* DetailStrongSubView.swift */; };
 		8611642226C5E1BA00295333 /* StrongAttackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8611642126C5E1BA00295333 /* StrongAttackView.swift */; };
 		8611642426CC5B1000295333 /* EffectiveTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8611642326CC5B1000295333 /* EffectiveTypeCell.swift */; };
+		863AB629272DD0910083ABFA /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863AB628272DD0910083ABFA /* LoadingViewController.swift */; };
 		8654FFBF2703A8E0005EEB27 /* AddFavoriteTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8654FFBE2703A8E0005EEB27 /* AddFavoriteTypeCell.swift */; };
 		8654FFC1270780CA005EEB27 /* RemoveFavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8654FFC0270780CA005EEB27 /* RemoveFavoriteViewController.swift */; };
 		8654FFC327078297005EEB27 /* RemoveFavoriteTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8654FFC227078297005EEB27 /* RemoveFavoriteTableCell.swift */; };
@@ -113,6 +114,7 @@
 		8611641D26C5DEB500295333 /* DetailStrongSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStrongSubView.swift; sourceTree = "<group>"; };
 		8611642126C5E1BA00295333 /* StrongAttackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrongAttackView.swift; sourceTree = "<group>"; };
 		8611642326CC5B1000295333 /* EffectiveTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectiveTypeCell.swift; sourceTree = "<group>"; };
+		863AB628272DD0910083ABFA /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		8654FFBE2703A8E0005EEB27 /* AddFavoriteTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFavoriteTypeCell.swift; sourceTree = "<group>"; };
 		8654FFC0270780CA005EEB27 /* RemoveFavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveFavoriteViewController.swift; sourceTree = "<group>"; };
 		8654FFC227078297005EEB27 /* RemoveFavoriteTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveFavoriteTableCell.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				86045B2F271103AB0020C585 /* MainButtonCell.swift */,
 				86045B30271103AB0020C585 /* MainButtonCell.xib */,
 				869A720F272A360E00A97974 /* TypeFilterController.swift */,
+				863AB628272DD0910083ABFA /* LoadingViewController.swift */,
 			);
 			path = "Poke Guide";
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				8654FFC327078297005EEB27 /* RemoveFavoriteTableCell.swift in Sources */,
 				8611641C26C586D500295333 /* DetailEvolutionsSubView.swift in Sources */,
 				8611641826C44FDC00295333 /* DetailStatsSubView.swift in Sources */,
+				863AB629272DD0910083ABFA /* LoadingViewController.swift in Sources */,
 				860358F826F57AAF00EAA2AA /* WeakEffectCollectionView.swift in Sources */,
 				86AB198F26C0FA2200AAB46E /* MyCollectionViewCell.swift in Sources */,
 				8611641A26C4D70D00295333 /* StatCollectionViewCell.swift in Sources */,

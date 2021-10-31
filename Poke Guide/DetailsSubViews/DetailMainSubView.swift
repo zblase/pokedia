@@ -62,10 +62,10 @@ class DetailMainSubView: UIView {
         
         
         
-        self.backgroundView.backgroundColor = typeA.appearance.getColor().withAlphaComponent(0.08)
+        //self.backgroundView.backgroundColor = typeA.appearance.getColor().withAlphaComponent(0.08)
         
         rightView.layer.backgroundColor = typeA.appearance.getColor().withAlphaComponent(0.08).cgColor
-        rightView.layer.borderColor = typeA.appearance.getColor().withAlphaComponent(0.5).cgColor
+        rightView.layer.borderColor = typeA.appearance.getColor().cgColor
         rightView.layer.borderWidth = 1
         rightView.layer.cornerRadius = 10
         
@@ -108,7 +108,7 @@ class DetailMainSubView: UIView {
             let typeB: TypeStruct = typeDict[typeBRef!.type.name]!
             configureTypeButton(button: typeButtonB, type: typeB.appearance)
             
-            self.backgroundView.backgroundColor = typeB.appearance.getColor().withAlphaComponent(0.08)
+            //self.backgroundView.backgroundColor = typeB.appearance.getColor().withAlphaComponent(0.08)
         }
         
         

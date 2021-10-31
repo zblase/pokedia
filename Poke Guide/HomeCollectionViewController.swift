@@ -20,7 +20,7 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
     
     let dispatchGroup = DispatchGroup()
     let dataDispatchGroup = DispatchGroup()
-    let pokemonGroupA = DispatchGroup()
+    //let pokemonGroupA = DispatchGroup()
     let pokemonGroupB = DispatchGroup()
     let pokemonGroupC = DispatchGroup()
     
@@ -33,8 +33,9 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.startAnimating()
+        //activityIndicator.hidesWhenStopped = true
+        //activityIndicator.startAnimating()
+        activityIndicator.isHidden = true
         
         backToTopBtn.isHidden = true
         
@@ -44,6 +45,11 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
         searchController.searchBar.delegate = self
+        
+        
+        self.currentResults = baseUrlArray
+        self.collectionView.dataSource = self
+        self.collectionView.delegate = self
         
         let typeController = TypeDataController()
         typeController.getAllTypeData{ (success) -> Void in
@@ -148,7 +154,9 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
     }
     
     @IBAction func scrollToTop(_ sender: Any?) {
-        self.collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+        if currentResults.count > 0 {
+            self.collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+        }
         
         //self.backToTopBtn.isHidden = true
     }

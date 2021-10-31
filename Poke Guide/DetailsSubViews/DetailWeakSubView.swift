@@ -144,7 +144,7 @@ class DetailWeakSubView: ToggleViewButton, UICollectionViewDataSource, UICollect
             return CGSize(width: collectionView.frame.size.height, height: collectionView.frame.size.height)
         }
         else {
-            return CGSize(width: (collectionView.frame.size.width - 30) / 4, height: (collectionView.frame.size.width - 30) / 10)
+            return CGSize(width: (collectionView.frame.size.width - 30) / 4, height: 25)
         }
     }
     
@@ -175,7 +175,9 @@ class DetailWeakSubView: ToggleViewButton, UICollectionViewDataSource, UICollect
         self.noFavLabel.isHidden = self.suggestedPokemon.count > 0
         self.suggestedCollection.reloadData()
         
-        self.suggestedCollection.scrollToItem(at: IndexPath(row: 0, section: 0), at: .left, animated: true)
+        if self.suggestedPokemon.count > 0 {
+            self.suggestedCollection.scrollToItem(at: IndexPath(row: 0, section: 0), at: .left, animated: true)
+        }
     }
     
     @IBAction func showFavorite(_ sender: Any) {
@@ -192,6 +194,8 @@ class DetailWeakSubView: ToggleViewButton, UICollectionViewDataSource, UICollect
         self.noFavLabel.isHidden = self.suggestedPokemon.count > 0
         self.suggestedCollection.reloadData()
         
-        self.suggestedCollection.scrollToItem(at: IndexPath(row: 0, section: 0), at: .left, animated: true)
+        if self.suggestedPokemon.count > 0 {
+            self.suggestedCollection.scrollToItem(at: IndexPath(row: 0, section: 0), at: .left, animated: true)
+        }
     }
 }

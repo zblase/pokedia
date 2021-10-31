@@ -34,42 +34,43 @@ class TypeButtonCell: UICollectionViewCell {
         typeIcon.contentMode = .scaleAspectFit
         
         //cellButton.backgroundColor = type.appearance.getColor().withAlphaComponent(isSel ? 1.0 : 0.2)
-        cellButton.layer.cornerRadius = 8
-        cellButton.layer.borderWidth = 1
+        contentView.layer.cornerRadius = 12.5
+        contentView.layer.borderWidth = 1
+        contentView.backgroundColor = .clear
         
-        self.layer.masksToBounds = false
+        /*self.layer.masksToBounds = false
         self.clipsToBounds = false
         self.layer.cornerRadius = 8
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOffset = CGSize(width: 1.5, height: 1.5)
         self.layer.shadowRadius = 0.75
         self.layer.shadowOpacity = traitCollection.userInterfaceStyle == .light ? 0.2 : 0.4
-        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.layer.cornerRadius).cgPath
+        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.layer.cornerRadius).cgPath*/
         
     }
     
     func configureToggle(type: TypeStruct) {
         self.isToggle = true
         
-        typeLabel.adjustsFontSizeToFitWidth = true
         typeLabel.text = type.appearance.name
-        typeLabel.textColor = isSel ? typeLabel.textColor.withAlphaComponent(1) : typeLabel.textColor.withAlphaComponent(0.5)
-        typeIcon.tintColor = isSel ? typeIcon.tintColor.withAlphaComponent(1) : typeIcon.tintColor.withAlphaComponent(0.5)
+        typeLabel.textColor = isSel ? .white : type.appearance.getColor()
+        typeLabel.font = UIFont.systemFont(ofSize: 12, weight: .medium)
+        typeIcon.tintColor = isSel ? .white : type.appearance.getColor()
         
-        cellButton.backgroundColor = type.appearance.getColor().withAlphaComponent(isSel ? 1.0 : 0.2)
-        cellButton.layer.borderColor = UIColor(named: "ColorButtonBorder")!.cgColor
+        contentView.backgroundColor = type.appearance.getColor().withAlphaComponent(isSel ? 1.0 : 0)
+        contentView.layer.borderColor = type.appearance.getColor().cgColor
     }
     
     func configureEffect(value: String, type: TypeStruct, labelCol: UIColor = .white) {
+        
         typeLabel.text = value
         typeLabel.textColor = labelCol
-        typeLabel.shadowColor = .black.withAlphaComponent(0.25)
-        typeLabel.shadowOffset = CGSize(width: 0.5, height: 0.5)
-        typeLabel.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        typeLabel.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         
-        cellButton.backgroundColor = type.appearance.getColor().withAlphaComponent(0.15)
-        cellButton.layer.borderColor = type.appearance.getColor().cgColor
-        cellButton.layer.borderWidth = 1.5
+        
+        contentView.backgroundColor = labelCol.withAlphaComponent(0.08)
+        contentView.layer.borderColor = type.appearance.getColor().cgColor
+        contentView.layer.borderWidth = 1.5
         
         typeIcon.tintColor = type.appearance.getColor()
     }

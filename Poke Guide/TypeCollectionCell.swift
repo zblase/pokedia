@@ -23,17 +23,17 @@ class TypeCollectionCell: UICollectionViewCell {
         cellImage.image = appearance.getImage().withRenderingMode(.alwaysTemplate)
         cellName.text = appearance.name
         contentView.layer.backgroundColor = UIColor.tertiarySystemBackground.cgColor
-        contentView.layer.cornerRadius = 12.0
-        contentView.layer.borderWidth = 1
-        contentView.layer.borderColor = UIColor(named: "ColorButtonBorder")!.cgColor
-        contentView.layer.masksToBounds = true
+        contentView.layer.cornerRadius = 15.0
+        //contentView.layer.borderWidth = 1
+        //contentView.layer.borderColor = UIColor(named: "ColorButtonBorder")!.cgColor
+        //contentView.layer.masksToBounds = true
         
-        layer.shadowColor = UIColor.black.cgColor
+        /*layer.shadowColor = UIColor.black.cgColor
         layer.shadowOffset = CGSize(width: 2.5, height: 2.5)
         layer.shadowRadius = 0.85
         layer.shadowOpacity = traitCollection.userInterfaceStyle == .light ? 0.15 : 0.4
         
         layer.masksToBounds = false
-        layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
+        layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath*/
     }
 }

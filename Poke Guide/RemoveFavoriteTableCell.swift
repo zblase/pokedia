@@ -44,10 +44,8 @@ class RemoveFavoriteTableCell: UITableViewCell {
         
         if fav.types.count > 0 {
             let typeA = typeDict[fav.types[0].lowercased()]!
-            typeViewA.backgroundColor = typeA.appearance.getColor().withAlphaComponent(0.5)
-            typeViewA.layer.borderColor = typeA.appearance.getColor().cgColor
-            typeViewA.layer.borderWidth = 1
-            typeViewA.layer.cornerRadius = 8
+            typeViewA.backgroundColor = typeA.appearance.getColor()
+            typeViewA.layer.cornerRadius = typeViewA.bounds.height / 2
             
             let labelA = typeViewA.subviews[0] as! UILabel
             labelA.text = typeA.appearance.name
@@ -56,10 +54,8 @@ class RemoveFavoriteTableCell: UITableViewCell {
         }
         if fav.types.count > 1 {
             let typeB = typeDict[fav.types[1].lowercased()]!
-            typeViewB.backgroundColor = typeB.appearance.getColor().withAlphaComponent(0.5)
-            typeViewB.layer.borderColor = typeB.appearance.getColor().cgColor
-            typeViewB.layer.borderWidth = 1
-            typeViewB.layer.cornerRadius = 8
+            typeViewB.backgroundColor = typeB.appearance.getColor()
+            typeViewB.layer.cornerRadius = typeViewA.bounds.height / 2
             
             let labelB = typeViewB.subviews[0] as! UILabel
             labelB.text = typeB.appearance.name
@@ -68,10 +64,8 @@ class RemoveFavoriteTableCell: UITableViewCell {
         }
         if fav.types.count > 2 {
             let typeC = typeDict[fav.types[2].lowercased()]!
-            typeViewC.backgroundColor = typeC.appearance.getColor().withAlphaComponent(0.5)
-            typeViewC.layer.borderColor = typeC.appearance.getColor().cgColor
-            typeViewC.layer.borderWidth = 1
-            typeViewC.layer.cornerRadius = 8
+            typeViewC.backgroundColor = typeC.appearance.getColor()
+            typeViewC.layer.cornerRadius = typeViewA.bounds.height / 2
             
             let labelC = typeViewC.subviews[0] as! UILabel
             labelC.text = typeC.appearance.name

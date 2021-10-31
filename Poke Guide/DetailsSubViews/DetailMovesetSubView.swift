@@ -75,13 +75,13 @@ class DetailMovesetSubView: ToggleViewButton, UICollectionViewDataSource, UIColl
         
         
         moveViewA.superview?.layer.masksToBounds = false
-        moveViewA.superview?.layer.cornerRadius = 8
+        moveViewA.superview?.layer.cornerRadius = 12.5
         moveViewA.superview?.layer.borderColor = UIColor.gray.cgColor
         moveViewB.superview?.layer.masksToBounds = false
-        moveViewB.superview?.layer.cornerRadius = 8
+        moveViewB.superview?.layer.cornerRadius = 12.5
         moveViewB.superview?.layer.borderColor = UIColor.gray.cgColor
         moveViewC.superview?.layer.masksToBounds = false
-        moveViewC.superview?.layer.cornerRadius = 8
+        moveViewC.superview?.layer.cornerRadius = 12.5
         moveViewC.superview?.layer.borderColor = UIColor.gray.cgColor
         
         refreshSelectedTypes()
@@ -227,10 +227,10 @@ class DetailMovesetSubView: ToggleViewButton, UICollectionViewDataSource, UIColl
     }
     
     func configureSelectedType(cell: UIView, type: TypeStruct) {
-        cell.layer.cornerRadius = 8
+        cell.layer.cornerRadius = 12.5
         cell.layer.borderWidth = 1
-        //cell.layer.borderColor = type.appearance.getColor().cgColor
-        cell.layer.borderColor = UIColor(named: "ColorButtonBorder")!.cgColor
+        cell.layer.borderColor = type.appearance.getColor().cgColor
+        //cell.layer.borderColor = UIColor(named: "ColorButtonBorder")!.cgColor
         //cell.layer.backgroundColor = type.appearance.getColor().withAlphaComponent(0.45).cgColor
         cell.layer.backgroundColor = type.appearance.getColor().cgColor
         
@@ -303,7 +303,7 @@ class DetailMovesetSubView: ToggleViewButton, UICollectionViewDataSource, UIColl
             return CGSize(width: collectionView.frame.size.height, height: collectionView.frame.size.height)
         }
         else {
-            return CGSize(width: (collectionView.frame.size.width - 30) / 4, height: (collectionView.frame.size.width - 30) / 10)
+            return CGSize(width: (collectionView.frame.size.width - 30) / 4, height: 25)
         }
     }
     
@@ -376,7 +376,9 @@ class DetailMovesetSubView: ToggleViewButton, UICollectionViewDataSource, UIColl
         //self.noFavLabel.isHidden = self.suggestedPokemon.count > 0
         self.suggestedCollection.reloadData()
         
-        self.suggestedCollection.scrollToItem(at: IndexPath(row: 0, section: 0), at: .left, animated: true)
+        if self.suggestedPokemon.count > 0 {
+            self.suggestedCollection.scrollToItem(at: IndexPath(row: 0, section: 0), at: .left, animated: true)
+        }
     }
     
     @IBAction func showFavorite(_ sender: Any) {
@@ -393,6 +395,8 @@ class DetailMovesetSubView: ToggleViewButton, UICollectionViewDataSource, UIColl
         //self.noFavLabel.isHidden = self.suggestedPokemon.count > 0
         self.suggestedCollection.reloadData()
         
-        self.suggestedCollection.scrollToItem(at: IndexPath(row: 0, section: 0), at: .left, animated: true)
+        if self.suggestedPokemon.count > 0 {
+            self.suggestedCollection.scrollToItem(at: IndexPath(row: 0, section: 0), at: .left, animated: true)
+        }
     }
 }

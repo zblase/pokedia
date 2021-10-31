@@ -15,6 +15,7 @@ var pokemonDict: [String: Pokemon] = [:]
 var pokemonArray: [Pokemon] = []
 var favPokemon: FavPokemonJson?
 var genArray: [Generation] = []
+var genUrls: GenerationArrayResult!
 
 struct Pokemon {
     let data: PokemonData
@@ -38,6 +39,48 @@ struct PokemonArrayResult: Codable {
             let trimmedUrl = String(self.url.dropLast())
             let startSuffix = trimmedUrl.index(trimmedUrl.lastIndex(of: "/")!, offsetBy: 1)
             return String(trimmedUrl[startSuffix...])
+        }
+        
+        struct DisplayName {
+            let name: String
+            let subName: String
+            
+            init(name: String, sName: String = "Normal") {
+                self.name = name
+                self.subName = sName
+            }
+        }
+        
+        func getDisplayName() -> DisplayName {
+            
+            switch self.name {
+            case "porygon-z":
+                return DisplayName(name: "Porygon Z")
+            case "ho-oh":
+                return DisplayName(name: "Ho-Oh")
+            case "mr-mime":
+                return DisplayName(name: "Mr. Mime")
+            case "nidoran-f":
+                return DisplayName(name: "Nidoran (F)")
+            case "nidoran-m":
+                return DisplayName(name: "Nidoran (M)")
+            case "pumpkaboo-average":
+                return DisplayName(name: "Pumpkaboo", sName: "Average")
+            case "zamazenta-hero":
+                return DisplayName(name: "Zamazenta", sName: "Hero")
+            case "zacian-hero":
+                return DisplayName(name: "Zacian", sName: "Hero")
+            default:
+                let names = self.name.split(separator: "-")
+                var subName = ""
+                if names.count > 1 {
+                    for i in 1...names.count - 1 {
+                        subName += String(names[i]).capitalizingFirstLetter() + " "
+                    }
+                }
+                
+                return DisplayName(name: String(names[0]).capitalizingFirstLetter(), sName: subName == "" ? "Normal" : String(subName.dropLast()))
+            }
         }
     }
 }
@@ -163,54 +206,58 @@ class PokemonDataController {
     let groupC = DispatchGroup()
     let groupD = DispatchGroup()
     
-    var genUrls: GenerationArrayResult?
     
-    func getAllPokemonData(homeController: HomeCollectionViewController) {
+    
+    func getPokemonUrls(loadingVC: LoadingViewController) {
+        
         fetchPokemonUrls()
         fetchGenUrls()
         
         mainGroup.notify(queue: .main) {
-            homeController.currentResults = baseUrlArray
-            homeController.collectionView.dataSource = homeController.self
-            homeController.collectionView.delegate = homeController.self
-            homeController.activityIndicator.stopAnimating()
+            
+            loadingVC.finishedLoading()
+        }
+    }
+    
+    func getAllPokemonData(homeController: HomeCollectionViewController) {
+        //fetchPokemonUrls()
+        //fetchGenUrls()
+        
+        
+        for url in genUrls!.results {
+            self.fetchGeneration(urlStr: url.url)
+        }
+        
+        for i in 0...20 {
+            self.fetchPokemonData(group: self.groupA, url: pokeUrlArray!.urlArray[i].url, index: i)
+        }
+        
+        self.groupA.notify(queue: .main) {
+            pokemonArray.sort(by: { $0.data.id < $1.data.id })
             //homeController.updateResultsList()
             
-            for url in self.genUrls!.results {
-                self.fetchGeneration(urlStr: url.url)
+            for i in 21...60 {
+                self.fetchPokemonData(group: self.groupB, url: pokeUrlArray!.urlArray[i].url, index: i)
             }
             
-            for i in 0...20 {
-                self.fetchPokemonData(group: self.groupA, url: pokeUrlArray!.urlArray[i].url, index: i)
-            }
-            
-            self.groupA.notify(queue: .main) {
+            self.groupB.notify(queue: .main) {
                 pokemonArray.sort(by: { $0.data.id < $1.data.id })
                 //homeController.updateResultsList()
                 
-                for i in 21...60 {
-                    self.fetchPokemonData(group: self.groupB, url: pokeUrlArray!.urlArray[i].url, index: i)
+                for i in 61...200 {
+                    self.fetchPokemonData(group: self.groupC, url: pokeUrlArray!.urlArray[i].url, index: i)
                 }
                 
-                self.groupB.notify(queue: .main) {
+                self.groupC.notify(queue: .main) {
                     pokemonArray.sort(by: { $0.data.id < $1.data.id })
                     //homeController.updateResultsList()
                     
-                    for i in 61...200 {
-                        self.fetchPokemonData(group: self.groupC, url: pokeUrlArray!.urlArray[i].url, index: i)
+                    for i in 201...pokeUrlArray!.urlArray.count - 1 {
+                        self.fetchPokemonData(group: self.groupD, url: pokeUrlArray!.urlArray[i].url, index: i)
                     }
                     
-                    self.groupC.notify(queue: .main) {
+                    self.groupD.notify(queue: .main) {
                         pokemonArray.sort(by: { $0.data.id < $1.data.id })
-                        //homeController.updateResultsList()
-                        
-                        for i in 201...pokeUrlArray!.urlArray.count - 1 {
-                            self.fetchPokemonData(group: self.groupD, url: pokeUrlArray!.urlArray[i].url, index: i)
-                        }
-                        
-                        self.groupD.notify(queue: .main) {
-                            pokemonArray.sort(by: { $0.data.id < $1.data.id })
-                        }
                     }
                 }
             }
@@ -228,11 +275,11 @@ class PokemonDataController {
             do {
                 pokeUrlArray = try JSONDecoder().decode(PokemonArrayResult.self, from: data)
                 
-                //let blackList: [Int] = [10080, 10081, 10082, 10083, 10084, 10094, 10095, 10096, 10097, 10098, 10099, 10148, 10117,  10030, 10031, 10032, 10118, 10119, 10120, 10086, 10151, 10126, 10152, 10127, 772, 10155, 10156, 10157, 10178, 10179, 10183, 10184, 10185, 10218, 10219, 10220, 10022, 10023]
+                let blackList: [Int] = [10080, 10081, 10082, 10083, 10084, 10085, 10094, 10095, 10096, 10097, 10098, 10099, 10148, 10117,  10030, 10031, 10032, 10118, 10119, 10120, 10086, 10151, 10126, 10152, 10127, 772, 10155, 10156, 10157, 10178, 10179, 10183, 10184, 10185, 10218, 10219, 10220, 10022, 10023]
                 
-                let blackList: [Int] = []
+                //let blackList: [Int] = []
                 
-                let hyphNames: [String] = ["porygon-z", "ho-oh", "mr-mime", "nidoran-f", "nidoran-m", "pumpkaboo-average"]
+                let hyphNames: [String] = ["porygon-z", "ho-oh", "mr-mime", "nidoran-f", "nidoran-m", "pumpkaboo-average", "zamazenta-hero", "zacian-hero"]
                 
                 pokeUrlArray?.urlArray.removeAll(where: { $0.name.contains("-gmax") || $0.name.contains("-totem")})
                 
@@ -261,7 +308,7 @@ class PokemonDataController {
             }
             
             do {
-                self.genUrls = try JSONDecoder().decode(GenerationArrayResult.self, from: data)
+                genUrls = try JSONDecoder().decode(GenerationArrayResult.self, from: data)
                 self.mainGroup.leave()
             }
             catch {
@@ -302,7 +349,17 @@ class PokemonDataController {
             }
             guard let data = data else { return }
             do {
-                let pData = try JSONDecoder().decode(PokemonData.self, from: data)
+                let hyphNames: [String] = ["porygon-z", "ho-oh", "mr-mime", "nidoran-f", "nidoran-m", "pumpkaboo-average"]
+                var pData = try JSONDecoder().decode(PokemonData.self, from: data)
+                
+                
+                if hyphNames.contains(pData.name) {
+                    pData.name = pData.name.replacingOccurrences(of: "-", with: "_")
+                }
+                else if pData.name == "pumpkaboo-average" {
+                    pData.name = "pumpkaboo"
+                }
+                
                 //pData.order = pData.order > 0 ? pData.order : pData.id
                 self.fetchPokemonImage(group: group, pokeData: pData, index: index)
                 

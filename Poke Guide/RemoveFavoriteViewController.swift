@@ -23,7 +23,7 @@ class RemoveFavoriteViewController: UIViewController, UITableViewDelegate, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        modalView.layer.cornerRadius = 10
+        modalView.layer.cornerRadius = 12.5
         modalView.layer.masksToBounds = true
         
         let fArray = FavoriteJsonParser().readJson()
@@ -43,14 +43,7 @@ class RemoveFavoriteViewController: UIViewController, UITableViewDelegate, UITab
     
     @IBAction func removeTapped(_ sender: Any?) {
         
-        for poke in selectedPokemon {
-            FavoriteJsonParser().removeFavorite(fav: poke)
-        }
-        
-        if !favPokemon!.favArray.contains(where: { $0.name == pokemon.data.name }) {
-            
-            detailVC?.removeAsFavorite()
-        }
+        detailVC?.removeFavorites(favs: selectedPokemon)
         
         self.backgroundButton.isHidden = true
         dismiss(animated: true, completion: nil)

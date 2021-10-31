@@ -37,6 +37,10 @@ class DetailsViewController: UIViewController, UIViewControllerTransitioningDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        for btn in toggleView.subviews {
+            btn.isHidden = true
+        }
+        
         scrollView.isUserInteractionEnabled = false
         self.view.bringSubviewToFront(activityView)
         activityView.isHidden = false
@@ -62,24 +66,29 @@ class DetailsViewController: UIViewController, UIViewControllerTransitioningDele
     
     func configure() {
         
+        let typeARef = pokemon!.data.types.first(where: { $0.slot == 1 })
+        let typeA: TypeStruct = typeDict[typeARef!.type.name]!
+        self.primaryColor = typeA.appearance.getColor()
+        self.toggleView.layer.borderColor = self.primaryColor.cgColor
+        for view in self.toggleView.subviews {
+            let btn = view as! UIButton
+            if btn.backgroundColor != .clear {
+                btn.backgroundColor = self.primaryColor
+            }
+            else {
+                btn.tintColor = self.primaryColor
+            }
+        }
+        
         if self.formNames.count == 0 {
             
-            if self.pokeUrl!.name != "pumpkaboo-average" {
+            if self.pokeUrl!.name != "pumpkaboo-average" && self.pokeUrl!.name != "zamazenta-hero" && self.pokeUrl!.name != "zacian-hero" {
                 self.formNames.append(self.pokeUrl!)
             }
             self.formNames.append(contentsOf: pokeUrlArray!.urlArray.filter({ $0.name.contains("\(self.pokemon!.data.species!.name)-") }))
             
             activityView.stopAnimating()
             scrollView.isUserInteractionEnabled = true
-            
-            
-            let typeARef = pokemon!.data.types.first(where: { $0.slot == 1 })
-            let typeA: TypeStruct = typeDict[typeARef!.type.name]!
-            self.primaryColor = typeA.appearance.getColor()
-            
-            for btn in toggleView.subviews {
-                btn.isHidden = true
-            }
             
             if formNames.count > 1 {
                 toggleView.isHidden = false
@@ -91,44 +100,20 @@ class DetailsViewController: UIViewController, UIViewControllerTransitioningDele
                     btn.layer.cornerRadius = 12
                     btn.layer.masksToBounds = true
                     
-                    if formNames[i].name == pokemon!.data.name {
+                    let title = formNames[i].getDisplayName().subName
+                    btn.setTitle(title, for: .normal)
+                    btn.setAttributedTitle(NSAttributedString(string: title, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12, weight: .regular) ]), for: .normal)
+                    
+                    if i == 0 {
                         btn.backgroundColor = self.primaryColor
                         btn.tintColor = .white
-                        if self.pokeUrl!.name != "pumpkaboo-average" {
-                            btn.setTitle("Normal", for: .normal)
-                        }
-                        else {
-                            btn.setTitle("Average", for: .normal)
-                            btn.setAttributedTitle(NSAttributedString(string: "Average", attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12, weight: .regular) ]), for: .normal)
-                        }
                     }
                     else {
                         btn.backgroundColor = .clear
                         btn.tintColor = self.primaryColor
-                        
-                        let names = formNames[i].name.split(separator: "-")
-                        var form = ""
-                        if names.count > 1 {
-                            for n in 1...names.count - 1 {
-                                form += "\(String(names[n]).capitalizingFirstLetter()) "
-                            }
-                            form = String(form.dropLast())
-                        }
-                        btn.setTitle(form, for: .normal)
-                        btn.setAttributedTitle(NSAttributedString(string: form, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12, weight: .regular) ]), for: .normal)
                     }
                     
                     btn.titleLabel!.font = UIFont.systemFont(ofSize: 12, weight: .regular)
-                    
-                    /*if let str = btn.titleLabel?.attributedText {
-                        let attributedString = NSMutableAttributedString( attributedString: str  )
-                        attributedString.removeAttribute(.font, range: NSRange.init(location: 0, length: attributedString.length))
-                        attributedString.addAttributes(
-                            [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12, weight: .regular) ],
-                            range: NSRange.init(location: 0, length: attributedString.length)
-                        )
-                        btn.setAttributedTitle(attributedString, for: .normal)
-                    }*/
                     
                     btn.isHidden = false
                 }
@@ -148,7 +133,7 @@ class DetailsViewController: UIViewController, UIViewControllerTransitioningDele
         let typeBRef = pokemon!.data.types.first(where: { $0.slot == 2 })
         let typeRef = typeBRef != nil ? typeBRef : pokemon!.data.types.first(where: { $0.slot == 1 })!
         let type: TypeStruct = typeDict[typeRef!.type.name]!
-        self.backgroundView.backgroundColor = type.appearance.getColor().withAlphaComponent(0.08)
+        //self.backgroundView.backgroundColor = type.appearance.getColor().withAlphaComponent(0.08)
         
         let favPoke = FavoriteJsonParser().readJson()
         
@@ -314,10 +299,6 @@ class DetailsViewController: UIViewController, UIViewControllerTransitioningDele
         movesetView.configure(pokemon: pokemon!, detailVC: self)
     }
     
-    func configureUI() {
-        
-    }
-    
     @IBAction func showForm(_ sender: Any) {
         for viewBtn in self.toggleView.subviews {
             let btn = viewBtn as! UIButton
@@ -378,16 +359,17 @@ class DetailsViewController: UIViewController, UIViewControllerTransitioningDele
     }
     
     func showAddFavoriteModal() {
-        let favVC = self.storyboard?.instantiateViewController(withIdentifier: "AddFavoriteViewController") as! AddFavoriteViewController
+        let filterVC = self.storyboard?.instantiateViewController(withIdentifier: "TypeFilterController") as! TypeFilterController
         
-        favVC.pokemon = self.pokemon!
-        favVC.detailVC = self
-        favVC.selectedTypes = movesetView.selectedTypes
-        favVC.modalPresentationStyle = .custom
-        favVC.transitioningDelegate = self
+        filterVC.titleStr = "Add Favorite"
+        filterVC.labelStr = "Selected move types:"
+        filterVC.saveCallback = self.addFavorite(types:)
+        filterVC.selectedTypes = self.pokemon!.data.types.compactMap({ typeDict[$0.type.name]! })
+        filterVC.saveWithNone = false
+        filterVC.modalPresentationStyle = .custom
+        filterVC.transitioningDelegate = self
         
-        //present(favVC, animated: true)
-        present(favVC, animated: true, completion: { favVC.backgroundButton.isHidden = false })
+        present(filterVC, animated: true, completion: { filterVC.backgroundButton.isHidden = false })
     }
     
     func showRemoveFavoriteModal() {
@@ -410,6 +392,12 @@ class DetailsViewController: UIViewController, UIViewControllerTransitioningDele
     }
     
     
+    func addFavorite(types: [TypeStruct]) {
+        FavoriteJsonParser().addFavorite(fav: FavPokemonJson.FavJson(name: pokemon!.data.name, types: types.compactMap({ $0.appearance.name.lowercased() })))
+        
+        self.setAsFavorite()
+    }
+    
     func setAsFavorite() {
         
         let menu = UIMenu(title: "", options: .destructive, children: [
@@ -417,7 +405,14 @@ class DetailsViewController: UIViewController, UIViewControllerTransitioningDele
                 self.showAddFavoriteModal()
             }),
             UIAction(title: "Remove", image: UIImage(systemName: "trash")!, attributes: .destructive, handler: { (_) in
-                self.showRemoveFavoriteModal()
+                
+                let favs = favPokemon?.favArray.filter({ $0.name == self.pokemon!.data.name })
+                if favs!.count > 1 {
+                    self.showRemoveFavoriteModal()
+                }
+                else {
+                    self.removeFavorites(favs: favs!)
+                }
             })
         ])
         
@@ -425,6 +420,17 @@ class DetailsViewController: UIViewController, UIViewControllerTransitioningDele
         navItem.tintColor = .systemYellow
         
         self.navigationItem.rightBarButtonItem = navItem
+    }
+    
+    func removeFavorites(favs: [FavPokemonJson.FavJson]) {
+        
+        for poke in favs {
+            FavoriteJsonParser().removeFavorite(fav: poke)
+        }
+        
+        if !FavoriteJsonParser().readJson().favArray.contains(where: { $0.name == pokemon!.data.name }) {
+            self.removeAsFavorite()
+        }
     }
     
     func removeAsFavorite() {
@@ -447,11 +453,28 @@ class DetailsViewController: UIViewController, UIViewControllerTransitioningDele
     }
     
     func tryGetPokemon() {
+        
         if let poke = pokemonDict[pokeUrl!.name] {
             self.pokemon = poke
             configure()
         }
         else {
+            
+            self.mainView.numberLabel.text = "#\(self.pokeUrl!.getId())"
+            
+            let displayName = self.pokeUrl?.getDisplayName()
+            self.mainView.nameLabel.text = displayName?.name
+            self.mainView.subNameLabel.isHidden = displayName?.subName == "Normal"
+            self.mainView.subNameLabel.text = displayName?.subName
+            
+            self.mainView.mainImage.image = nil
+            
+            self.statView.isHidden = true
+            self.evolutionView.isHidden = true
+            self.strongView.isHidden = true
+            self.weakView.isHidden = true
+            self.movesetView.isHidden = true
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                 self.tryGetPokemon()
             })

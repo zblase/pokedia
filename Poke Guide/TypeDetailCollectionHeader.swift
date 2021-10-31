@@ -35,13 +35,13 @@ class TypeDetailCollectionHeader: UICollectionReusableView, UICollectionViewData
         layer.shadowOffset = CGSize(width: 0, height: 3)
         layer.masksToBounds = false
         
-        defView.layer.backgroundColor = type.appearance.getColor().withAlphaComponent(0.05).cgColor
-        defView.layer.borderColor = type.appearance.getColor().withAlphaComponent(0.2).cgColor
+        defView.backgroundColor = UIColor.clear
+        defView.layer.borderColor = type.appearance.getColor().cgColor
         defView.layer.borderWidth = 1
         defView.layer.cornerRadius = 10
         
-        atkView.layer.backgroundColor = type.appearance.getColor().withAlphaComponent(0.05).cgColor
-        atkView.layer.borderColor = type.appearance.getColor().withAlphaComponent(0.2).cgColor
+        atkView.backgroundColor = UIColor.clear
+        atkView.layer.borderColor = type.appearance.getColor().cgColor
         atkView.layer.borderWidth = 1
         atkView.layer.cornerRadius = 10
         
@@ -80,15 +80,6 @@ class TypeDetailCollectionHeader: UICollectionReusableView, UICollectionViewData
         let cellHeight = (UIScreen.main.bounds.width - 32) / 10
         
         defHeight.constant = defRows * cellHeight + ((defRows - 1) * 8) + 31
-        
-        /*if defEffects.count < 8 {
-            defHeight.constant = (UIScreen.main.bounds.width / 7) + 26
-            //defHeight.constant = 83
-        }
-        else {
-            defHeight.constant = (UIScreen.main.bounds.width / 3.5) + 22
-            //defHeight.constant = 132
-        }*/
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -106,7 +97,7 @@ class TypeDetailCollectionHeader: UICollectionReusableView, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.frame.size.width - 30) / 4, height: (collectionView.frame.size.width - 30) / 10)
+        return CGSize(width: (collectionView.frame.size.width - 30) / 4, height: 25)
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
