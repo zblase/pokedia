@@ -18,13 +18,28 @@ class LoadingViewController: UIViewController {
         
         
         
+        loadData()
+    }
+    
+    func loadData() {
+        
         let typeDC = TypeDataController()
-        typeDC.getAllTypeData{ (success) -> Void in
+        typeDC.getAllTypeData(loadingVC: self, completion: {(success) -> Void in
             if success {
                 let pokeDC = PokemonDataController()
                 pokeDC.getPokemonUrls(loadingVC: self)
             }
-        }
+        })
+    }
+    
+    func showError(errorStr: String) {
+        let alert = UIAlertController(title: "Error loading data", message: errorStr, preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Try again", style: .default, handler: { action in
+            self.loadData()
+        }))
+
+        self.present(alert, animated: true)
     }
     
     func finishedLoading() {

@@ -77,9 +77,9 @@ class TypeDetailCollectionHeader: UICollectionReusableView, UICollectionViewData
         
         let defRows = ceil(Double(defEffects.count) / 4)
         //print(defRows)
-        let cellHeight = (UIScreen.main.bounds.width - 32) / 10
+        let cellHeight = 25.0
         
-        defHeight.constant = defRows * cellHeight + ((defRows - 1) * 8) + 31
+        defHeight.constant = defRows * cellHeight + ((defRows - 1) * 8) + 38
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

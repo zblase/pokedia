@@ -31,7 +31,49 @@ class TypeFilterController: UIViewController, UICollectionViewDataSource, UIColl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        modalView.layer.cornerRadius = 12.5
+        print(UIDevice.current.name)
+        
+        switch UIDevice.current.name {
+        case "iPhone 13":
+            modalView.layer.cornerRadius = 20
+        case "iPhone 13 Pro":
+            modalView.layer.cornerRadius = 20
+        case "iPhone 13 Pro Max":
+            modalView.layer.cornerRadius = 20
+        case "iPhone 13 mini":
+            modalView.layer.cornerRadius = 20
+        case "iPhone 12":
+            modalView.layer.cornerRadius = 20
+        case "iPhone 12 Pro":
+            modalView.layer.cornerRadius = 40
+        case "iPhone 12 Pro Max":
+            modalView.layer.cornerRadius = 20
+        case "iPhone 12 mini":
+            modalView.layer.cornerRadius = 20
+        case "iPhone 11":
+            modalView.layer.cornerRadius = 20
+        case "iPhone 11 Pro":
+            modalView.layer.cornerRadius = 20
+        case "iPhone 11 Pro Max":
+            modalView.layer.cornerRadius = 20
+        case "iPhone SE":
+            modalView.layer.cornerRadius = 20
+        case "iPhone X":
+            modalView.layer.cornerRadius = 20
+        case "iPhone Xs":
+            modalView.layer.cornerRadius = 20
+        case "iPhone Xs Max":
+            modalView.layer.cornerRadius = 20
+        case "iPhone Xr":
+            modalView.layer.cornerRadius = 20
+        case "iPhone 8":
+            modalView.layer.cornerRadius = 20
+        case "iPhone 8 Plus":
+            modalView.layer.cornerRadius = 20
+        default:
+            modalView.layer.cornerRadius = 14
+        }
+        //modalView.layer.cornerRadius = 12.5
         modalView.layer.masksToBounds = true
         
         self.navTitle.title = titleStr

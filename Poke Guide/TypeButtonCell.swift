@@ -37,6 +37,9 @@ class TypeButtonCell: UICollectionViewCell {
         contentView.layer.cornerRadius = 12.5
         contentView.layer.borderWidth = 1
         contentView.backgroundColor = .clear
+        //self.backgroundColor = .clear
+        //cellButton.backgroundColor = .clear
+        //cellButton.isHidden = true
         
         /*self.layer.masksToBounds = false
         self.clipsToBounds = false

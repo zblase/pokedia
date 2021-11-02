@@ -88,16 +88,16 @@ class TypeDetailsViewController: UIViewController, UICollectionViewDataSource, U
         
         //var height: CGFloat = 76 + (self.view.frame.size.width / 3.5)
         
-        let cellHeight = (UIScreen.main.bounds.width - 32) / 10
+        let cellHeight = 25.0
         
         let defEffects = type!.data.damage_relations.double_damage_from + type!.data.damage_relations.half_damage_from + type!.data.damage_relations.no_damage_from
         let defRows = ceil(Double(defEffects.count) / 4)
-        let defHeight = defRows * cellHeight + ((defRows - 1) * 8) + 28
+        let defHeight = defRows * cellHeight + ((defRows - 1) * 8) + 38
         
         let atkEffects = type!.data.damage_relations.double_damage_to + type!.data.damage_relations.half_damage_to + type!.data.damage_relations.no_damage_to
         let atkRows = ceil(Double(atkEffects.count) / 4)
         print(atkRows)
-        let atkHeight = atkRows * cellHeight + ((atkRows - 1) * 8) + 28
+        let atkHeight = atkRows * cellHeight + ((atkRows - 1) * 8) + 38
         
         /*if (type!.data.damage_relations.double_damage_from + type!.data.damage_relations.half_damage_from + type!.data.damage_relations.no_damage_from).count > 7 {
             height += (self.view.frame.size.width / 7) - 2
@@ -106,7 +106,7 @@ class TypeDetailsViewController: UIViewController, UICollectionViewDataSource, U
             height += (self.view.frame.size.width / 7) - 2
         }*/
         
-        return CGSize(width: self.collectionView.frame.size.width, height: defHeight + atkHeight + 34)
+        return CGSize(width: self.collectionView.frame.size.width, height: defHeight + atkHeight + 26)
     }
     
     func typeCellTapped(cell: TypeButtonCell) {

@@ -200,7 +200,7 @@ struct PokemonEffectScore {
 
 class PokemonDataController {
     
-    let mainGroup = DispatchGroup()
+    var mainGroup = DispatchGroup()
     let groupA = DispatchGroup()
     let groupB = DispatchGroup()
     let groupC = DispatchGroup()
@@ -209,9 +209,10 @@ class PokemonDataController {
     
     
     func getPokemonUrls(loadingVC: LoadingViewController) {
+        mainGroup = DispatchGroup()
         
-        fetchPokemonUrls()
-        fetchGenUrls()
+        fetchPokemonUrls(loadingVC)
+        fetchGenUrls(loadingVC)
         
         mainGroup.notify(queue: .main) {
             
@@ -264,16 +265,21 @@ class PokemonDataController {
         }
     }
     
-    func fetchPokemonUrls() {
+    func fetchPokemonUrls(_ loadingVC: LoadingViewController) {
         self.mainGroup.enter()
         URLSession.shared.dataTask(with: URL(string: "https://pokeapi.co/api/v2/pokemon?limit=1118")!, completionHandler: {data, response, error in
             guard let data = data, error == nil else {
                 print(error!)
+                loadingVC.showError(errorStr: error.debugDescription)
                 return
             }
             
             do {
+                
+                
                 pokeUrlArray = try JSONDecoder().decode(PokemonArrayResult.self, from: data)
+                
+                
                 
                 let blackList: [Int] = [10080, 10081, 10082, 10083, 10084, 10085, 10094, 10095, 10096, 10097, 10098, 10099, 10148, 10117,  10030, 10031, 10032, 10118, 10119, 10120, 10086, 10151, 10126, 10152, 10127, 772, 10155, 10156, 10157, 10178, 10179, 10183, 10184, 10185, 10218, 10219, 10220, 10022, 10023]
                 
@@ -293,17 +299,19 @@ class PokemonDataController {
             }
             catch {
                 print(error)
+                loadingVC.showError(errorStr: error.localizedDescription)
             }
             
         }).resume()
     }
     
-    func fetchGenUrls() {
+    func fetchGenUrls(_ loadingVC: LoadingViewController) {
         self.mainGroup.enter()
         URLSession.shared.dataTask(with: URL(string: "https://pokeapi.co/api/v2/generation")!, completionHandler: {data, response, error in
             guard let data = data, error == nil else {
                 print(error!)
-                self.mainGroup.leave()
+                loadingVC.showError(errorStr: error.debugDescription)
+                //self.mainGroup.leave()
                 return
             }
             
@@ -313,7 +321,8 @@ class PokemonDataController {
             }
             catch {
                 print(error)
-                self.mainGroup.leave()
+                loadingVC.showError(errorStr: error.localizedDescription)
+                //self.mainGroup.leave()
             }
             
         }).resume()
@@ -385,13 +394,13 @@ class PokemonDataController {
             image = UIImage(data: data)
             if image != nil {
                 
-                var moveTypes: [String] = []
-                for move in pokeData.moves {
+                let moveTypes: [String] = ["normal", "fire", "water", "grass", "electric", "ice", "fighting", "poison", "ground", "flying", "psychic", "bug", "rock", "ghost", "dark", "dragon", "steel", "fairy"]
+                /*for move in pokeData.moves {
                     let typeName = moveDict[move.move.name]!.type.name
                     if !moveTypes.contains(where: { $0 == typeName }) {
                         moveTypes.append(typeName)
                     }
-                }
+                }*/
                 
                 //pokeData.order = pokeData.order > 0 ? pokeData.order : pokeData.id
                 let poke = Pokemon(data: pokeData, image: image!, moveTypes: moveTypes)

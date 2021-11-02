@@ -38,6 +38,12 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
         activityIndicator.isHidden = true
         
         backToTopBtn.isHidden = true
+        let topBtnImg = backToTopBtn.subviews[1] as! UIImageView
+        topBtnImg.layer.shadowColor = UIColor.black.cgColor
+        topBtnImg.layer.shadowRadius = 4
+        topBtnImg.layer.shadowOpacity = traitCollection.userInterfaceStyle == .light ? 0.75 : 1
+        topBtnImg.layer.shadowOffset = CGSize(width: 0, height: 0)
+        topBtnImg.layer.masksToBounds = false
         
         let sNib = UINib(nibName: "MainButtonCell", bundle: nil)
         self.collectionView.register(sNib, forCellWithReuseIdentifier: "MainButtonCell")
@@ -51,14 +57,17 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
         
-        let typeController = TypeDataController()
+        let pokeController = PokemonDataController()
+        pokeController.getAllPokemonData(homeController: self)
+        
+        /*let typeController = TypeDataController()
         typeController.getAllTypeData{ (success) -> Void in
             if success {
                 
                 let pokeController = PokemonDataController()
                 pokeController.getAllPokemonData(homeController: self)
             }
-        }
+        }*/
     }
     
     override func viewWillAppear(_ animated: Bool) {

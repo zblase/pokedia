@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		860358EE26F3E4CC00EAA2AA /* TypeAttributes.json in Resources */ = {isa = PBXBuildFile; fileRef = 860358ED26F3E4CC00EAA2AA /* TypeAttributes.json */; };
-		860358F026F4083C00EAA2AA /* AttackEffects.json in Resources */ = {isa = PBXBuildFile; fileRef = 860358EF26F4083C00EAA2AA /* AttackEffects.json */; };
-		860358F226F4138600EAA2AA /* DefenseEffects.json in Resources */ = {isa = PBXBuildFile; fileRef = 860358F126F4138600EAA2AA /* DefenseEffects.json */; };
-		860358F426F4215200EAA2AA /* PokemonData.json in Resources */ = {isa = PBXBuildFile; fileRef = 860358F326F4215200EAA2AA /* PokemonData.json */; };
 		860358F626F578F000EAA2AA /* DetailWeakSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860358F526F578F000EAA2AA /* DetailWeakSubView.swift */; };
 		860358F826F57AAF00EAA2AA /* WeakEffectCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860358F726F57AAF00EAA2AA /* WeakEffectCollectionView.swift */; };
 		860358FA26F57AFD00EAA2AA /* WeakSuggestedCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860358F926F57AFD00EAA2AA /* WeakSuggestedCollectionView.swift */; };
@@ -34,8 +31,6 @@
 		8611641A26C4D70D00295333 /* StatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8611641926C4D70D00295333 /* StatCollectionViewCell.swift */; };
 		8611641C26C586D500295333 /* DetailEvolutionsSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8611641B26C586D500295333 /* DetailEvolutionsSubView.swift */; };
 		8611641E26C5DEB500295333 /* DetailStrongSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8611641D26C5DEB500295333 /* DetailStrongSubView.swift */; };
-		8611642226C5E1BA00295333 /* StrongAttackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8611642126C5E1BA00295333 /* StrongAttackView.swift */; };
-		8611642426CC5B1000295333 /* EffectiveTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8611642326CC5B1000295333 /* EffectiveTypeCell.swift */; };
 		863AB629272DD0910083ABFA /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863AB628272DD0910083ABFA /* LoadingViewController.swift */; };
 		8654FFBF2703A8E0005EEB27 /* AddFavoriteTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8654FFBE2703A8E0005EEB27 /* AddFavoriteTypeCell.swift */; };
 		8654FFC1270780CA005EEB27 /* RemoveFavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8654FFC0270780CA005EEB27 /* RemoveFavoriteViewController.swift */; };
@@ -57,7 +52,6 @@
 		86780D1326FE8E5300512D06 /* TypeCollectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86780D1226FE8E5300512D06 /* TypeCollectionHeader.swift */; };
 		86841AE0270D00BC00F78F0E /* SuggestedButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86841ADE270D00BC00F78F0E /* SuggestedButtonCell.swift */; };
 		86841AE1270D00BC00F78F0E /* SuggestedButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86841ADF270D00BC00F78F0E /* SuggestedButtonCell.xib */; };
-		8693921826F06D7800694069 /* StrongSuggestedCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8693921726F06D7800694069 /* StrongSuggestedCollectionView.swift */; };
 		8693921A26F073B500694069 /* SuggestedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8693921926F073B500694069 /* SuggestedCell.swift */; };
 		869A7210272A360E00A97974 /* TypeFilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A720F272A360E00A97974 /* TypeFilterController.swift */; };
 		86AB198F26C0FA2200AAB46E /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AB198E26C0FA2200AAB46E /* MyCollectionViewCell.swift */; };
@@ -86,9 +80,6 @@
 
 /* Begin PBXFileReference section */
 		860358ED26F3E4CC00EAA2AA /* TypeAttributes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TypeAttributes.json; sourceTree = "<group>"; };
-		860358EF26F4083C00EAA2AA /* AttackEffects.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AttackEffects.json; sourceTree = "<group>"; };
-		860358F126F4138600EAA2AA /* DefenseEffects.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DefenseEffects.json; sourceTree = "<group>"; };
-		860358F326F4215200EAA2AA /* PokemonData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PokemonData.json; sourceTree = "<group>"; };
 		860358F526F578F000EAA2AA /* DetailWeakSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWeakSubView.swift; sourceTree = "<group>"; };
 		860358F726F57AAF00EAA2AA /* WeakEffectCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakEffectCollectionView.swift; sourceTree = "<group>"; };
 		860358F926F57AFD00EAA2AA /* WeakSuggestedCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakSuggestedCollectionView.swift; sourceTree = "<group>"; };
@@ -112,8 +103,6 @@
 		8611641926C4D70D00295333 /* StatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatCollectionViewCell.swift; sourceTree = "<group>"; };
 		8611641B26C586D500295333 /* DetailEvolutionsSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEvolutionsSubView.swift; sourceTree = "<group>"; };
 		8611641D26C5DEB500295333 /* DetailStrongSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStrongSubView.swift; sourceTree = "<group>"; };
-		8611642126C5E1BA00295333 /* StrongAttackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrongAttackView.swift; sourceTree = "<group>"; };
-		8611642326CC5B1000295333 /* EffectiveTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectiveTypeCell.swift; sourceTree = "<group>"; };
 		863AB628272DD0910083ABFA /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		8654FFBE2703A8E0005EEB27 /* AddFavoriteTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFavoriteTypeCell.swift; sourceTree = "<group>"; };
 		8654FFC0270780CA005EEB27 /* RemoveFavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveFavoriteViewController.swift; sourceTree = "<group>"; };
@@ -141,7 +130,6 @@
 		86780D1226FE8E5300512D06 /* TypeCollectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCollectionHeader.swift; sourceTree = "<group>"; };
 		86841ADE270D00BC00F78F0E /* SuggestedButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedButtonCell.swift; sourceTree = "<group>"; };
 		86841ADF270D00BC00F78F0E /* SuggestedButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestedButtonCell.xib; sourceTree = "<group>"; };
-		8693921726F06D7800694069 /* StrongSuggestedCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrongSuggestedCollectionView.swift; sourceTree = "<group>"; };
 		8693921926F073B500694069 /* SuggestedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedCell.swift; sourceTree = "<group>"; };
 		869A720F272A360E00A97974 /* TypeFilterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeFilterController.swift; sourceTree = "<group>"; };
 		86AB198E26C0FA2200AAB46E /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -194,9 +182,6 @@
 				8611641926C4D70D00295333 /* StatCollectionViewCell.swift */,
 				8611641B26C586D500295333 /* DetailEvolutionsSubView.swift */,
 				8611641D26C5DEB500295333 /* DetailStrongSubView.swift */,
-				8611642126C5E1BA00295333 /* StrongAttackView.swift */,
-				8611642326CC5B1000295333 /* EffectiveTypeCell.swift */,
-				8693921726F06D7800694069 /* StrongSuggestedCollectionView.swift */,
 				8693921926F073B500694069 /* SuggestedCell.swift */,
 				8606ACC526F2E9D6000D53A9 /* ToggleViewButton.swift */,
 				860358F526F578F000EAA2AA /* DetailWeakSubView.swift */,
@@ -233,9 +218,6 @@
 			isa = PBXGroup;
 			children = (
 				8603590526F97EB500EAA2AA /* DataModels */,
-				860358F326F4215200EAA2AA /* PokemonData.json */,
-				860358F126F4138600EAA2AA /* DefenseEffects.json */,
-				860358EF26F4083C00EAA2AA /* AttackEffects.json */,
 				860358ED26F3E4CC00EAA2AA /* TypeAttributes.json */,
 				8611641426C44C9F00295333 /* DetailsSubViews */,
 				8656386B26BCD60C0082D528 /* AppDelegate.swift */,
@@ -399,12 +381,9 @@
 			files = (
 				860358EE26F3E4CC00EAA2AA /* TypeAttributes.json in Resources */,
 				8654FFC7270B8DD2005EEB27 /* TypeButtonCell.xib in Resources */,
-				860358F026F4083C00EAA2AA /* AttackEffects.json in Resources */,
 				8656387826BCD60D0082D528 /* LaunchScreen.storyboard in Resources */,
 				86045B32271103AB0020C585 /* MainButtonCell.xib in Resources */,
-				860358F226F4138600EAA2AA /* DefenseEffects.json in Resources */,
 				8656387526BCD60D0082D528 /* Assets.xcassets in Resources */,
-				860358F426F4215200EAA2AA /* PokemonData.json in Resources */,
 				86841AE1270D00BC00F78F0E /* SuggestedButtonCell.xib in Resources */,
 				8656387326BCD60C0082D528 /* Main.storyboard in Resources */,
 			);
@@ -437,7 +416,6 @@
 				8606ACC626F2E9D6000D53A9 /* ToggleViewButton.swift in Sources */,
 				86DC67F5270267A700843A23 /* AddFavoriteViewController.swift in Sources */,
 				8654FFC6270B8DD2005EEB27 /* TypeButtonCell.swift in Sources */,
-				8611642226C5E1BA00295333 /* StrongAttackView.swift in Sources */,
 				8656387026BCD60C0082D528 /* ViewController.swift in Sources */,
 				86045B31271103AB0020C585 /* MainButtonCell.swift in Sources */,
 				86780D0D26FD4D5000512D06 /* DetailMovesetSubView.swift in Sources */,
@@ -465,8 +443,6 @@
 				860358FA26F57AFD00EAA2AA /* WeakSuggestedCollectionView.swift in Sources */,
 				860CC50326FFBE450060BEED /* TypeCellButton.swift in Sources */,
 				8611641626C44CE300295333 /* DetailMainSubView.swift in Sources */,
-				8611642426CC5B1000295333 /* EffectiveTypeCell.swift in Sources */,
-				8693921826F06D7800694069 /* StrongSuggestedCollectionView.swift in Sources */,
 				86841AE0270D00BC00F78F0E /* SuggestedButtonCell.swift in Sources */,
 				8603590426F97EA400EAA2AA /* MoveDM.swift in Sources */,
 				86DC67F127023BF800843A23 /* FavoritesViewController.swift in Sources */,
@@ -653,14 +629,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 6L8WV29F9Z;
 				INFOPLIST_FILE = "Poke Guide/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Blase.Poke-Guide";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -674,14 +650,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 6L8WV29F9Z;
 				INFOPLIST_FILE = "Poke Guide/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Blase.Poke-Guide";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

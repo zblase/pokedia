@@ -83,7 +83,14 @@ class DetailsViewController: UIViewController, UIViewControllerTransitioningDele
         if self.formNames.count == 0 {
             
             if self.pokeUrl!.name != "pumpkaboo-average" && self.pokeUrl!.name != "zamazenta-hero" && self.pokeUrl!.name != "zacian-hero" {
-                self.formNames.append(self.pokeUrl!)
+                if let url = pokeUrlArray?.urlArray.first(where: { $0.name == self.pokemon!.data.species?.name}) {
+                    
+                    self.formNames.append(url)
+                }
+                else {
+                    
+                    self.formNames.append(self.pokeUrl!)
+                }
             }
             self.formNames.append(contentsOf: pokeUrlArray!.urlArray.filter({ $0.name.contains("\(self.pokemon!.data.species!.name)-") }))
             
@@ -102,9 +109,9 @@ class DetailsViewController: UIViewController, UIViewControllerTransitioningDele
                     
                     let title = formNames[i].getDisplayName().subName
                     btn.setTitle(title, for: .normal)
-                    btn.setAttributedTitle(NSAttributedString(string: title, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12, weight: .regular) ]), for: .normal)
+                    btn.setAttributedTitle(NSAttributedString(string: title, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12, weight: .regular), NSAttributedString.Key.underlineStyle : nil ]), for: .normal)
                     
-                    if i == 0 {
+                    if formNames[i].name == self.pokeUrl!.name {
                         btn.backgroundColor = self.primaryColor
                         btn.tintColor = .white
                     }
@@ -289,7 +296,7 @@ class DetailsViewController: UIViewController, UIViewControllerTransitioningDele
         
         self.strongHeight.constant = 160 + (rowHeight) * strongRows + 16 + (strongRows * 4)
         self.weakHeight.constant = 160 + (rowHeight) * weakRows + 16 + (weakRows * 4)
-        self.movesetHeight.constant = 250 + (rowHeight) * movesetRows + 16 + (movesetRows * 4)
+        //self.movesetHeight.constant = 250 + (rowHeight) * movesetRows + 16 + (movesetRows * 4)
         
         mainView.configure(pokemon: pokemon!, forms: self.formNames, fFunc: self.switchForm(url:))
         statView.configure(pokemon: pokemon!)
