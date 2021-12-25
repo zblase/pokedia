@@ -23,7 +23,7 @@ class RemoveFavoriteViewController: UIViewController, UITableViewDelegate, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        modalView.layer.cornerRadius = 12.5
+        modalView.layer.cornerRadius = 15
         modalView.layer.masksToBounds = true
         
         let fArray = FavoriteJsonParser().readJson()

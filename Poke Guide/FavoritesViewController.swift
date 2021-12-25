@@ -365,7 +365,8 @@ class FavoritesViewController: UIViewController, UICollectionViewDataSource, UIC
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let cell = cell as! MainButtonCell
         let url = pokeUrlArray!.urlArray.first(where: { $0.name == filteredResults[indexPath.row].name })
-        cell.configureCellIdentity(pokeUrl: url!, favTypes: filteredResults[indexPath.row].types)
+        //cell.configureCellIdentity(pokeUrl: url!, favTypes: filteredResults[indexPath.row].types)
+        cell.testConfig(pokeUrl: url!, favTypes: filteredResults[indexPath.row].types)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

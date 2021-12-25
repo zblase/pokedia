@@ -29,38 +29,15 @@ class MainButtonCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func configureCellIdentity(pokeUrl: PokemonArrayResult.PokemonUrl, favTypes: [String]? = nil) {
+    func testConfig(pokeUrl: PokemonArrayResult.PokemonUrl, favTypes: [String]? = nil) {
         self.activityIndicator.startAnimating()
         self.activityIndicator.hidesWhenStopped = true
         self.pokeUrl = pokeUrl
-        //self.pokemonButton.pokeUrl = pokeUrl
         self.favTypes = favTypes
         
-        if pokeUrl.name == "nidoran-f" {
-            cellName.text = "Nidoran (F)"
-        }
-        else if pokeUrl.name == "nidoran-m" {
-            cellName.text = "Nidoran (M)"
-        }
-        else if pokeUrl.name == "pumpkaboo-average" {
-            cellName.text = "Pumpkaboo"
-        }
-        else {
-            let names = pokeUrl.name.split(separator: "-")
-            cellName.text = String(names[0]).capitalizingFirstLetter()
-            if names.count > 1 {
-                //cellSubName.text = String(names[1]).capitalizingFirstLetter()
-                //cellSubName.isHidden = false
-            }
-            else {
-                //cellSubName.isHidden = true
-            }
-        }
-        
-        
+        cellName.text = pokeUrl.getDisplayName().name
         
         cellNumber.text = "#\(pokeUrl.getId())"
-        
         
         contentView.layer.cornerRadius = 12.0
         contentView.layer.borderWidth = 0.75
@@ -75,88 +52,12 @@ class MainButtonCell: UICollectionViewCell {
         layer.masksToBounds = false
         layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
         
-        if pokemon == nil || pokemon!.data.name != pokeUrl.name {
-            cellImage.image = UIImage()
-            typeBtnA.isHidden = true
-            typeBtnB.isHidden = true
-            typeBtnC.isHidden = true
-            activityIndicator.startAnimating()
-        }
-        else {
-            
-            cellImage.layer.shadowColor = UIColor.black.cgColor
-            cellImage.layer.shadowRadius = 2.5
-            cellImage.layer.shadowOpacity = 0.45
-            cellImage.layer.shadowOffset = CGSize(width: 2.5, height: 4)
-            cellImage.layer.masksToBounds = false
-        }
-        
-        tryGetPokemon(name: pokeUrl.name)
-    }
-    
-    func configureCellData(poke: Pokemon) {
-        self.activityIndicator.startAnimating()
-        self.activityIndicator.hidesWhenStopped = true
-        
-        
-        if poke.data.name == "nidoran-f" {
-            cellName.text = "Nidoran (F)"
-        }
-        else if poke.data.name == "nidoran-m" {
-            cellName.text = "Nidoran (M)"
-        }
-        else if poke.data.name == "mr-mime" {
-            cellName.text = "Mr. Mime"
-        }
-        else if poke.data.name == "porygon-z" {
-            cellName.text = "Porygon-Z"
-        }
-        else if poke.data.name == "ho-oh" {
-            cellName.text = "Ho-Oh"
-        }
-        else {
-            let names = poke.data.name.split(separator: "-")
-            cellName.text = String(names[0]).capitalizingFirstLetter()
-            if names.count > 1 {
-                //cellSubName.text = String(names[1]).capitalizingFirstLetter()
-                //cellSubName.isHidden = false
-            }
-            else {
-                //cellSubName.isHidden = true
-            }
-        }
-        
-        
-        
-        
-        contentView.layer.cornerRadius = 12.0
-        contentView.layer.borderWidth = 0.75
-        contentView.layer.borderColor = UIColor(named: "ColorHomeCellBorder")!.cgColor
-        contentView.layer.masksToBounds = true
-        
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOffset = CGSize(width: 3, height: 3)
-        layer.shadowRadius = 1.0
-        layer.shadowOpacity = traitCollection.userInterfaceStyle == .light ? 0.15 : 0.4
-        layer.masksToBounds = false
-        layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
-        
-        cellImage.layer.shadowColor = UIColor.black.cgColor
-        cellImage.layer.shadowRadius = 2.5
-        cellImage.layer.shadowOpacity = 0.45
-        cellImage.layer.shadowOffset = CGSize(width: 2.5, height: 4)
-        cellImage.layer.masksToBounds = false
-        
-        self.activityIndicator.stopAnimating()
-        self.pokemon = poke
-        //self.pokemonButton.pokemon = poke
-        cellImage.image = poke.image
-        cellNumber.text = "#\(poke.data.id)"
-        
         typeBtnA.isHidden = true
         typeBtnB.isHidden = true
+        typeBtnC.isHidden = true
         
-        let typeArray = favTypes != nil ? favTypes : poke.data.types.sorted(by: { $0.slot < $1.slot }).map({ $0.type.name })
+        let pokeTypes = pokeTypes.first(where: { String($0.id) == self.pokeUrl!.getId() })
+        let typeArray = favTypes != nil ? favTypes : pokeTypes?.types.sorted(by: { $0.slot < $1.slot }).map({ typeNames[$0.type - 1] })
         
         if typeArray!.count > 0 {
             let type: TypeStruct = typeDict[typeArray![0].lowercased()]!
@@ -172,8 +73,9 @@ class MainButtonCell: UICollectionViewCell {
             let type: TypeStruct = typeDict[typeArray![2].lowercased()]!
             configureTypeButton(imgView: typeBtnC, type: type.appearance)
         }
+        
+        tryGetImage(id: self.pokeUrl!.getId())
     }
-    
     
     func configureTypeButton(imgView: UIImageView, type: TypeAppearance) {
         
@@ -184,26 +86,31 @@ class MainButtonCell: UICollectionViewCell {
         imgView.tintColor = type.getColor()
         imgView.image = type.getImage().withConfiguration(symConfig).withRenderingMode(.alwaysTemplate)
         imgView.contentMode = .scaleAspectFit
-        //button.imageEdgeInsets = UIEdgeInsets(top: 1, left: 1, bottom: 0, right: 1)
+    }
+    
+    func configureImage(img: UIImage) {
+        cellImage.layer.shadowColor = UIColor.black.cgColor
+        cellImage.layer.shadowRadius = 2.5
+        cellImage.layer.shadowOpacity = 0.45
+        cellImage.layer.shadowOffset = CGSize(width: 2.5, height: 4)
+        cellImage.layer.masksToBounds = false
         
+        self.activityIndicator.stopAnimating()
+        cellImage.image = img
     }
     
-    func configureAsFav(fav: FavPokemonJson.FavJson) {
-        //configure types and maybe name
-        tryGetPokemon(name: fav.name)
-    }
-    
-    func tryGetPokemon(name: String) {
-        if name != self.pokeUrl!.name {
+    func tryGetImage(id: String) {
+        
+        if id != self.pokeUrl!.getId() {
             return
         }
         
-        if let poke = pokemonDict[name] {
-            configureCellData(poke: poke)
+        if let img = pokeImages[id] {
+            self.configureImage(img: img)
         }
         else {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                self.tryGetPokemon(name: name)
+                self.tryGetImage(id: id)
             })
         }
     }

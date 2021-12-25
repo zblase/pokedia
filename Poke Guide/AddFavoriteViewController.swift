@@ -20,6 +20,7 @@ class AddFavoriteViewController: UIViewController, UICollectionViewDataSource, U
     @IBOutlet var modalHeight: NSLayoutConstraint!
     
     var pokemon: Pokemon?
+    var pokeUrl: PokemonArrayResult.PokemonUrl!
     var selectedTypes: [TypeStruct] = []
     var detailVC: DetailsViewController?
     
@@ -29,7 +30,12 @@ class AddFavoriteViewController: UIViewController, UICollectionViewDataSource, U
         modalView.layer.masksToBounds = true
         modalView.layer.cornerRadius = 10
 
-        let names = pokemon!.data.name.split(separator: "-")
+        nameLabel.text = pokeUrl.getDisplayName().name
+        let subName = pokeUrl.getDisplayName().subName
+        subNameLabel.text = subName
+        subNameLabel.isHidden = subName == "Normal"
+        
+        /*let names = pokemon!.data.name.split(separator: "-")
         nameLabel.text = String(names[0]).capitalizingFirstLetter()
         
         if names.count > 1 {
@@ -41,7 +47,7 @@ class AddFavoriteViewController: UIViewController, UICollectionViewDataSource, U
         }
         else {
             subNameLabel.isHidden = true
-        }
+        }*/
         
         moveViewA.superview?.layer.cornerRadius = 8
         moveViewA.superview?.layer.borderWidth = 1
@@ -63,11 +69,11 @@ class AddFavoriteViewController: UIViewController, UICollectionViewDataSource, U
         
         refreshSelectedTypes()
         
-        let movesetRows = ceil(Double(pokemon!.moveTypes.count) / 4.0)
+        //let movesetRows = ceil(Double(pokemon!.moveTypes.count) / 4.0)
         
-        let rowHeight = (UIScreen.main.bounds.width) / 10
+        //let rowHeight = (UIScreen.main.bounds.width) / 10
         
-        self.modalHeight.constant = 182 + (rowHeight) * movesetRows + 16 + (movesetRows * 4)
+        //self.modalHeight.constant = 182 + (rowHeight) * movesetRows + 16 + (movesetRows * 4)
     }
     
     func refreshSelectedTypes() {
@@ -149,14 +155,14 @@ class AddFavoriteViewController: UIViewController, UICollectionViewDataSource, U
         //self.navItem!.image = UIImage(systemName: "star.fill")
         detailVC?.setAsFavorite()
         
-        FavoriteJsonParser().addFavorite(fav: FavPokemonJson.FavJson(name: pokemon!.data.name, types: typeArray.compactMap({ $0.lowercased() })))
+        FavoriteJsonParser().addFavorite(fav: FavPokemonJson.FavJson(name: pokeUrl.name, types: typeArray.compactMap({ $0.lowercased() })))
         
         self.backgroundButton.isHidden = true
         dismiss(animated: true, completion: nil)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return pokemon!.moveTypes.count
+        return 18
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -169,7 +175,7 @@ class AddFavoriteViewController: UIViewController, UICollectionViewDataSource, U
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let tCell = cell as! TypeButtonCell
-        let type = typeDict[pokemon!.moveTypes[indexPath.row]]!
+        let type = typeDict[typeNames[indexPath.row]]!
         
         
         let isSel = self.selectedTypes.contains(where: { $0.appearance.name.lowercased() == pokemon!.moveTypes[indexPath.row] })

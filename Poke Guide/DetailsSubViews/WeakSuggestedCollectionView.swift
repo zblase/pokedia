@@ -31,7 +31,7 @@ class WeakSuggestedCollectionView: UICollectionView, UICollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WeakSuggestedCell.identifier, for: indexPath) as! WeakSuggestedCell
         
-        cell.configure(pokemon: currentExamples[indexPath.row].pokemon)
+        cell.configure(url: currentExamples[indexPath.row].pokeUrl)
         
         return cell
     }
@@ -43,6 +43,6 @@ class WeakSuggestedCollectionView: UICollectionView, UICollectionViewDataSource,
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = self.visibleCells[indexPath.row] as! WeakSuggestedCell
-        detailVC.showNextVC(pokemon: cell.pokemon!)
+        detailVC.showNextVC(pokemon: cell.pokeUrl)
     }
 }

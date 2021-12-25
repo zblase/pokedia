@@ -58,37 +58,40 @@ class DetailEvolutionsSubView: ToggleViewButton {
         viewD.isHidden = true
         buttonE.isHidden = true
         
-        guard let firstPoke = pokemonDict[ev.chain.species.name] else { return }
+        //guard let firstPoke = pokemonDict[ev.chain.species.name] else { return }
         let urlA = pokeUrlArray?.urlArray.first(where: { $0.name == ev.chain.species.name })
+        let imgA = pokeImages[urlA!.getId()]
         
         buttonA.isHidden = false
-        buttonA.pokemon = firstPoke
+        //buttonA.pokemon = firstPoke
         buttonA.pokeUrl = urlA
-        buttonA.setImage(firstPoke.image, for: .normal)
+        buttonA.setImage(imgA, for: .normal)
         buttonA.contentMode = .scaleAspectFit
         buttonA.imageView?.contentMode = .scaleAspectFit
         
         if ev.chain.evolves_to.count > 0 {
-            guard let secondPoke = pokemonDict[ev.chain.evolves_to[0].species.name] else { return }
+            //guard let secondPoke = pokemonDict[ev.chain.evolves_to[0].species.name] else { return }
             let urlC = pokeUrlArray?.urlArray.first(where: { $0.name == ev.chain.evolves_to[0].species.name })
+            let imgC = pokeImages[urlC!.getId()]
             
             viewB.isHidden = false
             buttonC.isHidden = false
-            buttonC.pokemon = secondPoke
+            //buttonC.pokemon = secondPoke
             buttonC.pokeUrl = urlC
-            buttonC.setImage(secondPoke.image, for: .normal)
+            buttonC.setImage(imgC, for: .normal)
             buttonC.contentMode = .scaleAspectFit
             buttonC.imageView?.contentMode = .scaleAspectFit
             
             if ev.chain.evolves_to[0].evolves_to.count > 0 {
-                guard let thirdPoke = pokemonDict[ev.chain.evolves_to[0].evolves_to[0].species.name] else { return }
+                //guard let thirdPoke = pokemonDict[ev.chain.evolves_to[0].evolves_to[0].species.name] else { return }
                 let urlE = pokeUrlArray?.urlArray.first(where: { $0.name == ev.chain.evolves_to[0].evolves_to[0].species.name })
+                let imgE = pokeImages[urlE!.getId()]
                 
                 viewD.isHidden = false
                 buttonE.isHidden = false
-                buttonE.pokemon = thirdPoke
+                //buttonE.pokemon = thirdPoke
                 buttonE.pokeUrl = urlE
-                buttonE.setImage(thirdPoke.image, for: .normal)
+                buttonE.setImage(imgE, for: .normal)
                 buttonE.contentMode = .scaleAspectFit
                 buttonE.imageView?.contentMode = .scaleAspectFit
             }

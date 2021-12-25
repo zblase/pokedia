@@ -136,15 +136,7 @@ class DetailsViewController: UIViewController, UIViewControllerTransitioningDele
             toggleView.layer.borderColor = self.primaryColor.cgColor
         }
         
-        
-        let typeBRef = pokemon!.data.types.first(where: { $0.slot == 2 })
-        let typeRef = typeBRef != nil ? typeBRef : pokemon!.data.types.first(where: { $0.slot == 1 })!
-        let type: TypeStruct = typeDict[typeRef!.type.name]!
-        //self.backgroundView.backgroundColor = type.appearance.getColor().withAlphaComponent(0.08)
-        
         let favPoke = FavoriteJsonParser().readJson()
-        
-        
         var title = ""
         let names = pokemon!.data.name.split(separator: "-")
         for name in names {
@@ -160,130 +152,10 @@ class DetailsViewController: UIViewController, UIViewControllerTransitioningDele
             self.setAsFavorite()
         }
         
-        var testArray: [TypeEffect] = []
-        var testDict: [String: Double] = [:]
-        for url in typeUrlArray {
-            testArray.append(TypeEffect(name: url.name, value: 0))
-        }
-        
-        for typeRef in pokemon!.data.types {
-            let type = typeDict[typeRef.type.name]!
-            
-            for rel in type.data.damage_relations.double_damage_from {
-                if testDict[rel.name] != nil {
-                    testDict[rel.name]! += 1
-                }
-                else {
-                    testDict[rel.name] = 1
-                }
-            }
-            for rel in type.data.damage_relations.half_damage_from {
-                if testDict[rel.name] != nil {
-                    testDict[rel.name]! -= 1
-                }
-                else {
-                    testDict[rel.name] = -1
-                }
-            }
-            for rel in type.data.damage_relations.no_damage_from {
-                if testDict[rel.name] != nil {
-                    testDict[rel.name]! -= 2
-                }
-                else {
-                    testDict[rel.name] = -2
-                }
-            }
-        }
-        
-        var suggestedStrong: [PokemonEffectScore] = []
-        var suggestedWeak: [PokemonEffectScore] = []
-        
-        for poke in pokeUrlArray!.urlArray {
-            guard let pokeDictVal = pokemonDict[poke.name] else { continue }
-            var effScore = PokemonEffectScore(poke: pokeDictVal, types: pokeDictVal.data.types.map({ $0.type.name }))
-            
-            for typeRef in pokeDictVal.data.types {
-                if let effect = testDict[typeRef.type.name], effect != 0 {
-                    effScore.score += testDict[typeRef.type.name]!
-                }
-            }
-            
-            if !effScore.pokemon.data.name.contains("-mega") {
-                if effScore.score < 0 {
-                    suggestedStrong.append(effScore)
-                }
-                else if effScore.score > 0 {
-                    suggestedWeak.append(effScore)
-                }
-            }
-        }
-        
-        suggestedStrong.sort {
-            ($0.score * -1, $0.pokemon.data.stats.first(where: { $0.stat.name == "attack" })!.base_stat) >
-            ($1.score * -1, $1.pokemon.data.stats.first(where: { $0.stat.name == "attack" })!.base_stat)
-        }
-        
-        suggestedWeak.sort {
-            ($0.score, $0.pokemon.data.stats.first(where: { $0.stat.name == "attack" })!.base_stat) >
-            ($1.score, $1.pokemon.data.stats.first(where: { $0.stat.name == "attack" })!.base_stat)
-        }
-        
-        var strongFavs: [PokemonEffectScore] = []
-        var weakFavs: [PokemonEffectScore] = []
-        
-        for poke in favPoke.favArray {
-            guard let pokeDictVal = pokemonDict[poke.name] else { continue }
-            var effScore = PokemonEffectScore(poke: pokeDictVal, types: poke.types)
-            effScore.types = poke.types
-            
-            for typeRef in poke.types {
-                if let effect = testDict[typeRef], effect != 0 {
-                    effScore.score += testDict[typeRef]!
-                }
-            }
-            
-            if effScore.score < 0 {
-                strongFavs.append(effScore)
-            }
-            else if effScore.score > 0 {
-                weakFavs.append(effScore)
-            }
-        }
-        
-        strongFavs.sort {
-            ($0.score * -1, $0.pokemon.data.stats.first(where: { $0.stat.name == "attack" })!.base_stat) >
-            ($1.score * -1, $1.pokemon.data.stats.first(where: { $0.stat.name == "attack" })!.base_stat)
-        }
-        
-        weakFavs.sort {
-            ($0.score, $0.pokemon.data.stats.first(where: { $0.stat.name == "attack" })!.base_stat) >
-            ($1.score, $1.pokemon.data.stats.first(where: { $0.stat.name == "attack" })!.base_stat)
-        }
-        
-        var fromArray: [TypeEffect] = []
-        
-        for url in typeUrlArray {
-            if let effect = testDict[url.name], effect != 0 {
-                var val: Double
-                switch effect {
-                case 2:
-                    val = 400
-                case 1:
-                    val = 200
-                case -1:
-                    val = 75
-                case -2:
-                    val = 50
-                case -3:
-                    val = 25
-                case -4:
-                    val = 0
-                default:
-                    val = 100
-                }
-                fromArray.append(TypeEffect(name: url.name, value: val))
-            }
-        }
+        let effectController = PokemonEffectsController(poke: self.pokemon!)
+        let allSuggested = effectController.getAll()
+        let favSuggested = effectController.getFavorites()
+        let fromArray = effectController.getEffects()
         
         let strongArray = fromArray.filter({ $0.value < 100 }).sorted(by: { $0.value < $1.value })
         let weakArray = fromArray.filter({ $0.value > 100 }).sorted(by: { $0.value > $1.value })
@@ -301,8 +173,8 @@ class DetailsViewController: UIViewController, UIViewControllerTransitioningDele
         mainView.configure(pokemon: pokemon!, forms: self.formNames, fFunc: self.switchForm(url:))
         statView.configure(pokemon: pokemon!)
         evolutionView.configure(pokemon: pokemon!)
-        strongView.configure(pokemon: pokemon!, effects: strongArray, suggAll: suggestedStrong, suggFav: strongFavs, detailVC: self)
-        weakView.configure(pokemon: pokemon!, effects: weakArray, suggAll: suggestedWeak, suggFav: weakFavs, detailVC: self)
+        strongView.configure(pokemon: pokemon!, effects: strongArray, suggAll: allSuggested.strongPokemon, suggFav: favSuggested.strongPokemon, detailVC: self)
+        weakView.configure(pokemon: pokemon!, effects: weakArray, suggAll: allSuggested.weakPokemon, suggFav: favSuggested.weakPokemon, detailVC: self)
         movesetView.configure(pokemon: pokemon!, detailVC: self)
     }
     
@@ -329,17 +201,17 @@ class DetailsViewController: UIViewController, UIViewControllerTransitioningDele
     @IBAction func pokemonClicked(sender: Any?) {
         let pb = sender as! PokemonButton
         
-        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController, pb.pokemon!.data.id != self.pokemon!.data.id {
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController, pb.pokeUrl!.url != self.pokeUrl!.url {
             vc.pokemon = pb.pokemon
             vc.pokeUrl = pb.pokeUrl
             self.show(vc, sender: self)
         }
     }
     
-    func showNextVC(pokemon: Pokemon, types: [String]? = nil) {
-        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController, pokemon.data.id != self.pokemon!.data.id {
-            vc.pokemon = pokemon
-            vc.pokeUrl = pokeUrlArray?.urlArray.first(where: { $0.name == pokemon.data.name })
+    func showNextVC(pokemon: PokemonArrayResult.PokemonUrl, types: [String]? = nil) {
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController, pokemon.url != self.pokeUrl!.url {
+            //vc.pokemon = pokemon
+            vc.pokeUrl = pokemon
             vc.favTypes = types
             self.show(vc, sender: self)
         }
@@ -387,7 +259,6 @@ class DetailsViewController: UIViewController, UIViewControllerTransitioningDele
         remVC.modalPresentationStyle = .custom
         remVC.transitioningDelegate = self
         
-        //present(favVC, animated: true)
         present(remVC, animated: true, completion: {
             remVC.backgroundButton.isHidden = false
             //remVC.tableView.setEditing(true, animated: true)
@@ -482,8 +353,17 @@ class DetailsViewController: UIViewController, UIViewControllerTransitioningDele
             self.weakView.isHidden = true
             self.movesetView.isHidden = true
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                self.tryGetPokemon()
+            let pokeController = PokemonDataController()
+            pokeController.requestPokemonData(url: self.pokeUrl!.url, completion: {(success) -> Void in
+                if success {
+                    DispatchQueue.main.async {
+                        self.pokemon = pokemonDict[self.pokeUrl!.name]
+                        self.configure()
+                    }
+                }
+                else {
+                    self.tryGetPokemon()
+                }
             })
         }
     }

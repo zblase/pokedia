@@ -9,6 +9,7 @@ import UIKit
 
 class SuggestedButtonCell: UICollectionViewCell {
 
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var cellIcon: UIImageView!
     @IBOutlet var cellName: UILabel!
     @IBOutlet var cellSubName: UILabel!
@@ -17,21 +18,23 @@ class SuggestedButtonCell: UICollectionViewCell {
     @IBOutlet var typeImgB: UIImageView!
     @IBOutlet var typeImgC: UIImageView!
     
-    var pokemon: Pokemon!
+    //var pokemon: Pokemon!
+    var pokeUrl: PokemonArrayResult.PokemonUrl!
     var types: [String]?
-    var selectFunc: ((Pokemon, [String]?) -> Void)?
+    var selectFunc: ((PokemonArrayResult.PokemonUrl, [String]?) -> ())?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    func configure(pokemon: Pokemon, color: UIColor, types: [String], sFunc: ((Pokemon, [String]?) -> Void)?) {
-        self.pokemon = pokemon
+    func configure(url: PokemonArrayResult.PokemonUrl, color: UIColor, types: [String], sFunc: ((PokemonArrayResult.PokemonUrl, [String]?) -> ())?) {
+        //self.pokemon = pokemon
+        self.pokeUrl = url
         self.types = types
         self.selectFunc = sFunc
         
-        self.cellIcon.image = pokemon.image
+        //self.cellIcon.image = pokeImages[self.pokeUrl.getId()]
         
         typeImgA.isHidden = true
         typeImgB.isHidden = true
@@ -71,35 +74,30 @@ class SuggestedButtonCell: UICollectionViewCell {
         self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.layer.cornerRadius).cgPath
         
         
-        let names = pokemon.data.name.split(separator: "-")
-        self.cellName.text = String(names[0]).capitalizingFirstLetter()
-        if names.count > 1 {
-            self.cellSubName.isHidden = false
-            self.cellSubName.text = String(names[1]).capitalizingFirstLetter()
-            
-            if names.count > 2 {
-                self.cellSubName.text! += " \(String(names[2]).capitalizingFirstLetter())"
-            }
-        }
-        else {
-            self.cellSubName.isHidden = true
-        }
+        self.cellName.text = self.pokeUrl.getDisplayName().name
+        let subName = self.pokeUrl.getDisplayName().subName
+        self.cellSubName.text = subName
+        self.cellSubName.isHidden = subName == "Normal"
         
+        tryGetImage()
     }
     
     @IBAction func pokemonTapped(_ sender: Any?) {
         
         if self.selectFunc != nil {
-            self.selectFunc!(self.pokemon, self.types)
+            self.selectFunc!(self.pokeUrl, self.types)
         }
-        /*if let homeVC = self.rootVC as? HomeCollectionViewController {
-            homeVC.showNextVC(pokemon: self.pokemon)
+    }
+    
+    func tryGetImage() {
+        if pokeImages[self.pokeUrl.getId()] != nil {
+            self.activityIndicator.stopAnimating()
+            self.cellIcon.image = pokeImages[self.pokeUrl.getId()]
         }
-        else if let detailVC = self.rootVC as? DetailsViewController {
-            detailVC.showNextVC(pokemon: self.pokemon)
+        else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                self.tryGetImage()
+            })
         }
-        else if let favVC = self.rootVC as? FavoritesViewController {
-            //favVC.showNextVC(pokemon: self.pokemon)
-        }*/
     }
 }

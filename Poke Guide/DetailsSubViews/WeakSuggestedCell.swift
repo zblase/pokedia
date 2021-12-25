@@ -14,12 +14,15 @@ class WeakSuggestedCell: UICollectionViewCell {
     @IBOutlet var pokemonName: UILabel!
     
     var pokemon: Pokemon?
+    var pokeUrl: PokemonArrayResult.PokemonUrl!
     
-    public func configure (pokemon: Pokemon) {
-        self.pokemon = pokemon
-        self.pokemonImage.image = pokemon.image
-        let names = pokemon.data.name.split(separator: "-")
-        self.pokemonName.text = String(names[0]).capitalizingFirstLetter()
+    public func configure (url: PokemonArrayResult.PokemonUrl) {
+        //self.pokemon = pokemon
+        self.pokeUrl = url
+        self.pokemonImage.image = pokeImages[url.getId()]
+        //let names = pokemon.data.name.split(separator: "-")
+        //self.pokemonName.text = String(names[0]).capitalizingFirstLetter()
+        self.pokemonName.text = url.getDisplayName().name
         contentView.layer.masksToBounds = true
     }
     

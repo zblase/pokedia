@@ -151,7 +151,7 @@ class DetailWeakSubView: ToggleViewButton, UICollectionViewDataSource, UICollect
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if collectionView == self.suggestedCollection {
             let sCell = cell as! SuggestedButtonCell
-            sCell.configure(pokemon: suggestedPokemon[indexPath.row].pokemon, color: self.primaryColor!, types: suggestedPokemon[indexPath.row].types, sFunc: self.detailVC.showNextVC(pokemon:types:))
+            sCell.configure(url: suggestedPokemon[indexPath.row].pokeUrl, color: self.primaryColor!, types: suggestedPokemon[indexPath.row].types, sFunc: self.detailVC.showNextVC(pokemon:types:))
         }
         else {
             let tCell = cell as! TypeButtonCell

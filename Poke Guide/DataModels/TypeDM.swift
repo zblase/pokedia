@@ -12,6 +12,8 @@ import UIKit
 var typeDict: [String: TypeStruct] = [:]
 var typeUrlArray: [TypeReference.TypeUrl] = []
 var moveDict: [String: MoveData] = [:]
+var pokeTypes: [PokeTypesJSON]!
+let typeNames: [String] = ["normal", "fire", "water", "grass", "electric", "ice", "fighting", "poison", "ground", "flying", "psychic", "bug", "rock", "ghost", "dark", "dragon", "steel", "fairy"]
 
 struct TypeStruct {
     let appearance: TypeAppearance
@@ -111,6 +113,7 @@ class TypeDataController {
     func getAllTypeData(loadingVC: LoadingViewController, completion: @escaping (_ success: Bool) -> Void) {
         urlGroup = DispatchGroup()
         typeAppearanceDict = parseTypeAppearances()!
+        pokeTypes = parsePokeTypes()!.results
         fetchTypeUrls(loadingVC)
         //fetchMoveUrls(loadingVC)
         
@@ -154,6 +157,32 @@ class TypeDataController {
         return nil
     }
     
+    func parsePokeTypes() -> PokeTypesResult? {
+        guard let path = Bundle.main.path(forResource: "PokeTypes", ofType: "json") else {
+            return nil
+        }
+        
+        let url = URL(fileURLWithPath: path)
+        
+        var result: PokeTypesResult?
+        do {
+            let jsonData = try Data(contentsOf: url)
+            result = try JSONDecoder().decode(PokeTypesResult.self, from: jsonData)
+            
+            if let result = result {
+                return result
+            }
+            else {
+                print("error decoding type attributes")
+            }
+        }
+        catch {
+            print(error)
+        }
+        
+        return nil
+    }
+    
     func fetchTypeUrls(_ loadingVC: LoadingViewController) {
         self.urlGroup.enter()
         URLSession.shared.dataTask(with: URL(string: "https://pokeapi.co/api/v2/type")!, completionHandler: {data, response, error in
@@ -167,8 +196,7 @@ class TypeDataController {
             do {
                 self.result = try JSONDecoder().decode(TypeArrayResult.self, from: data)
                 typeUrlArray = self.result!.urlArray
-                //print("fetchTypeUrls")
-                //self.printJson(data)
+                
                 self.urlGroup.leave()
             }
             catch {
@@ -196,9 +224,6 @@ class TypeDataController {
                 
                 typeDict[url.name] = TypeStruct(app: self.typeAppearanceDict[url.name]!, data: tData)
                 
-                //print("fetchTypeData")
-                //self.printJson(data)
-                
                 self.typeGroup.leave()
             } catch let err {
                 print("\(err) - ID: \(url)")
@@ -207,65 +232,6 @@ class TypeDataController {
             }
         }.resume()
     }
-    
-    /*func fetchMoveUrls(_ loadingVC: LoadingViewController) {
-        self.urlGroup.enter()
-        URLSession.shared.dataTask(with: URL(string: "https://pokeapi.co/api/v2/move?limit=844")!, completionHandler: {data, response, error in
-            guard let data = data, error == nil else {
-                print("blah")
-                self.urlGroup.leave()
-                loadingVC.showError(errorStr: error.debugDescription)
-                return
-            }
-            
-            do {
-                self.moveResult = try JSONDecoder().decode(MoveArrayResult.self, from: data)
-                
-                print("fetchMoveUrls")
-                self.printJson(data)
-                
-                self.urlGroup.leave()
-                
-                
-            }
-            catch {
-                print(error)
-                self.urlGroup.leave()
-                loadingVC.showError(errorStr: error.localizedDescription)
-            }
-            
-        }).resume()
-    }
-    
-    func fetchMoveData(url: TypeReference.TypeUrl, _ loadingVC: LoadingViewController) {
-        typeGroup.enter()
-        
-        URLSession.shared.dataTask(with: URL(string: url.url)!) { (data, urlResponse, error) in
-            
-            guard let data = data, error == nil else {
-                self.typeGroup.leave()
-                loadingVC.showError(errorStr: error.debugDescription)
-                return
-                
-            }
-            do {
-                let mData = try JSONDecoder().decode(MoveData.self, from: data)
-                
-                print("fetchMoveData")
-                self.printJson(data)
-                
-                
-                moveDict[url.name] = mData
-                
-                self.typeGroup.leave()
-            } catch let err {
-                print(err)
-                self.typeGroup.leave()
-                loadingVC.showError(errorStr: err.localizedDescription)
-            }
-        }.resume()
-    }*/
-    
 }
 
 

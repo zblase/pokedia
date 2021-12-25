@@ -141,6 +141,8 @@ class DetailMovesetSubView: ToggleViewButton, UICollectionViewDataSource, UIColl
         }
         
         self.suggestedPokemon.removeAll()
+        self.suggestedAll.removeAll()
+        self.suggestedFav.removeAll()
         var relations: [String: Double] = [:]
         
         for typeStruct in selectedTypes {
@@ -173,7 +175,7 @@ class DetailMovesetSubView: ToggleViewButton, UICollectionViewDataSource, UIColl
         
         for poke in pokeUrlArray!.urlArray {
             guard let pokeDictVal = pokemonDict[poke.name] else { continue }
-            var effScore = PokemonEffectScore(poke: pokeDictVal)
+            var effScore = PokemonEffectScore(poke: pokeDictVal, url: poke)
             
             for typeRef in pokeDictVal.data.types {
                 if let effect = relations[typeRef.type.name], effect != 0 {
@@ -181,17 +183,18 @@ class DetailMovesetSubView: ToggleViewButton, UICollectionViewDataSource, UIColl
                 }
             }
             
-            if !effScore.pokemon.data.name.contains("-mega") {
+            if !effScore.pokeUrl.name.contains("-mega") {
                 if effScore.score > 0 {
                     self.suggestedAll.append(effScore)
                 }
             }
         }
         
-        self.suggestedAll.sort {
+        //FIND NEW METHOD FOR SORTING THAT DOESN'T INVOLVE REQUESTING EVERY POKEMON'S DATA
+        /*self.suggestedAll.sort {
             ($0.score, $0.pokemon.data.stats.first(where: { $0.stat.name == "defense" })!.base_stat) >
             ($1.score, $1.pokemon.data.stats.first(where: { $0.stat.name == "defense" })!.base_stat)
-        }
+        }*/
         
         guard let favPoke = favPokemon else {
             self.typeCollection.reloadData()
@@ -202,7 +205,7 @@ class DetailMovesetSubView: ToggleViewButton, UICollectionViewDataSource, UIColl
         
         for poke in favPoke.favArray {
             guard let pokeDictVal = pokemonDict[poke.name] else { continue }
-            var effScore = PokemonEffectScore(poke: pokeDictVal)
+            var effScore = PokemonEffectScore(poke: pokeDictVal, url: (pokeUrlArray?.urlArray.first(where: { $0.name == poke.name }))!)
             
             for typeRef in pokeDictVal.data.types {
                 if let effect = relations[typeRef.type.name], effect != 0 {
@@ -210,17 +213,18 @@ class DetailMovesetSubView: ToggleViewButton, UICollectionViewDataSource, UIColl
                 }
             }
             
-            if !effScore.pokemon.data.name.contains("-mega") {
+            if !effScore.pokeUrl.name.contains("-mega") {
                 if effScore.score > 0 {
                     self.suggestedFav.append(effScore)
                 }
             }
         }
         
-        self.suggestedFav.sort {
+        //FIND NEW METHOD FOR SORTING THAT DOESN'T INVOLVE REQUESTING EVERY POKEMON'S DATA
+        /*self.suggestedFav.sort {
             ($0.score, $0.pokemon.data.stats.first(where: { $0.stat.name == "defense" })!.base_stat) >
             ($1.score, $1.pokemon.data.stats.first(where: { $0.stat.name == "defense" })!.base_stat)
-        }
+        }*/
         
         self.typeCollection.reloadData()
         self.suggestedCollection.reloadData()
@@ -310,8 +314,9 @@ class DetailMovesetSubView: ToggleViewButton, UICollectionViewDataSource, UIColl
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if collectionView == self.suggestedCollection {
             let sCell = cell as! SuggestedButtonCell
-            let types = suggestedPokemon[indexPath.row].pokemon.data.types.map({ $0.type.name })
-            sCell.configure(pokemon: suggestedPokemon[indexPath.row].pokemon, color: self.primaryColor!, types: types, sFunc: self.detailVC.showNextVC(pokemon:types:))
+            let types = pokeTypes.first(where: { String($0.id) == suggestedPokemon[indexPath.row].pokeUrl.getId()})!.types.map({ typeNames[$0.type-1] })
+            //let types = suggestedPokemon[indexPath.row].pokemon.data.types.map({ $0.type.name })
+            sCell.configure(url: suggestedPokemon[indexPath.row].pokeUrl, color: self.primaryColor!, types: types, sFunc: self.detailVC.showNextVC(pokemon:types:))
         }
         else {
             let tCell = cell as! TypeButtonCell

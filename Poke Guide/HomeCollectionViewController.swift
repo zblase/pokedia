@@ -7,16 +7,22 @@
 
 import UIKit
 
+
 class HomeCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UISearchBarDelegate  {
     
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var backToTopBtn: UIView!
+    @IBOutlet var toggleView: UIView!
+    @IBOutlet weak var collectionViewMargin: NSLayoutConstraint!
+    var cvMarginValue = 0
+    var addSlotFunction: ((PokemonArrayResult.PokemonUrl) -> ())!
     
     let searchController = UISearchController(searchResultsController: nil)
+    var cheatSheetVC: CheatSheetViewController!
     
     //var currentResults: [PokemonArrayResult.PokemonUrl] = []
-    var currentResults: [PokemonArrayResult.PokemonUrl] = []
+    var currentResults: [Any] = []
     
     let dispatchGroup = DispatchGroup()
     let dataDispatchGroup = DispatchGroup()
@@ -30,12 +36,19 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
     var searchActive: Bool = false
     var searchText: String = ""
     
+    var allBtn: UIButton!
+    var favBtn: UIButton!
+    var favPokes: FavPokemonJson!
+    var baseResults: [Any]!
+    var showFavs = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //activityIndicator.hidesWhenStopped = true
-        //activityIndicator.startAnimating()
+        collectionViewMargin.constant = CGFloat(cvMarginValue)
         activityIndicator.isHidden = true
+        favPokes = FavoriteJsonParser().readJson()
+        baseResults = baseUrlArray
         
         backToTopBtn.isHidden = true
         let topBtnImg = backToTopBtn.subviews[1] as! UIImageView
@@ -58,16 +71,17 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
         self.collectionView.delegate = self
         
         let pokeController = PokemonDataController()
-        pokeController.getAllPokemonData(homeController: self)
+        pokeController.getAllImages()
         
-        /*let typeController = TypeDataController()
-        typeController.getAllTypeData{ (success) -> Void in
-            if success {
-                
-                let pokeController = PokemonDataController()
-                pokeController.getAllPokemonData(homeController: self)
-            }
-        }*/
+        self.toggleView.layer.cornerRadius = 15
+        self.toggleView.layer.borderColor = UIColor.link.cgColor
+        self.toggleView.layer.borderWidth = 1
+        allBtn = self.toggleView.subviews[0] as? UIButton
+        allBtn.layer.cornerRadius = 12
+        allBtn.tintColor = .white
+        favBtn = self.toggleView.subviews[1] as? UIButton
+        favBtn.layer.cornerRadius = 12
+        favBtn.backgroundColor = .clear
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -77,10 +91,34 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
         }
     }
     
+    @IBAction func showFavorites(_ sender: Any) {
+        self.showFavs = true
+        
+        allBtn.backgroundColor = UIColor.clear
+        allBtn.tintColor = UIColor.link
+        favBtn.backgroundColor = UIColor.link
+        favBtn.tintColor = UIColor.white
+        
+        self.currentResults = favPokes.favArray
+        self.collectionView.reloadData()
+    }
+    
+    @IBAction func showAll(_ sender: Any) {
+        self.showFavs = false
+        
+        allBtn.backgroundColor = UIColor.link
+        allBtn.tintColor = UIColor.white
+        favBtn.backgroundColor = UIColor.clear
+        favBtn.tintColor = UIColor.link
+        
+        self.currentResults = baseUrlArray
+        self.collectionView.reloadData()
+    }
+    
     func updateResultsList() {
         if !searchActive {
-            self.currentResults = baseUrlArray
-            //self.currentResults = pokemonArray
+            self.currentResults = showFavs ? favPokes.favArray as [Any] : baseUrlArray as [Any]
+            
             self.collectionView.reloadData()
         }
         else {
@@ -94,29 +132,39 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.searchText = searchText
         guard let text = searchBar.text, !text.isEmpty else {
-            self.currentResults = baseUrlArray
-            //self.currentResults = pokemonArray
+            self.currentResults = showFavs ? favPokes.favArray as [Any] : baseUrlArray as [Any]
+            
             self.collectionView.reloadData()
             return
         }
         
         searchActive = true
-        self.currentResults = baseUrlArray.filter({ $0.name.contains(searchText.lowercased()) })
-        //self.currentResults = pokemonArray.filter({ $0.data.name.contains(searchText.lowercased()) })
+        if showFavs {
+            self.currentResults = favPokes.favArray.filter({ $0.name.contains(searchText.lowercased()) })
+        }
+        else {
+            self.currentResults = baseUrlArray.filter({ $0.name.contains(searchText.lowercased()) })
+        }
+        
         self.collectionView.reloadData()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let text = searchBar.text, !text.isEmpty else {
-            self.currentResults = baseUrlArray
-            //self.currentResults = pokemonArray
+            self.currentResults = showFavs ? favPokes.favArray as [Any] : baseUrlArray as [Any]
+            
             self.collectionView.reloadData()
             return
         }
         
         searchActive = true
-        self.currentResults = baseUrlArray.filter({ $0.name.contains(searchText.lowercased()) })
-        //self.currentResults = pokemonArray.filter({ $0.data.name.contains(searchText.lowercased()) })
+        if showFavs {
+            self.currentResults = favPokes.favArray.filter({ $0.name.contains(searchText.lowercased()) })
+        }
+        else {
+            self.currentResults = baseUrlArray.filter({ $0.name.contains(searchText.lowercased()) })
+        }
+        
         self.collectionView.reloadData()
         
         self.searchController.dismiss(animated: true, completion: nil)
@@ -124,8 +172,8 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         self.searchText = ""
-        self.currentResults = baseUrlArray
-        //self.currentResults = pokemonArray
+        self.currentResults = showFavs ? favPokes.favArray as [Any] : baseUrlArray as [Any]
+        
         self.collectionView.reloadData()
     }
     
@@ -134,6 +182,7 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         return currentResults.count
     }
     
@@ -150,15 +199,30 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
         self.backToTopBtn.isHidden = collectionView.visibleCells.contains(where: { collectionView.indexPath(for: $0)?.row == 0 })
         
         let pCell = cell as! MainButtonCell
-        pCell.configureCellIdentity(pokeUrl: self.currentResults[indexPath.row])
+        
+        if showFavs {
+            let fav: FavPokemonJson.FavJson = currentResults[indexPath.row] as! FavPokemonJson.FavJson
+            let url = (pokeUrlArray?.urlArray.first(where: { $0.name == fav.name })!)!
+            pCell.testConfig(pokeUrl: url, favTypes: fav.types)
+        }
+        else {
+            pCell.testConfig(pokeUrl: self.currentResults[indexPath.row] as! PokemonArrayResult.PokemonUrl)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! MainButtonCell
         
-        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController {
-            vc.pokeUrl = cell.pokeUrl
-            self.show(vc, sender: self)
+        if cvMarginValue == 0 {
+            if let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController {
+                vc.pokeUrl = cell.pokeUrl
+                self.show(vc, sender: self)
+            }
+        }
+        else {
+            self.addSlotFunction(cell.pokeUrl!)
+            self.navigationController?.popViewController(animated: true)
+            //self.dismiss(animated: true, completion: {})
         }
     }
     
@@ -185,6 +249,12 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
             let pButton = sender as! PokemonButton
             
             vc?.pokeUrl = pButton.pokeUrl
+        }
+        else if segue.destination is CheatSheetViewController {
+            let vc = segue.destination as? CheatSheetViewController
+            let pButton = sender as! PokemonButton
+            
+            vc?.tryGetPokemon(pokeUrl: pButton.pokeUrl!)
         }
     }
 }

@@ -16,11 +16,12 @@ var pokemonArray: [Pokemon] = []
 var favPokemon: FavPokemonJson?
 var genArray: [Generation] = []
 var genUrls: GenerationArrayResult!
+var pokeImages: [String: UIImage] = [:]
 
 struct Pokemon {
     let data: PokemonData
     let image: UIImage
-    let moveTypes: [String]
+    var moveTypes: [String] = []
     var favTypes: [String] = []
 }
 
@@ -83,6 +84,18 @@ struct PokemonArrayResult: Codable {
             }
         }
     }
+}
+
+struct PokeTypesResult: Codable {
+    let results: [PokeTypesJSON]
+}
+struct PokeTypesJSON: Codable {
+    let id: Int
+    let types: [TypeJSON]
+}
+struct TypeJSON: Codable {
+    let slot: Int
+    let type: Int
 }
 
 struct PokemonData: Codable {
@@ -185,12 +198,14 @@ struct Evolution: Codable {
 }
 
 struct PokemonEffectScore {
-    let pokemon: Pokemon
+    let pokemon: Pokemon?
+    let pokeUrl: PokemonArrayResult.PokemonUrl
     var types: [String]
     var score: Double = 0.0
     
-    init(poke: Pokemon, types: [String] = []) {
+    init(poke: Pokemon?, url: PokemonArrayResult.PokemonUrl, types: [String] = []) {
         self.pokemon = poke
+        self.pokeUrl = url
         self.types = types
     }
 }
@@ -206,6 +221,8 @@ class PokemonDataController {
     let groupC = DispatchGroup()
     let groupD = DispatchGroup()
     
+    var typeEffectDict: [String: Double] = [:]
+    
     
     
     func getPokemonUrls(loadingVC: LoadingViewController) {
@@ -215,9 +232,65 @@ class PokemonDataController {
         fetchGenUrls(loadingVC)
         
         mainGroup.notify(queue: .main) {
+            for url in genUrls!.results {
+                self.fetchGeneration(urlStr: url.url)
+            }
             
             loadingVC.finishedLoading()
         }
+    }
+    
+    func getAllImages() {
+        let gA = DispatchGroup()
+        let gB = DispatchGroup()
+        let gC = DispatchGroup()
+        let gD = DispatchGroup()
+        
+        for i in 0...20 {
+            self.newGetImage(group: gA, id: pokeUrlArray!.urlArray[i].getId())
+        }
+        
+        gA.notify(queue: .main) {
+            for i in 21...60 {
+                self.newGetImage(group: gB, id: pokeUrlArray!.urlArray[i].getId())
+            }
+            
+            gB.notify(queue: .main) {
+                for i in 61...200 {
+                    self.newGetImage(group: gC, id: pokeUrlArray!.urlArray[i].getId())
+                }
+                
+                gC.notify(queue: .main) {
+                    for i in 201...pokeUrlArray!.urlArray.count - 1 {
+                        self.newGetImage(group: gD, id: pokeUrlArray!.urlArray[i].getId())
+                    }
+                    
+                    gD.notify(queue: .main) {
+                        
+                    }
+                }
+            }
+        }
+    }
+    
+    func newGetImage(group: DispatchGroup, id: String) {
+        group.enter()
+        let url = URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/\(id).png")!
+        var image: UIImage?
+        URLSession.shared.dataTask(with: url) { (data, urlResponse, err) in
+            if let err = err { print("\(err) - ID: \(url)") }
+            guard let data = data else {
+                group.leave()
+                return
+            }
+            
+            image = UIImage(data: data)
+            if image != nil {
+                pokeImages[id] = image!
+            }
+            
+            group.leave()
+        }.resume()
     }
     
     func getAllPokemonData(homeController: HomeCollectionViewController) {
@@ -259,9 +332,33 @@ class PokemonDataController {
                     
                     self.groupD.notify(queue: .main) {
                         pokemonArray.sort(by: { $0.data.id < $1.data.id })
+                        //self.getPokeTypes()
+                        
                     }
                 }
             }
+        }
+    }
+    
+    func getPokeTypes() {
+        
+        let dict: [String: Int] = ["normal": 1, "fire": 2, "water": 3, "grass": 4, "electric": 5, "ice": 6, "fighting": 7, "poison": 8, "ground": 9, "flying": 10, "psychic": 11, "bug": 12, "rock": 13, "ghost": 14, "dark": 15, "dragon": 16, "steel": 17, "fairy": 18]
+        var test: [PokeTypesJSON] = []
+        for poke in pokemonArray {
+            var types: [TypeJSON] = []
+            for type in poke.data.types {
+                print(type.type.name)
+                types.append(TypeJSON(slot: type.slot, type: dict[type.type.name]!))
+            }
+            test.append(PokeTypesJSON(id: poke.data.id, types: types))
+        }
+        
+        do {
+            let json = try JSONEncoder().encode(test)
+            print(json.prettyPrintedJSONString!)
+        }
+        catch {
+            
         }
     }
     
@@ -380,6 +477,37 @@ class PokemonDataController {
         }.resume()
     }
     
+    func requestPokemonData(url: String, completion: @escaping (_ success: Bool) -> Void) {
+        URLSession.shared.dataTask(with: URL(string: url)!) { (data, urlResponse, err) in
+            if let err = err {
+                print("\(err) - ID: \(url)")
+            }
+            guard let data = data else { return }
+            do {
+                let hyphNames: [String] = ["porygon-z", "ho-oh", "mr-mime", "nidoran-f", "nidoran-m", "pumpkaboo-average"]
+                var pData = try JSONDecoder().decode(PokemonData.self, from: data)
+                
+                
+                if hyphNames.contains(pData.name) {
+                    pData.name = pData.name.replacingOccurrences(of: "-", with: "_")
+                }
+                else if pData.name == "pumpkaboo-average" {
+                    pData.name = "pumpkaboo"
+                }
+                
+                let img = pokeImages[String(pData.id)]
+                let poke = Pokemon(data: pData, image: img!)
+                pokemonDict[pData.name] = poke
+                pokemonArray.append(poke)
+                
+                completion(true)
+                
+            } catch let err {
+                print("\(err) - ID: \(url)")
+            }
+        }.resume()
+    }
+    
     func fetchPokemonImage(group: DispatchGroup, pokeData: PokemonData, index: Int) {
         group.enter()
         let url = URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/\(pokeData.id).png")!
@@ -448,6 +576,173 @@ class PokemonDataController {
             }
             
         }.resume()
+    }
+    
+    func configureTypeEffects() {
+        
+    }
+}
+
+public class PokemonEffectsController {
+    let pokemon: Pokemon!
+    var typeEffectDict: [String: Double]!
+    
+    init(poke: Pokemon) {
+        self.pokemon = poke
+        self.typeEffectDict = [:]
+        
+        self.configureEffects()
+    }
+    
+    func configureEffects() {
+        for typeRef in pokemon!.data.types {
+            let type = typeDict[typeRef.type.name]!
+            
+            for rel in type.data.damage_relations.double_damage_from {
+                if typeEffectDict[rel.name] != nil {
+                    typeEffectDict[rel.name]! += 1
+                }
+                else {
+                    typeEffectDict[rel.name] = 1
+                }
+            }
+            for rel in type.data.damage_relations.half_damage_from {
+                if typeEffectDict[rel.name] != nil {
+                    typeEffectDict[rel.name]! -= 1
+                }
+                else {
+                    typeEffectDict[rel.name] = -1
+                }
+            }
+            for rel in type.data.damage_relations.no_damage_from {
+                if typeEffectDict[rel.name] != nil {
+                    typeEffectDict[rel.name]! -= 2
+                }
+                else {
+                    typeEffectDict[rel.name] = -2
+                }
+            }
+        }
+    }
+    
+    func getAll() -> SuggestedPokemon {
+        var suggestedStrong: [PokemonEffectScore] = []
+        var suggestedWeak: [PokemonEffectScore] = []
+        
+        for poke in pokeUrlArray!.urlArray {
+            guard let tNames = pokeTypes.first(where: { String($0.id) == poke.getId() })?.types.map( { typeNames[$0.type-1] } ) else { continue }
+            let pokeDictVal = pokemonDict[poke.name]
+            var effScore = PokemonEffectScore(poke: pokeDictVal, url: poke, types: tNames)
+            
+            for typeRef in tNames {
+                if let effect = typeEffectDict[typeRef], effect != 0 {
+                    effScore.score += typeEffectDict[typeRef]!
+                }
+            }
+            
+            if !effScore.pokeUrl.name.contains("-mega") {
+                if effScore.score < 0 {
+                    suggestedStrong.append(effScore)
+                }
+                else if effScore.score > 0 {
+                    suggestedWeak.append(effScore)
+                }
+            }
+        }
+        
+        suggestedStrong.sort(by: { $0.score < $1.score })
+        suggestedWeak.sort(by: { $0.score > $1.score })
+        /*suggestedStrong.sort {
+            ($0.score * -1, $0.pokemon.data.stats.first(where: { $0.stat.name == "attack" })!.base_stat) >
+            ($1.score * -1, $1.pokemon.data.stats.first(where: { $0.stat.name == "attack" })!.base_stat)
+        }
+        
+        suggestedWeak.sort {
+            ($0.score, $0.pokemon.data.stats.first(where: { $0.stat.name == "attack" })!.base_stat) >
+            ($1.score, $1.pokemon.data.stats.first(where: { $0.stat.name == "attack" })!.base_stat)
+        }*/
+        
+        return SuggestedPokemon(strong: suggestedStrong, weak: suggestedWeak)
+    }
+    
+    func getFavorites() -> SuggestedPokemon {
+        var strongFavs: [PokemonEffectScore] = []
+        var weakFavs: [PokemonEffectScore] = []
+        let favPoke = FavoriteJsonParser().readJson()
+        
+        for poke in favPoke.favArray {
+            let pUrl = pokeUrlArray?.urlArray.first(where: { $0.name == poke.name.lowercased() })
+            guard let tNames = pokeTypes.first(where: { String($0.id) == pUrl!.getId() })?.types.map( { typeNames[$0.type-1] } ) else { continue }
+            let pokeDictVal = pokemonDict[poke.name]
+            var effScore = PokemonEffectScore(poke: pokeDictVal, url: (pokeUrlArray?.urlArray.first(where: { $0.name == poke.name }))!, types: tNames)
+            effScore.types = poke.types
+            
+            for typeRef in tNames {
+                if let effect = typeEffectDict[typeRef], effect != 0 {
+                    effScore.score += typeEffectDict[typeRef]!
+                }
+            }
+            
+            if effScore.score < 0 {
+                strongFavs.append(effScore)
+            }
+            else if effScore.score > 0 {
+                weakFavs.append(effScore)
+            }
+        }
+        
+        strongFavs.sort(by: { $0.score < $1.score })
+        weakFavs.sort(by: { $0.score > $1.score })
+        /*strongFavs.sort {
+            ($0.score * -1, $0.pokemon.data.stats.first(where: { $0.stat.name == "attack" })!.base_stat) >
+            ($1.score * -1, $1.pokemon.data.stats.first(where: { $0.stat.name == "attack" })!.base_stat)
+        }
+        
+        weakFavs.sort {
+            ($0.score, $0.pokemon.data.stats.first(where: { $0.stat.name == "attack" })!.base_stat) >
+            ($1.score, $1.pokemon.data.stats.first(where: { $0.stat.name == "attack" })!.base_stat)
+        }*/
+        
+        return SuggestedPokemon(strong: strongFavs, weak: weakFavs)
+    }
+    
+    func getEffects() -> [TypeEffect] {
+        var fromArray: [TypeEffect] = []
+        
+        for url in typeUrlArray {
+            if let effect = typeEffectDict[url.name], effect != 0 {
+                var val: Double
+                switch effect {
+                case 2:
+                    val = 400
+                case 1:
+                    val = 200
+                case -1:
+                    val = 75
+                case -2:
+                    val = 50
+                case -3:
+                    val = 25
+                case -4:
+                    val = 0
+                default:
+                    val = 100
+                }
+                fromArray.append(TypeEffect(name: url.name, value: val))
+            }
+        }
+        
+        return fromArray
+    }
+    
+    public struct SuggestedPokemon {
+        let strongPokemon: [PokemonEffectScore]!
+        let weakPokemon: [PokemonEffectScore]!
+        
+        init(strong: [PokemonEffectScore], weak: [PokemonEffectScore]) {
+            self.strongPokemon = strong
+            self.weakPokemon = weak
+        }
     }
 }
 
@@ -537,8 +832,6 @@ class FavoriteJsonParser {
     }
 }
 
-let blackList: [Int] = []
-
 
 extension String {
     func capitalizingFirstLetter() -> String {
@@ -553,5 +846,15 @@ extension String {
 extension Int {
     static func parse(from string: String) -> Int? {
         return Int(string.components(separatedBy: CharacterSet.decimalDigits.inverted).joined())
+    }
+}
+
+extension Data {
+    var prettyPrintedJSONString: NSString? { /// NSString gives us a nice sanitized debugDescription
+        guard let object = try? JSONSerialization.jsonObject(with: self, options: []),
+              let data = try? JSONSerialization.data(withJSONObject: object, options: [.prettyPrinted]),
+              let prettyPrintedString = NSString(data: data, encoding: String.Encoding.utf8.rawValue) else { return nil }
+
+        return prettyPrintedString
     }
 }

@@ -72,7 +72,8 @@ class TypeDetailsViewController: UIViewController, UICollectionViewDataSource, U
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let pCell = cell as! MainButtonCell
-        pCell.configureCellIdentity(pokeUrl: self.type!.data.pokemon[indexPath.row].pokemon)
+        //pCell.configureCellIdentity(pokeUrl: self.type!.data.pokemon[indexPath.row].pokemon)
+        pCell.testConfig(pokeUrl: self.type!.data.pokemon[indexPath.row].pokemon)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

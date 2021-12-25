@@ -32,8 +32,8 @@ class TypeFilterController: UIViewController, UICollectionViewDataSource, UIColl
         super.viewDidLoad()
         
         print(UIDevice.current.name)
-        
-        switch UIDevice.current.name {
+        modalView.layer.cornerRadius = 15
+        /*switch UIDevice.current.name {
         case "iPhone 13":
             modalView.layer.cornerRadius = 20
         case "iPhone 13 Pro":
@@ -45,7 +45,7 @@ class TypeFilterController: UIViewController, UICollectionViewDataSource, UIColl
         case "iPhone 12":
             modalView.layer.cornerRadius = 20
         case "iPhone 12 Pro":
-            modalView.layer.cornerRadius = 40
+            modalView.layer.cornerRadius = 44
         case "iPhone 12 Pro Max":
             modalView.layer.cornerRadius = 20
         case "iPhone 12 mini":
@@ -72,7 +72,7 @@ class TypeFilterController: UIViewController, UICollectionViewDataSource, UIColl
             modalView.layer.cornerRadius = 20
         default:
             modalView.layer.cornerRadius = 14
-        }
+        }*/
         //modalView.layer.cornerRadius = 12.5
         modalView.layer.masksToBounds = true
         
