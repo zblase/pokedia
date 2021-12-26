@@ -16,7 +16,7 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
     @IBOutlet var toggleView: UIView!
     @IBOutlet weak var collectionViewMargin: NSLayoutConstraint!
     var cvMarginValue = 0
-    var addSlotFunction: ((PokemonArrayResult.PokemonUrl) -> ())!
+    var addSlotFunction: ((PokemonArrayResult.PokemonUrl, [String]?) -> ())!
     
     let searchController = UISearchController(searchResultsController: nil)
     var cheatSheetVC: CheatSheetViewController!
@@ -220,7 +220,8 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
             }
         }
         else {
-            self.addSlotFunction(cell.pokeUrl!)
+            self.addSlotFunction(cell.pokeUrl!, cell.favTypes)
+            
             self.navigationController?.popViewController(animated: true)
             //self.dismiss(animated: true, completion: {})
         }
@@ -249,12 +250,6 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
             let pButton = sender as! PokemonButton
             
             vc?.pokeUrl = pButton.pokeUrl
-        }
-        else if segue.destination is CheatSheetViewController {
-            let vc = segue.destination as? CheatSheetViewController
-            let pButton = sender as! PokemonButton
-            
-            vc?.tryGetPokemon(pokeUrl: pButton.pokeUrl!)
         }
     }
 }

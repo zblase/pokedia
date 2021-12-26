@@ -832,6 +832,81 @@ class FavoriteJsonParser {
     }
 }
 
+class CheatSheetJsonParser {
+    
+    
+    func addSlot(fav: FavPokemonJson.FavJson) {
+        var favJson = readJson()
+        favJson.favArray.append(fav)
+        //favPokemon = favJson
+        writeJson(cheatSheetData: favJson)
+    }
+    
+    func removeSlot(fav: FavPokemonJson.FavJson) {
+        var favJson = readJson()
+        favJson.favArray.removeAll(where: { $0 == fav })
+        //favPokemon = favJson
+        writeJson(cheatSheetData: favJson)
+    }
+    
+    func readJson() -> FavPokemonJson {
+        var favJson = FavPokemonJson(favArray: [])
+        let fileManager = FileManager.default
+
+        guard let docDirectoryURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first
+        else { return favJson }
+
+        let inputFileURL = docDirectoryURL.appendingPathComponent("cheatSheetPokemon")
+
+        guard fileManager.fileExists(atPath: inputFileURL.path)
+        else {
+            print("File Doesn't exist. Try typing a name and hitting 'Save' First.")
+            return favJson
+        }
+
+        do {
+            print("Attempting to read from \("cheatSheetPokemon")")
+            print("Reading from file at path \(inputFileURL.deletingLastPathComponent().path)")
+            let inputData = try Data(contentsOf: inputFileURL)
+            let decoder = JSONDecoder()
+            favJson = try decoder.decode(FavPokemonJson.self, from: inputData)
+            
+            for var poke in favJson.favArray {
+                poke.types = poke.types.compactMap({ $0.lowercased() })
+            }
+            
+            //favPokemon = favJson
+        } catch {
+            print("Failed to open file contents for display!")
+        }
+        
+        return favJson
+    }
+    
+    func writeJson(cheatSheetData: FavPokemonJson) {
+        guard let docDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+                else { return }
+
+        // Build final output URL.
+        let outputURL = docDirectoryURL.appendingPathComponent("cheatSheetPokemon")
+
+        do {
+            // Encoder, to encode our data.
+            let jsonEncoder = JSONEncoder()
+
+            // Convert our Object into a Data object.
+            let jsonCodedData = try jsonEncoder.encode(cheatSheetData)
+
+            // Write the data to output.
+            try jsonCodedData.write(to: outputURL)
+        } catch {
+            // Error Handling.
+            print("Failed to write to file \(error.localizedDescription)")
+            return
+        }
+    }
+}
+
 
 extension String {
     func capitalizingFirstLetter() -> String {

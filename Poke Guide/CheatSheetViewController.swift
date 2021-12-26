@@ -26,50 +26,74 @@ class CheatSheetViewController: UIViewController, UICollectionViewDataSource, UI
         
         for slot in slotArray {
             slot.layer.cornerRadius = 8
-            slot.subviews[0].layer.borderColor = UIColor(named: "ColorEmptySlotBorder")?.cgColor
-            slot.subviews[0].layer.borderWidth = 2
+            slot.layer.borderColor = UIColor(named: "ColorEmptySlotBorder")?.cgColor
+            slot.layer.borderWidth = 1
             slot.layer.masksToBounds = true
+            (slot.subviews[2] as! UIActivityIndicatorView).stopAnimating()
+            let strongView = slot.viewWithTag(2)!.superview!
+            strongView.layer.borderColor = UIColor.green.withAlphaComponent(0.5).cgColor
+            strongView.layer.borderWidth = 0.5
+            let weakView = slot.viewWithTag(3)!.superview!
+            weakView.layer.borderColor = UIColor.red.withAlphaComponent(0.5).cgColor
+            weakView.layer.borderWidth = 0.5
             (slot.viewWithTag(2) as! UICollectionView).delegate = self
             (slot.viewWithTag(2) as! UICollectionView).dataSource = self
             (slot.viewWithTag(3) as! UICollectionView).delegate = self
             (slot.viewWithTag(3) as! UICollectionView).dataSource = self
         }
-    }
-    
-    func configure() {
         
+        let cheatSheetParser = CheatSheetJsonParser()
+        let csPokes = cheatSheetParser.readJson()
+        for poke in csPokes.favArray {
+            var types: [String]? = poke.types
+            if poke.types.count == 0 {
+                types = nil
+            }
+            tryGetPokemon(pokeUrl: (pokeUrlArray?.urlArray.first(where: { $0.name == poke.name }))!, favTypes: types)
+        }
     }
     
     @IBAction func showAddListView(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "HomeController") as! HomeCollectionViewController
         vc.title = "Add to Cheat Sheet"
-        vc.addSlotFunction = self.tryGetPokemon(pokeUrl: )
+        vc.addSlotFunction = self.addNewPokemon(pokeUrl: favTypes:)
         vc.cvMarginValue = 30
         self.show(vc, sender: self)
     }
     
-    func tryGetPokemon(pokeUrl: PokemonArrayResult.PokemonUrl) {
+    func addNewPokemon(pokeUrl: PokemonArrayResult.PokemonUrl, favTypes: [String]?) {
+        let csParser = CheatSheetJsonParser()
+        let types = (favTypes == nil ? [] : favTypes)!
+        let poke = FavPokemonJson.FavJson(name: pokeUrl.name, types: types)
+        csParser.addSlot(fav: poke)
+        
+        self.tryGetPokemon(pokeUrl: pokeUrl, favTypes: favTypes)
+    }
+    
+    func tryGetPokemon(pokeUrl: PokemonArrayResult.PokemonUrl, favTypes: [String]?) {
+        let emptySlot = self.getFirstEmptySlot()
+        (emptySlot.subviews[2] as! UIActivityIndicatorView).startAnimating()
         
         if let poke = pokemonDict[pokeUrl.name] {
-            addPokemon(pokemon: poke)
+            addPokemon(pokemon: poke, favTypes: favTypes)
         }
         else {
             let pokeController = PokemonDataController()
             pokeController.requestPokemonData(url: pokeUrl.url, completion: {(success) -> Void in
                 if success {
                     DispatchQueue.main.async {
-                        self.addPokemon(pokemon: pokemonDict[pokeUrl.name]!)
+                        self.addPokemon(pokemon: pokemonDict[pokeUrl.name]!, favTypes: favTypes)
                     }
                 }
                 else {
-                    self.tryGetPokemon(pokeUrl: pokeUrl)
+                    self.tryGetPokemon(pokeUrl: pokeUrl, favTypes: favTypes)
                 }
             })
         }
     }
     
-    func addPokemon(pokemon: Pokemon) {
+    func addPokemon(pokemon: Pokemon, favTypes: [String]?) {
         
         let emptySlot = self.getFirstEmptySlot()
         
@@ -78,15 +102,23 @@ class CheatSheetViewController: UIViewController, UICollectionViewDataSource, UI
         self.strongEffects = effects.filter({ $0.value < 100 }).sorted(by: { $0.value < $1.value })
         self.weakEffects = effects.filter({ $0.value > 100 }).sorted(by: { $0.value > $1.value })
         
-        (emptySlot.viewWithTag(1) as! UIImageView).image = pokemon.image
+        (emptySlot.viewWithTag(13) as! UILabel).text = pokemon.data.name.capitalizingFirstLetter()
+        let pokeImg = (emptySlot.viewWithTag(1) as! UIImageView)
+        pokeImg.image = pokemon.image
+        pokeImg.layer.shadowColor = UIColor.black.cgColor
+        pokeImg.layer.shadowRadius = 2.5
+        pokeImg.layer.shadowOpacity = 0.45
+        pokeImg.layer.shadowOffset = CGSize(width: 2.5, height: 4)
         (emptySlot.viewWithTag(2) as! UICollectionView).reloadData()
         (emptySlot.viewWithTag(3) as! UICollectionView).reloadData()
         
-        let types = pokemon.favTypes.count > 0 ? pokemon.favTypes : pokemon.data.types.compactMap({ $0.type.name })
+        let types = favTypes != nil ? favTypes! : pokemon.data.types.compactMap({ $0.type.name })
         let typeA = typeDict[types[0]]!
         (emptySlot.viewWithTag(4)?.subviews[0] as! UIImageView).tintColor = typeA.appearance.getColor()
         (emptySlot.viewWithTag(4)?.subviews[1] as! UIImageView).image = typeA.appearance.getImage()
-        emptySlot.viewWithTag(4)?.superview?.backgroundColor = typeA.appearance.getColor().withAlphaComponent(0.08)
+        emptySlot.viewWithTag(4)?.superview?.backgroundColor = typeA.appearance.getColor().withAlphaComponent(0.1)
+        emptySlot.viewWithTag(4)?.superview?.layer.borderColor = typeA.appearance.getColor().withAlphaComponent(0.5).cgColor
+        emptySlot.viewWithTag(4)?.superview?.layer.borderWidth = 0.5
         let typeAEffectives = typeA.data.damage_relations.double_damage_to.compactMap({ $0.name })
         let typeANotEffectives = (typeA.data.damage_relations.half_damage_to + typeA.data.damage_relations.no_damage_to).compactMap({ $0.name })
         
@@ -97,7 +129,9 @@ class CheatSheetViewController: UIViewController, UICollectionViewDataSource, UI
             let typeB = typeDict[types[1]]!
             (emptySlot.viewWithTag(7)?.subviews[0] as! UIImageView).tintColor = typeB.appearance.getColor()
             (emptySlot.viewWithTag(7)?.subviews[1] as! UIImageView).image = typeB.appearance.getImage()
-            emptySlot.viewWithTag(7)?.superview?.backgroundColor = typeB.appearance.getColor().withAlphaComponent(0.08)
+            emptySlot.viewWithTag(7)?.superview?.backgroundColor = typeB.appearance.getColor().withAlphaComponent(0.1)
+            emptySlot.viewWithTag(7)?.superview?.layer.borderColor = typeB.appearance.getColor().withAlphaComponent(0.5).cgColor
+            emptySlot.viewWithTag(7)?.superview?.layer.borderWidth = 0.5
             let typeBEffectives = typeB.data.damage_relations.double_damage_to.compactMap({ $0.name })
             let typeBNotEffectives = (typeB.data.damage_relations.half_damage_to + typeB.data.damage_relations.no_damage_to).compactMap({ $0.name })
             
@@ -112,7 +146,9 @@ class CheatSheetViewController: UIViewController, UICollectionViewDataSource, UI
             let typeC = typeDict[types[2]]!
             (emptySlot.viewWithTag(10)?.subviews[0] as! UIImageView).tintColor = typeC.appearance.getColor()
             (emptySlot.viewWithTag(10)?.subviews[1] as! UIImageView).image = typeC.appearance.getImage()
-            emptySlot.viewWithTag(10)?.superview?.backgroundColor = typeC.appearance.getColor().withAlphaComponent(0.08)
+            emptySlot.viewWithTag(10)?.superview?.backgroundColor = typeC.appearance.getColor().withAlphaComponent(0.1)
+            emptySlot.viewWithTag(10)?.superview?.layer.borderColor = typeC.appearance.getColor().withAlphaComponent(0.5).cgColor
+            emptySlot.viewWithTag(10)?.superview?.layer.borderWidth = 0.5
             let typeCEffectives = typeC.data.damage_relations.double_damage_to.compactMap({ $0.name })
             let typeCNotEffectives = (typeC.data.damage_relations.half_damage_to + typeC.data.damage_relations.no_damage_to).compactMap({ $0.name })
             
@@ -124,6 +160,7 @@ class CheatSheetViewController: UIViewController, UICollectionViewDataSource, UI
         }
         
         emptySlot.subviews[1].isHidden = false
+        (emptySlot.subviews[2] as! UIActivityIndicatorView).stopAnimating()
     }
     
     func getFirstEmptySlot(i: Int = 0) -> UIView {
@@ -140,12 +177,34 @@ class CheatSheetViewController: UIViewController, UICollectionViewDataSource, UI
         for v in view.subviews {
             v.isHidden = true
         }
+        
+        let size = min(view.superview!.frame.size.height - 12, view.superview!.frame.size.width / CGFloat(typeNames.count))
+        if let hConstraint = view.constraints.first(where: { $0.identifier == "viewHeight"}) {
+            hConstraint.constant = size
+        }
+        
         for i in 0...typeNames.count - 1 {
-            (view.subviews[i].subviews[0] as! UIImageView).tintColor = typeDict[typeNames[i]]?.appearance.getColor()
-            (view.subviews[i].subviews[1] as! UIImageView).image = typeDict[typeNames[i]]?.appearance.getImage()
+            let circle = view.subviews[i].subviews[0] as! UIImageView
+            let icon = view.subviews[i].subviews[1] as! UIImageView
+            circle.tintColor = typeDict[typeNames[i]]?.appearance.getColor()
+            icon.image = typeDict[typeNames[i]]?.appearance.getImage()
             
             view.subviews[i].isHidden = false
         }
+    }
+    
+    @IBAction func clearSlot(_ sender: Any) {
+        let closeBtn = sender as! UIButton
+        
+        let slotView = closeBtn.superview!
+        let wrapperView = slotView.superview!.superview!
+        let index = wrapperView.subviews.firstIndex(of: slotView.superview!)!
+        
+        let csParser = CheatSheetJsonParser()
+        let slotPokes = csParser.readJson()
+        csParser.removeSlot(fav: slotPokes.favArray[index])
+        
+        slotView.isHidden = true
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -184,7 +243,8 @@ class CheatSheetViewController: UIViewController, UICollectionViewDataSource, UI
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let size = min(collectionView.frame.size.width / 4 - 4, collectionView.frame.size.height / 3 - 4)
+        var size = min(collectionView.frame.size.width / 4 - 4, collectionView.frame.size.height / 3 - 4)
+        size = collectionView.frame.size.width / 4 - 4
         
         return CGSize(width: size, height: size)
         
