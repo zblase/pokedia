@@ -106,7 +106,8 @@ class MyCollectionViewCell: UICollectionViewCell {
         self.activityIndicator.stopAnimating()
         self.pokemon = poke
         self.pokemonButton.pokemon = poke
-        cellImage.image = poke.image
+        //cellImage.image = poke.getImage()
+        self.tryGetImage(id: self.pokeUrl!.getId())
         cellNumber.text = "#\(poke.data.id)"
         
         typeBtnA.isHidden = true
@@ -145,6 +146,18 @@ class MyCollectionViewCell: UICollectionViewCell {
             
         } else {
             // Fallback on earlier versions
+        }
+    }
+    
+    func tryGetImage(id: String) {
+        
+        if let img = pokeImageArray.first(where: { $0.id == id }) {
+            cellImage.image = img.image
+        }
+        else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                self.tryGetImage(id: id)
+            })
         }
     }
     

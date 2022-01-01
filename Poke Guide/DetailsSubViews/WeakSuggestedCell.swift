@@ -19,11 +19,21 @@ class WeakSuggestedCell: UICollectionViewCell {
     public func configure (url: PokemonArrayResult.PokemonUrl) {
         //self.pokemon = pokemon
         self.pokeUrl = url
-        self.pokemonImage.image = pokeImages[url.getId()]
+        //self.pokemonImage.image = pokeImages[url.getId()]
+        self.tryGetImage(id: url.getId())
         //let names = pokemon.data.name.split(separator: "-")
         //self.pokemonName.text = String(names[0]).capitalizingFirstLetter()
         self.pokemonName.text = url.getDisplayName().name
         contentView.layer.masksToBounds = true
+    }
+    
+    func tryGetImage(id: String) {
+        if let img = pokeImageArray.first(where: { $0.id == id }) {
+            self.pokemonImage.image = img.image
+        }
+        else {
+            self.tryGetImage(id: id)
+        }
     }
     
 }

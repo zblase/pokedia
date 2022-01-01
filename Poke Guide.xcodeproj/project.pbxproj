@@ -53,10 +53,10 @@
 		86841AE0270D00BC00F78F0E /* SuggestedButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86841ADE270D00BC00F78F0E /* SuggestedButtonCell.swift */; };
 		86841AE1270D00BC00F78F0E /* SuggestedButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86841ADF270D00BC00F78F0E /* SuggestedButtonCell.xib */; };
 		8693921A26F073B500694069 /* SuggestedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8693921926F073B500694069 /* SuggestedCell.swift */; };
-		8693FE252772563800336690 /* PokeTypes.json in Resources */ = {isa = PBXBuildFile; fileRef = 8693FE242772563800336690 /* PokeTypes.json */; };
 		8693FE272773E69900336690 /* CheatSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8693FE262773E69900336690 /* CheatSheetViewController.swift */; };
 		8693FE292773F57900336690 /* AddCheatPokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8693FE282773F57900336690 /* AddCheatPokemonViewController.swift */; };
 		869A7210272A360E00A97974 /* TypeFilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A720F272A360E00A97974 /* TypeFilterController.swift */; };
+		86A0E2AB277D386D0083CA27 /* PokeTypes.json in Resources */ = {isa = PBXBuildFile; fileRef = 86A0E2AA277D386D0083CA27 /* PokeTypes.json */; };
 		86AB198F26C0FA2200AAB46E /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AB198E26C0FA2200AAB46E /* MyCollectionViewCell.swift */; };
 		86AB199326C1B2D200AAB46E /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AB199226C1B2D200AAB46E /* DetailsViewController.swift */; };
 		86DC67F127023BF800843A23 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DC67F027023BF800843A23 /* FavoritesViewController.swift */; };
@@ -134,10 +134,10 @@
 		86841ADE270D00BC00F78F0E /* SuggestedButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedButtonCell.swift; sourceTree = "<group>"; };
 		86841ADF270D00BC00F78F0E /* SuggestedButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestedButtonCell.xib; sourceTree = "<group>"; };
 		8693921926F073B500694069 /* SuggestedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedCell.swift; sourceTree = "<group>"; };
-		8693FE242772563800336690 /* PokeTypes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = PokeTypes.json; path = ../../../PokeTypes.json; sourceTree = "<group>"; };
 		8693FE262773E69900336690 /* CheatSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheatSheetViewController.swift; sourceTree = "<group>"; };
 		8693FE282773F57900336690 /* AddCheatPokemonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCheatPokemonViewController.swift; sourceTree = "<group>"; };
 		869A720F272A360E00A97974 /* TypeFilterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeFilterController.swift; sourceTree = "<group>"; };
+		86A0E2AA277D386D0083CA27 /* PokeTypes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PokeTypes.json; sourceTree = "<group>"; };
 		86AB198E26C0FA2200AAB46E /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
 		86AB199226C1B2D200AAB46E /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		86DC67F027023BF800843A23 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
@@ -223,7 +223,7 @@
 		8656386A26BCD60C0082D528 /* Poke Guide */ = {
 			isa = PBXGroup;
 			children = (
-				8693FE242772563800336690 /* PokeTypes.json */,
+				86A0E2AA277D386D0083CA27 /* PokeTypes.json */,
 				8603590526F97EB500EAA2AA /* DataModels */,
 				860358ED26F3E4CC00EAA2AA /* TypeAttributes.json */,
 				8611641426C44C9F00295333 /* DetailsSubViews */,
@@ -390,11 +390,11 @@
 			files = (
 				860358EE26F3E4CC00EAA2AA /* TypeAttributes.json in Resources */,
 				8654FFC7270B8DD2005EEB27 /* TypeButtonCell.xib in Resources */,
-				8693FE252772563800336690 /* PokeTypes.json in Resources */,
 				8656387826BCD60D0082D528 /* LaunchScreen.storyboard in Resources */,
 				86045B32271103AB0020C585 /* MainButtonCell.xib in Resources */,
 				8656387526BCD60D0082D528 /* Assets.xcassets in Resources */,
 				86841AE1270D00BC00F78F0E /* SuggestedButtonCell.xib in Resources */,
+				86A0E2AB277D386D0083CA27 /* PokeTypes.json in Resources */,
 				8656387326BCD60C0082D528 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

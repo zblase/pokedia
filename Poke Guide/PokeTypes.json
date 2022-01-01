@@ -1,0 +1,11302 @@
+{
+"results": [
+    {
+      "id" : 1,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 8,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 2,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 8,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 3,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 8,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 4,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 5,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 6,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 7,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 8,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 9,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 10,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 11,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 12,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 13,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 8,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 14,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 8,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 15,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 8,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 16,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 17,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 18,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 19,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 20,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 21,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 22,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 23,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 24,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 25,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 26,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 27,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 28,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 29,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 30,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 31,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        },
+        {
+          "type" : 9,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 32,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 33,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 34,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        },
+        {
+          "type" : 9,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 35,
+      "types" : [
+        {
+          "type" : 18,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 36,
+      "types" : [
+        {
+          "type" : 18,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 37,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 38,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 39,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 40,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 41,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 42,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 43,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 8,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 44,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 8,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 45,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 8,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 46,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 4,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 47,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 4,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 48,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 8,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 49,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 8,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 50,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 51,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 52,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 53,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 54,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 55,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 56,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 57,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 58,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 59,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 60,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 61,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 62,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 7,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 63,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 64,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 65,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 66,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 67,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 68,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 69,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 8,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 70,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 8,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 71,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 8,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 72,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 8,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 73,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 8,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 74,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 9,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 75,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 9,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 76,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 9,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 77,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 78,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 79,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 80,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 81,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        },
+        {
+          "type" : 17,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 82,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        },
+        {
+          "type" : 17,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 83,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 84,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 85,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 86,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 87,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 6,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 88,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 89,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 90,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 91,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 6,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 92,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        },
+        {
+          "type" : 8,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 93,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        },
+        {
+          "type" : 8,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 94,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        },
+        {
+          "type" : 8,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 95,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 9,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 96,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 97,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 98,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 99,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 100,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 101,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 102,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 103,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 104,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 105,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 106,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 107,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 108,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 109,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 110,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 111,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        },
+        {
+          "type" : 13,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 112,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        },
+        {
+          "type" : 13,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 113,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 114,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 115,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 116,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 117,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 118,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 119,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 120,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 121,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 122,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 123,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 124,
+      "types" : [
+        {
+          "type" : 6,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 125,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 126,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 127,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 128,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 129,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 130,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 131,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 6,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 132,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 133,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 134,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 135,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 136,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 137,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 138,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 3,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 139,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 3,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 140,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 3,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 141,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 3,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 142,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 143,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 144,
+      "types" : [
+        {
+          "type" : 6,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 145,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 146,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 147,
+      "types" : [
+        {
+          "type" : 16,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 148,
+      "types" : [
+        {
+          "type" : 16,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 149,
+      "types" : [
+        {
+          "type" : 16,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 150,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 151,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 152,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 153,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 154,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 155,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 156,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 157,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 158,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 159,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 160,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 161,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 162,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 163,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 164,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 165,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 166,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 167,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 8,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 168,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 8,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 169,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 170,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 5,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 171,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 5,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 172,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 173,
+      "types" : [
+        {
+          "type" : 18,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 174,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 175,
+      "types" : [
+        {
+          "type" : 18,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 176,
+      "types" : [
+        {
+          "type" : 18,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 177,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 178,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 179,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 180,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 181,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 182,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 183,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 184,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 185,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 186,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 187,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 188,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 189,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 190,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 191,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 192,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 193,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 194,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 9,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 195,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 9,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 196,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 197,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 198,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 199,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 200,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 201,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 202,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 203,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 204,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 205,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 17,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 206,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 207,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 208,
+      "types" : [
+        {
+          "type" : 17,
+          "slot" : 1
+        },
+        {
+          "type" : 9,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 209,
+      "types" : [
+        {
+          "type" : 18,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 210,
+      "types" : [
+        {
+          "type" : 18,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 211,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 8,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 212,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 17,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 213,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 13,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 214,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 7,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 215,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        },
+        {
+          "type" : 6,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 216,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 217,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 218,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 219,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        },
+        {
+          "type" : 13,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 220,
+      "types" : [
+        {
+          "type" : 6,
+          "slot" : 1
+        },
+        {
+          "type" : 9,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 221,
+      "types" : [
+        {
+          "type" : 6,
+          "slot" : 1
+        },
+        {
+          "type" : 9,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 222,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 13,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 223,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 224,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 225,
+      "types" : [
+        {
+          "type" : 6,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 226,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 227,
+      "types" : [
+        {
+          "type" : 17,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 228,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        },
+        {
+          "type" : 2,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 229,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        },
+        {
+          "type" : 2,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 230,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 16,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 231,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 232,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 233,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 234,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 235,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 236,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 237,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 238,
+      "types" : [
+        {
+          "type" : 6,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 239,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 240,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 241,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 242,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 243,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 244,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 245,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 246,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 9,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 247,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 9,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 248,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 15,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 249,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 250,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 251,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        },
+        {
+          "type" : 4,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 252,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 253,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 254,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 255,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 256,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        },
+        {
+          "type" : 7,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 257,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        },
+        {
+          "type" : 7,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 258,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 259,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 9,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 260,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 9,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 261,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 262,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 263,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 264,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 265,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 266,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 267,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 268,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 269,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 8,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 270,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 4,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 271,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 4,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 272,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 4,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 273,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 274,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 15,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 275,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 15,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 276,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 277,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 278,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 279,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 280,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 281,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 282,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 283,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 3,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 284,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 285,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 286,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 7,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 287,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 288,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 289,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 290,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 9,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 291,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 292,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 14,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 293,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 294,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 295,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 296,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 297,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 298,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 299,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 300,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 301,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 302,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        },
+        {
+          "type" : 14,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 303,
+      "types" : [
+        {
+          "type" : 17,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 304,
+      "types" : [
+        {
+          "type" : 17,
+          "slot" : 1
+        },
+        {
+          "type" : 13,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 305,
+      "types" : [
+        {
+          "type" : 17,
+          "slot" : 1
+        },
+        {
+          "type" : 13,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 306,
+      "types" : [
+        {
+          "type" : 17,
+          "slot" : 1
+        },
+        {
+          "type" : 13,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 307,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 308,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 309,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 310,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 311,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 312,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 313,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 314,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 315,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 8,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 316,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 317,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 318,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 15,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 319,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 15,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 320,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 321,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 322,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        },
+        {
+          "type" : 9,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 323,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        },
+        {
+          "type" : 9,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 324,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 325,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 326,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 327,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 328,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 329,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        },
+        {
+          "type" : 16,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 330,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        },
+        {
+          "type" : 16,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 331,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 332,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 15,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 333,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 334,
+      "types" : [
+        {
+          "type" : 16,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 335,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 336,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 337,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 338,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 339,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 9,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 340,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 9,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 341,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 342,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 15,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 343,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 344,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 345,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 4,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 346,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 4,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 347,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 12,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 348,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 12,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 349,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 350,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 351,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 352,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 353,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 354,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 355,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 356,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 357,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 358,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 359,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 360,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 361,
+      "types" : [
+        {
+          "type" : 6,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 362,
+      "types" : [
+        {
+          "type" : 6,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 363,
+      "types" : [
+        {
+          "type" : 6,
+          "slot" : 1
+        },
+        {
+          "type" : 3,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 364,
+      "types" : [
+        {
+          "type" : 6,
+          "slot" : 1
+        },
+        {
+          "type" : 3,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 365,
+      "types" : [
+        {
+          "type" : 6,
+          "slot" : 1
+        },
+        {
+          "type" : 3,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 366,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 367,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 368,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 369,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 13,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 370,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 371,
+      "types" : [
+        {
+          "type" : 16,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 372,
+      "types" : [
+        {
+          "type" : 16,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 373,
+      "types" : [
+        {
+          "type" : 16,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 374,
+      "types" : [
+        {
+          "type" : 17,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 375,
+      "types" : [
+        {
+          "type" : 17,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 376,
+      "types" : [
+        {
+          "type" : 17,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 377,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 378,
+      "types" : [
+        {
+          "type" : 6,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 379,
+      "types" : [
+        {
+          "type" : 17,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 380,
+      "types" : [
+        {
+          "type" : 16,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 381,
+      "types" : [
+        {
+          "type" : 16,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 382,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 383,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 384,
+      "types" : [
+        {
+          "type" : 16,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 385,
+      "types" : [
+        {
+          "type" : 17,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 386,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 387,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 388,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 389,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 9,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 390,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 391,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        },
+        {
+          "type" : 7,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 392,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        },
+        {
+          "type" : 7,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 393,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 394,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 395,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 17,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 396,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 397,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 398,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 399,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 400,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 3,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 401,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 402,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 403,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 404,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 405,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 406,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 8,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 407,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 8,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 408,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 409,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 410,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 17,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 411,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 17,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 412,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 413,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 4,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 414,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 415,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 416,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 417,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 418,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 419,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 420,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 421,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 422,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 423,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 9,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 424,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 425,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 426,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 427,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 428,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 429,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 430,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 431,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 432,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 433,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 434,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        },
+        {
+          "type" : 15,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 435,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        },
+        {
+          "type" : 15,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 436,
+      "types" : [
+        {
+          "type" : 17,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 437,
+      "types" : [
+        {
+          "type" : 17,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 438,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 439,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 440,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 441,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 442,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        },
+        {
+          "type" : 15,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 443,
+      "types" : [
+        {
+          "type" : 16,
+          "slot" : 1
+        },
+        {
+          "type" : 9,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 444,
+      "types" : [
+        {
+          "type" : 16,
+          "slot" : 1
+        },
+        {
+          "type" : 9,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 445,
+      "types" : [
+        {
+          "type" : 16,
+          "slot" : 1
+        },
+        {
+          "type" : 9,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 446,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 447,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 448,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        },
+        {
+          "type" : 17,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 449,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 450,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 451,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        },
+        {
+          "type" : 12,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 452,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        },
+        {
+          "type" : 15,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 453,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        },
+        {
+          "type" : 7,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 454,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        },
+        {
+          "type" : 7,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 455,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 456,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 457,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 458,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 459,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 6,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 460,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 6,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 461,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        },
+        {
+          "type" : 6,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 462,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        },
+        {
+          "type" : 17,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 463,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 464,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        },
+        {
+          "type" : 13,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 465,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 466,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 467,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 468,
+      "types" : [
+        {
+          "type" : 18,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 469,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 470,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 471,
+      "types" : [
+        {
+          "type" : 6,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 472,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 473,
+      "types" : [
+        {
+          "type" : 6,
+          "slot" : 1
+        },
+        {
+          "type" : 9,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 474,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 475,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        },
+        {
+          "type" : 7,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 476,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 17,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 477,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 478,
+      "types" : [
+        {
+          "type" : 6,
+          "slot" : 1
+        },
+        {
+          "type" : 14,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 479,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        },
+        {
+          "type" : 14,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 480,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 481,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 482,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 483,
+      "types" : [
+        {
+          "type" : 17,
+          "slot" : 1
+        },
+        {
+          "type" : 16,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 484,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 16,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 485,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        },
+        {
+          "type" : 17,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 486,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 487,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        },
+        {
+          "type" : 16,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 488,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 489,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 490,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 491,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 492,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 493,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 494,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        },
+        {
+          "type" : 2,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 495,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 496,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 497,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 498,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 499,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        },
+        {
+          "type" : 7,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 500,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        },
+        {
+          "type" : 7,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 501,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 502,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 503,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 504,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 505,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 506,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 507,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 508,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 509,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 510,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 511,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 512,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 513,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 514,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 515,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 516,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 517,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 518,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 519,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 520,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 521,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 522,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 523,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 524,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 525,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 526,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 527,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 528,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 529,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 530,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        },
+        {
+          "type" : 17,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 531,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 532,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 533,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 534,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 535,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 536,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 9,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 537,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 9,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 538,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 539,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 540,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 4,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 541,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 4,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 542,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 4,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 543,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 8,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 544,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 8,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 545,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 8,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 546,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 547,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 548,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 549,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 550,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 551,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        },
+        {
+          "type" : 15,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 552,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        },
+        {
+          "type" : 15,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 553,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        },
+        {
+          "type" : 15,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 554,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 555,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 556,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 557,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 13,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 558,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 13,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 559,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        },
+        {
+          "type" : 7,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 560,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        },
+        {
+          "type" : 7,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 561,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 562,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 563,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 564,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 13,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 565,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 13,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 566,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 567,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 568,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 569,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 570,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 571,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 572,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 573,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 574,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 575,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 576,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 577,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 578,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 579,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 580,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 581,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 582,
+      "types" : [
+        {
+          "type" : 6,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 583,
+      "types" : [
+        {
+          "type" : 6,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 584,
+      "types" : [
+        {
+          "type" : 6,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 585,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 4,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 586,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 4,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 587,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 588,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 589,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 17,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 590,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 8,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 591,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 8,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 592,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 14,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 593,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 14,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 594,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 595,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 5,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 596,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 5,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 597,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 17,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 598,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 17,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 599,
+      "types" : [
+        {
+          "type" : 17,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 600,
+      "types" : [
+        {
+          "type" : 17,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 601,
+      "types" : [
+        {
+          "type" : 17,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 602,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 603,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 604,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 605,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 606,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 607,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        },
+        {
+          "type" : 2,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 608,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        },
+        {
+          "type" : 2,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 609,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        },
+        {
+          "type" : 2,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 610,
+      "types" : [
+        {
+          "type" : 16,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 611,
+      "types" : [
+        {
+          "type" : 16,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 612,
+      "types" : [
+        {
+          "type" : 16,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 613,
+      "types" : [
+        {
+          "type" : 6,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 614,
+      "types" : [
+        {
+          "type" : 6,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 615,
+      "types" : [
+        {
+          "type" : 6,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 616,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 617,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 618,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        },
+        {
+          "type" : 5,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 619,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 620,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 621,
+      "types" : [
+        {
+          "type" : 16,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 622,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        },
+        {
+          "type" : 14,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 623,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        },
+        {
+          "type" : 14,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 624,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        },
+        {
+          "type" : 17,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 625,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        },
+        {
+          "type" : 17,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 626,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 627,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 628,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 629,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 630,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 631,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 632,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 17,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 633,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        },
+        {
+          "type" : 16,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 634,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        },
+        {
+          "type" : 16,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 635,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        },
+        {
+          "type" : 16,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 636,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 2,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 637,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 2,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 638,
+      "types" : [
+        {
+          "type" : 17,
+          "slot" : 1
+        },
+        {
+          "type" : 7,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 639,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 7,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 640,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 7,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 641,
+      "types" : [
+        {
+          "type" : 10,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 642,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 643,
+      "types" : [
+        {
+          "type" : 16,
+          "slot" : 1
+        },
+        {
+          "type" : 2,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 644,
+      "types" : [
+        {
+          "type" : 16,
+          "slot" : 1
+        },
+        {
+          "type" : 5,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 645,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 646,
+      "types" : [
+        {
+          "type" : 16,
+          "slot" : 1
+        },
+        {
+          "type" : 6,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 647,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 7,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 648,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 649,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 17,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 650,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 651,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 652,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 7,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 653,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 654,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 655,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 656,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 657,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 658,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 15,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 659,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 660,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 9,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 661,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 662,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 663,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 664,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 665,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 666,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 667,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        },
+        {
+          "type" : 1,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 668,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        },
+        {
+          "type" : 1,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 669,
+      "types" : [
+        {
+          "type" : 18,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 670,
+      "types" : [
+        {
+          "type" : 18,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 671,
+      "types" : [
+        {
+          "type" : 18,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 672,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 673,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 674,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 675,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        },
+        {
+          "type" : 15,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 676,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 677,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 678,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 679,
+      "types" : [
+        {
+          "type" : 17,
+          "slot" : 1
+        },
+        {
+          "type" : 14,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 680,
+      "types" : [
+        {
+          "type" : 17,
+          "slot" : 1
+        },
+        {
+          "type" : 14,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 681,
+      "types" : [
+        {
+          "type" : 17,
+          "slot" : 1
+        },
+        {
+          "type" : 14,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 682,
+      "types" : [
+        {
+          "type" : 18,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 683,
+      "types" : [
+        {
+          "type" : 18,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 684,
+      "types" : [
+        {
+          "type" : 18,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 685,
+      "types" : [
+        {
+          "type" : 18,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 686,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 687,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 688,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 3,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 689,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 3,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 690,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        },
+        {
+          "type" : 3,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 691,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        },
+        {
+          "type" : 16,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 692,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 693,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 694,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        },
+        {
+          "type" : 1,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 695,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        },
+        {
+          "type" : 1,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 696,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 16,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 697,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 16,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 698,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 6,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 699,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 6,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 700,
+      "types" : [
+        {
+          "type" : 18,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 701,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 702,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 703,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 704,
+      "types" : [
+        {
+          "type" : 16,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 705,
+      "types" : [
+        {
+          "type" : 16,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 706,
+      "types" : [
+        {
+          "type" : 16,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 707,
+      "types" : [
+        {
+          "type" : 17,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 708,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        },
+        {
+          "type" : 4,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 709,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        },
+        {
+          "type" : 4,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 710,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        },
+        {
+          "type" : 4,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 711,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        },
+        {
+          "type" : 4,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 712,
+      "types" : [
+        {
+          "type" : 6,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 713,
+      "types" : [
+        {
+          "type" : 6,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 714,
+      "types" : [
+        {
+          "type" : 10,
+          "slot" : 1
+        },
+        {
+          "type" : 16,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 715,
+      "types" : [
+        {
+          "type" : 10,
+          "slot" : 1
+        },
+        {
+          "type" : 16,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 716,
+      "types" : [
+        {
+          "type" : 18,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 717,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 718,
+      "types" : [
+        {
+          "type" : 16,
+          "slot" : 1
+        },
+        {
+          "type" : 9,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 719,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 720,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        },
+        {
+          "type" : 14,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 721,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        },
+        {
+          "type" : 3,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 722,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 723,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 724,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 14,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 725,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 726,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 727,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        },
+        {
+          "type" : 15,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 728,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 729,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 730,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 731,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 732,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 733,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 734,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 735,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 736,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 737,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 5,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 738,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 5,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 739,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 740,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        },
+        {
+          "type" : 6,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 741,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 742,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 743,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 744,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 745,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 746,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 747,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        },
+        {
+          "type" : 3,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 748,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        },
+        {
+          "type" : 3,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 749,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 750,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 751,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 12,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 752,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 12,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 753,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 754,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 755,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 756,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 757,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        },
+        {
+          "type" : 2,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 758,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        },
+        {
+          "type" : 2,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 759,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 7,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 760,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 7,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 761,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 762,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 763,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 764,
+      "types" : [
+        {
+          "type" : 18,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 765,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 766,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 767,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 3,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 768,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 3,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 769,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        },
+        {
+          "type" : 9,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 770,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        },
+        {
+          "type" : 9,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 771,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 773,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 774,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 775,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 776,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        },
+        {
+          "type" : 16,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 777,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        },
+        {
+          "type" : 17,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 778,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 779,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 780,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 16,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 781,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        },
+        {
+          "type" : 4,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 782,
+      "types" : [
+        {
+          "type" : 16,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 783,
+      "types" : [
+        {
+          "type" : 16,
+          "slot" : 1
+        },
+        {
+          "type" : 7,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 784,
+      "types" : [
+        {
+          "type" : 16,
+          "slot" : 1
+        },
+        {
+          "type" : 7,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 785,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 786,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 787,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 788,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 789,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 790,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 791,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        },
+        {
+          "type" : 17,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 792,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        },
+        {
+          "type" : 14,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 793,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 8,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 794,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 7,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 795,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 7,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 796,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 797,
+      "types" : [
+        {
+          "type" : 17,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 798,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 17,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 799,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        },
+        {
+          "type" : 16,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 800,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 801,
+      "types" : [
+        {
+          "type" : 17,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 802,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        },
+        {
+          "type" : 14,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 803,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 804,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        },
+        {
+          "type" : 16,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 805,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 17,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 806,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        },
+        {
+          "type" : 14,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 807,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 808,
+      "types" : [
+        {
+          "type" : 17,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 809,
+      "types" : [
+        {
+          "type" : 17,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 810,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 811,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 812,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 813,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 814,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 815,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 816,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 817,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 818,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 819,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 820,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 821,
+      "types" : [
+        {
+          "type" : 10,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 822,
+      "types" : [
+        {
+          "type" : 10,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 823,
+      "types" : [
+        {
+          "type" : 10,
+          "slot" : 1
+        },
+        {
+          "type" : 17,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 824,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 825,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 826,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 827,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 828,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 829,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 830,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 831,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 832,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 833,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 834,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 13,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 835,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 836,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 837,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 838,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 2,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 839,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 2,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 840,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 16,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 841,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 16,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 842,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 16,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 843,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 844,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 845,
+      "types" : [
+        {
+          "type" : 10,
+          "slot" : 1
+        },
+        {
+          "type" : 3,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 846,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 847,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 848,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        },
+        {
+          "type" : 8,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 849,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        },
+        {
+          "type" : 8,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 850,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        },
+        {
+          "type" : 12,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 851,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        },
+        {
+          "type" : 12,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 852,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 853,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 854,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 855,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 856,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 857,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 858,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 859,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 860,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 861,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 862,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        },
+        {
+          "type" : 1,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 863,
+      "types" : [
+        {
+          "type" : 17,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 864,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 865,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 866,
+      "types" : [
+        {
+          "type" : 6,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 867,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        },
+        {
+          "type" : 14,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 868,
+      "types" : [
+        {
+          "type" : 18,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 869,
+      "types" : [
+        {
+          "type" : 18,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 870,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 871,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 872,
+      "types" : [
+        {
+          "type" : 6,
+          "slot" : 1
+        },
+        {
+          "type" : 12,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 873,
+      "types" : [
+        {
+          "type" : 6,
+          "slot" : 1
+        },
+        {
+          "type" : 12,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 874,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 875,
+      "types" : [
+        {
+          "type" : 6,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 876,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        },
+        {
+          "type" : 1,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 877,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        },
+        {
+          "type" : 15,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 878,
+      "types" : [
+        {
+          "type" : 17,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 879,
+      "types" : [
+        {
+          "type" : 17,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 880,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        },
+        {
+          "type" : 16,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 881,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        },
+        {
+          "type" : 6,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 882,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 16,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 883,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 6,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 884,
+      "types" : [
+        {
+          "type" : 17,
+          "slot" : 1
+        },
+        {
+          "type" : 16,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 885,
+      "types" : [
+        {
+          "type" : 16,
+          "slot" : 1
+        },
+        {
+          "type" : 14,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 886,
+      "types" : [
+        {
+          "type" : 16,
+          "slot" : 1
+        },
+        {
+          "type" : 14,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 887,
+      "types" : [
+        {
+          "type" : 16,
+          "slot" : 1
+        },
+        {
+          "type" : 14,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 888,
+      "types" : [
+        {
+          "type" : 18,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 889,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 890,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        },
+        {
+          "type" : 16,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 891,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 892,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        },
+        {
+          "type" : 15,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 893,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        },
+        {
+          "type" : 4,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 894,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 895,
+      "types" : [
+        {
+          "type" : 16,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 896,
+      "types" : [
+        {
+          "type" : 6,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 897,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 898,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        },
+        {
+          "type" : 4,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10001,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 10002,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 10003,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 10004,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 9,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10005,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 17,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10006,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10007,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        },
+        {
+          "type" : 16,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10008,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        },
+        {
+          "type" : 2,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10009,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        },
+        {
+          "type" : 3,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10010,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        },
+        {
+          "type" : 6,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10011,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10012,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        },
+        {
+          "type" : 4,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10013,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 10014,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 10015,
+      "types" : [
+        {
+          "type" : 6,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 10016,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 10017,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10018,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 7,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10019,
+      "types" : [
+        {
+          "type" : 10,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 10020,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10021,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10024,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 7,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10025,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 10026,
+      "types" : [
+        {
+          "type" : 17,
+          "slot" : 1
+        },
+        {
+          "type" : 14,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10027,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        },
+        {
+          "type" : 4,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10028,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        },
+        {
+          "type" : 4,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10029,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        },
+        {
+          "type" : 4,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10033,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 8,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10034,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        },
+        {
+          "type" : 16,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10035,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10036,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 10037,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 10038,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        },
+        {
+          "type" : 8,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10039,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 10040,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10041,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 15,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10042,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10043,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        },
+        {
+          "type" : 7,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10044,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 10045,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        },
+        {
+          "type" : 16,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10046,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 17,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10047,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 7,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10048,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        },
+        {
+          "type" : 2,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10049,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 15,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10050,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        },
+        {
+          "type" : 7,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10051,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10052,
+      "types" : [
+        {
+          "type" : 17,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10053,
+      "types" : [
+        {
+          "type" : 17,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 10054,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10055,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 10056,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 10057,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 10058,
+      "types" : [
+        {
+          "type" : 16,
+          "slot" : 1
+        },
+        {
+          "type" : 9,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10059,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        },
+        {
+          "type" : 17,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10060,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 6,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10062,
+      "types" : [
+        {
+          "type" : 16,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10063,
+      "types" : [
+        {
+          "type" : 16,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10064,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 9,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10065,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 16,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10066,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        },
+        {
+          "type" : 14,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10067,
+      "types" : [
+        {
+          "type" : 16,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10068,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        },
+        {
+          "type" : 7,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10069,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10070,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 15,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10071,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10072,
+      "types" : [
+        {
+          "type" : 17,
+          "slot" : 1
+        },
+        {
+          "type" : 9,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10073,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10074,
+      "types" : [
+        {
+          "type" : 6,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 10075,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10076,
+      "types" : [
+        {
+          "type" : 17,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10077,
+      "types" : [
+        {
+          "type" : 3,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 10078,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        },
+        {
+          "type" : 2,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10079,
+      "types" : [
+        {
+          "type" : 16,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10087,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        },
+        {
+          "type" : 9,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10088,
+      "types" : [
+        {
+          "type" : 1,
+          "slot" : 1
+        },
+        {
+          "type" : 7,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10089,
+      "types" : [
+        {
+          "type" : 16,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10090,
+      "types" : [
+        {
+          "type" : 12,
+          "slot" : 1
+        },
+        {
+          "type" : 8,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10091,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        },
+        {
+          "type" : 1,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10092,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        },
+        {
+          "type" : 1,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10100,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10101,
+      "types" : [
+        {
+          "type" : 6,
+          "slot" : 1
+        },
+        {
+          "type" : 17,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10102,
+      "types" : [
+        {
+          "type" : 6,
+          "slot" : 1
+        },
+        {
+          "type" : 17,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10103,
+      "types" : [
+        {
+          "type" : 6,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 10104,
+      "types" : [
+        {
+          "type" : 6,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10105,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        },
+        {
+          "type" : 17,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10106,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        },
+        {
+          "type" : 17,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10107,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 10108,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 10109,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 5,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10110,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 5,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10111,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 5,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10112,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        },
+        {
+          "type" : 15,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10113,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        },
+        {
+          "type" : 15,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10114,
+      "types" : [
+        {
+          "type" : 4,
+          "slot" : 1
+        },
+        {
+          "type" : 16,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10115,
+      "types" : [
+        {
+          "type" : 2,
+          "slot" : 1
+        },
+        {
+          "type" : 14,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10123,
+      "types" : [
+        {
+          "type" : 5,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10124,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10125,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10136,
+      "types" : [
+        {
+          "type" : 13,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10158,
+      "types" : [
+        {
+          "type" : 17,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 10159,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 10160,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10161,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 10162,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10163,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 10164,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        },
+        {
+          "type" : 18,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10165,
+      "types" : [
+        {
+          "type" : 6,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10166,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10167,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10168,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        },
+        {
+          "type" : 10,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10169,
+      "types" : [
+        {
+          "type" : 8,
+          "slot" : 1
+        },
+        {
+          "type" : 11,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10170,
+      "types" : [
+        {
+          "type" : 14,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 10171,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        },
+        {
+          "type" : 1,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10172,
+      "types" : [
+        {
+          "type" : 15,
+          "slot" : 1
+        },
+        {
+          "type" : 1,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10173,
+      "types" : [
+        {
+          "type" : 6,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 10174,
+      "types" : [
+        {
+          "type" : 6,
+          "slot" : 1
+        }
+      ]
+    },
+    {
+      "id" : 10176,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        },
+        {
+          "type" : 14,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10177,
+      "types" : [
+        {
+          "type" : 9,
+          "slot" : 1
+        },
+        {
+          "type" : 17,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10180,
+      "types" : [
+        {
+          "type" : 11,
+          "slot" : 1
+        },
+        {
+          "type" : 1,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10181,
+      "types" : [
+        {
+          "type" : 18,
+          "slot" : 1
+        },
+        {
+          "type" : 17,
+          "slot" : 2
+        }
+      ]
+    },
+    {
+      "id" : 10182,
+      "types" : [
+        {
+          "type" : 7,
+          "slot" : 1
+        },
+        {
+          "type" : 17,
+          "slot" : 2
+        }
+      ]
+    }
+  ]
+}

@@ -14,6 +14,7 @@ class CheatSheetViewController: UIViewController, UICollectionViewDataSource, UI
     @IBOutlet var viewC: UIView!
     
     var slotArray: [UIView] = []
+    var pokeArray: [FavPokemonJson.FavJson] = []
     var strongEffects: [TypeEffect] = []
     var weakEffects: [TypeEffect] = []
     
@@ -31,10 +32,10 @@ class CheatSheetViewController: UIViewController, UICollectionViewDataSource, UI
             slot.layer.masksToBounds = true
             (slot.subviews[2] as! UIActivityIndicatorView).stopAnimating()
             let strongView = slot.viewWithTag(2)!.superview!
-            strongView.layer.borderColor = UIColor.green.withAlphaComponent(0.5).cgColor
+            strongView.layer.borderColor = UIColor.green.withAlphaComponent(0.4).cgColor
             strongView.layer.borderWidth = 0.5
             let weakView = slot.viewWithTag(3)!.superview!
-            weakView.layer.borderColor = UIColor.red.withAlphaComponent(0.5).cgColor
+            weakView.layer.borderColor = UIColor.red.withAlphaComponent(0.3).cgColor
             weakView.layer.borderWidth = 0.5
             (slot.viewWithTag(2) as! UICollectionView).delegate = self
             (slot.viewWithTag(2) as! UICollectionView).dataSource = self
@@ -43,8 +44,8 @@ class CheatSheetViewController: UIViewController, UICollectionViewDataSource, UI
         }
         
         let cheatSheetParser = CheatSheetJsonParser()
-        let csPokes = cheatSheetParser.readJson()
-        for poke in csPokes.favArray {
+        self.pokeArray = cheatSheetParser.readJson().favArray
+        for poke in self.pokeArray {
             var types: [String]? = poke.types
             if poke.types.count == 0 {
                 types = nil
@@ -58,7 +59,7 @@ class CheatSheetViewController: UIViewController, UICollectionViewDataSource, UI
         let vc = storyboard.instantiateViewController(withIdentifier: "HomeController") as! HomeCollectionViewController
         vc.title = "Add to Cheat Sheet"
         vc.addSlotFunction = self.addNewPokemon(pokeUrl: favTypes:)
-        vc.cvMarginValue = 30
+        vc.cvMarginValue = 36
         self.show(vc, sender: self)
     }
     
@@ -67,6 +68,7 @@ class CheatSheetViewController: UIViewController, UICollectionViewDataSource, UI
         let types = (favTypes == nil ? [] : favTypes)!
         let poke = FavPokemonJson.FavJson(name: pokeUrl.name, types: types)
         csParser.addSlot(fav: poke)
+        self.pokeArray.append(poke)
         
         self.tryGetPokemon(pokeUrl: pokeUrl, favTypes: favTypes)
     }
@@ -74,6 +76,10 @@ class CheatSheetViewController: UIViewController, UICollectionViewDataSource, UI
     func tryGetPokemon(pokeUrl: PokemonArrayResult.PokemonUrl, favTypes: [String]?) {
         let emptySlot = self.getFirstEmptySlot()
         (emptySlot.subviews[2] as! UIActivityIndicatorView).startAnimating()
+        
+        (emptySlot.viewWithTag(13) as! UILabel).text = pokeUrl.getDisplayName().name
+        
+        self.tryGetImage(pokeUrl: pokeUrl)
         
         if let poke = pokemonDict[pokeUrl.name] {
             addPokemon(pokemon: poke, favTypes: favTypes)
@@ -93,6 +99,25 @@ class CheatSheetViewController: UIViewController, UICollectionViewDataSource, UI
         }
     }
     
+    func tryGetImage(pokeUrl: PokemonArrayResult.PokemonUrl) {
+        
+        if let img = pokeImageArray.first(where: { $0.id == pokeUrl.getId() }) {
+            let index = self.pokeArray.firstIndex(of: self.pokeArray.first(where: { $0.name == pokeUrl.name })!)!
+            let slot = self.slotArray[index]
+            let pokeImg = (slot.viewWithTag(1) as! UIImageView)
+            pokeImg.image = img.image
+            pokeImg.layer.shadowColor = UIColor.black.cgColor
+            pokeImg.layer.shadowRadius = 2.5
+            pokeImg.layer.shadowOpacity = 0.45
+            pokeImg.layer.shadowOffset = CGSize(width: 2.5, height: 4)
+        }
+        else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                self.tryGetImage(pokeUrl: pokeUrl)
+            })
+        }
+    }
+    
     func addPokemon(pokemon: Pokemon, favTypes: [String]?) {
         
         let emptySlot = self.getFirstEmptySlot()
@@ -103,12 +128,6 @@ class CheatSheetViewController: UIViewController, UICollectionViewDataSource, UI
         self.weakEffects = effects.filter({ $0.value > 100 }).sorted(by: { $0.value > $1.value })
         
         (emptySlot.viewWithTag(13) as! UILabel).text = pokemon.data.name.capitalizingFirstLetter()
-        let pokeImg = (emptySlot.viewWithTag(1) as! UIImageView)
-        pokeImg.image = pokemon.image
-        pokeImg.layer.shadowColor = UIColor.black.cgColor
-        pokeImg.layer.shadowRadius = 2.5
-        pokeImg.layer.shadowOpacity = 0.45
-        pokeImg.layer.shadowOffset = CGSize(width: 2.5, height: 4)
         (emptySlot.viewWithTag(2) as! UICollectionView).reloadData()
         (emptySlot.viewWithTag(3) as! UICollectionView).reloadData()
         
@@ -178,7 +197,10 @@ class CheatSheetViewController: UIViewController, UICollectionViewDataSource, UI
             v.isHidden = true
         }
         
-        let size = min(view.superview!.frame.size.height - 12, view.superview!.frame.size.width / CGFloat(typeNames.count))
+        print("height: \(view.superview!.frame.size.height)")
+        print("width: \(view.superview!.frame.size.width)")
+        print("count: \(typeNames.count)")
+        let size = min(view.superview!.frame.size.height - 12, view.superview!.bounds.size.width / CGFloat(typeNames.count))
         if let hConstraint = view.constraints.first(where: { $0.identifier == "viewHeight"}) {
             hConstraint.constant = size
         }
@@ -237,14 +259,13 @@ class CheatSheetViewController: UIViewController, UICollectionViewDataSource, UI
         circle.tintColor = type.appearance.getColor()
         icon.image = type.appearance.getImage()
         
-        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        var size = min(collectionView.frame.size.width / 4 - 4, collectionView.frame.size.height / 3 - 4)
-        size = collectionView.frame.size.width / 4 - 4
+        var size = min(collectionView.frame.size.width / 4 - 3, collectionView.frame.size.height / 2 - 2)
+        //size = collectionView.frame.size.width / 4 - 4
         
         return CGSize(width: size, height: size)
         

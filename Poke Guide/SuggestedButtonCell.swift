@@ -90,9 +90,9 @@ class SuggestedButtonCell: UICollectionViewCell {
     }
     
     func tryGetImage() {
-        if pokeImages[self.pokeUrl.getId()] != nil {
+        if let img = pokeImageArray.first(where: { $0.id == self.pokeUrl.getId() }){
             self.activityIndicator.stopAnimating()
-            self.cellIcon.image = pokeImages[self.pokeUrl.getId()]
+            self.cellIcon.image = img.image
         }
         else {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {

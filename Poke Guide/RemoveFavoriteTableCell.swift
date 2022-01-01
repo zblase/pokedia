@@ -32,7 +32,8 @@ class RemoveFavoriteTableCell: UITableViewCell {
         self.favPoke = fav
         
         let pokemon = pokemonArray.first(where: { $0.data.name == fav.name })!
-        pokemonIcon.image = pokemon.image
+        //pokemonIcon.image = pokemon.getImage()
+        self.tryGetImage(id: String(pokemon.data.id))
         pokemonIcon.contentMode = .scaleAspectFit
         
         let names = pokemon.data.name.split(separator: "-")
@@ -71,6 +72,18 @@ class RemoveFavoriteTableCell: UITableViewCell {
             labelC.text = typeC.appearance.name
             
             typeViewC.isHidden = false
+        }
+    }
+    
+    func tryGetImage(id: String) {
+        
+        if let img = pokeImageArray.first(where: { $0.id == id }) {
+            pokemonIcon.image = img.image
+        }
+        else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                self.tryGetImage(id: id)
+            })
         }
     }
     

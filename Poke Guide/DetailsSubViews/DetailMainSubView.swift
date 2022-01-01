@@ -47,7 +47,7 @@ class DetailMainSubView: UIView {
         layer.shadowOffset = CGSize(width: 0, height: 3)
         layer.masksToBounds = false
         
-        mainImage.image = pokemon.image
+        self.tryGetImage(id: String(pokemon.data.id))
         mainImage.layer.shadowColor = UIColor.black.cgColor
         mainImage.layer.shadowRadius = 4.0
         mainImage.layer.shadowOpacity = 0.5
@@ -139,5 +139,15 @@ class DetailMainSubView: UIView {
         return menuItems
     }
     
-    
+    func tryGetImage(id: String) {
+        
+        if let img = pokeImageArray.first(where: { $0.id == id }) {
+            self.mainImage.image = img.image
+        }
+        else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                self.tryGetImage(id: id)
+            })
+        }
+    }
 }

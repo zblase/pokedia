@@ -17,10 +17,16 @@ var favPokemon: FavPokemonJson?
 var genArray: [Generation] = []
 var genUrls: GenerationArrayResult!
 var pokeImages: [String: UIImage] = [:]
+var pokeImageArray: [PokeImage] = []
+
+struct PokeImage {
+    let id: String
+    let image: UIImage
+}
 
 struct Pokemon {
     let data: PokemonData
-    let image: UIImage
+    var image: UIImage?
     var moveTypes: [String] = []
     var favTypes: [String] = []
 }
@@ -287,6 +293,7 @@ class PokemonDataController {
             image = UIImage(data: data)
             if image != nil {
                 pokeImages[id] = image!
+                pokeImageArray.append(PokeImage(id: id, image: image!))
             }
             
             group.leave()
@@ -495,8 +502,8 @@ class PokemonDataController {
                     pData.name = "pumpkaboo"
                 }
                 
-                let img = pokeImages[String(pData.id)]
-                let poke = Pokemon(data: pData, image: img!)
+                //let img = pokeImages[String(pData.id)]
+                let poke = Pokemon(data: pData)
                 pokemonDict[pData.name] = poke
                 pokemonArray.append(poke)
                 
