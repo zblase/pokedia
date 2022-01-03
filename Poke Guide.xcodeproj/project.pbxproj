@@ -31,6 +31,7 @@
 		8611641A26C4D70D00295333 /* StatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8611641926C4D70D00295333 /* StatCollectionViewCell.swift */; };
 		8611641C26C586D500295333 /* DetailEvolutionsSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8611641B26C586D500295333 /* DetailEvolutionsSubView.swift */; };
 		8611641E26C5DEB500295333 /* DetailStrongSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8611641D26C5DEB500295333 /* DetailStrongSubView.swift */; };
+		8614AC912781160A00E95CEC /* CheatSheetSlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8614AC902781160A00E95CEC /* CheatSheetSlotView.swift */; };
 		863AB629272DD0910083ABFA /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863AB628272DD0910083ABFA /* LoadingViewController.swift */; };
 		8654FFBF2703A8E0005EEB27 /* AddFavoriteTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8654FFBE2703A8E0005EEB27 /* AddFavoriteTypeCell.swift */; };
 		8654FFC1270780CA005EEB27 /* RemoveFavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8654FFC0270780CA005EEB27 /* RemoveFavoriteViewController.swift */; };
@@ -106,6 +107,7 @@
 		8611641926C4D70D00295333 /* StatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatCollectionViewCell.swift; sourceTree = "<group>"; };
 		8611641B26C586D500295333 /* DetailEvolutionsSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEvolutionsSubView.swift; sourceTree = "<group>"; };
 		8611641D26C5DEB500295333 /* DetailStrongSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStrongSubView.swift; sourceTree = "<group>"; };
+		8614AC902781160A00E95CEC /* CheatSheetSlotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheatSheetSlotView.swift; sourceTree = "<group>"; };
 		863AB628272DD0910083ABFA /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		8654FFBE2703A8E0005EEB27 /* AddFavoriteTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFavoriteTypeCell.swift; sourceTree = "<group>"; };
 		8654FFC0270780CA005EEB27 /* RemoveFavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveFavoriteViewController.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				863AB628272DD0910083ABFA /* LoadingViewController.swift */,
 				8693FE262773E69900336690 /* CheatSheetViewController.swift */,
 				8693FE282773F57900336690 /* AddCheatPokemonViewController.swift */,
+				8614AC902781160A00E95CEC /* CheatSheetSlotView.swift */,
 			);
 			path = "Poke Guide";
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 				86841AE0270D00BC00F78F0E /* SuggestedButtonCell.swift in Sources */,
 				8603590426F97EA400EAA2AA /* MoveDM.swift in Sources */,
 				86DC67F127023BF800843A23 /* FavoritesViewController.swift in Sources */,
+				8614AC912781160A00E95CEC /* CheatSheetSlotView.swift in Sources */,
 				8654FFBF2703A8E0005EEB27 /* AddFavoriteTypeCell.swift in Sources */,
 				86780D1326FE8E5300512D06 /* TypeCollectionHeader.swift in Sources */,
 				8611640D26C224EB00295333 /* PokemonButton.swift in Sources */,
