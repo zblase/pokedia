@@ -31,6 +31,8 @@ class SuggestedCell: UICollectionViewCell {
             self.pokemonImage.image = img.image
         }
         else {
+            self.pokemonImage.image = nil
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                 self.tryGetImage(id: id)
             })

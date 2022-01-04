@@ -107,10 +107,10 @@ class MainButtonCell: UICollectionViewCell {
         if let img = pokeImageArray.first(where: { $0.id == id }) {
             self.configureImage(img: img.image)
         }
-        /*if let img = pokeImages[id] {
-            self.configureImage(img: img)
-        }*/
         else {
+            self.cellImage.image = nil
+            self.activityIndicator.startAnimating()
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                 self.tryGetImage(id: id)
             })

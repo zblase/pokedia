@@ -164,8 +164,12 @@ class MyCollectionViewCell: UICollectionViewCell {
     func tryGetPokemon(name: String) {
         if let poke = pokemonDict[name] {
             configureCellData(poke: poke)
+            self.activityIndicator.stopAnimating()
         }
         else {
+            self.cellImage.image = nil
+            self.activityIndicator.startAnimating()
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                 self.tryGetPokemon(name: name)
             })

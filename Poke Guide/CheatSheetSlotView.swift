@@ -182,6 +182,9 @@ class CheatSheetSlotView: UIView, UICollectionViewDataSource, UICollectionViewDe
             self.imgActivityIndicator.stopAnimating()
         }
         else {
+            self.pokeImage.image = nil
+            self.imgActivityIndicator.startAnimating()
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                 self.tryGetImage(pokeUrl: pokeUrl)
             })

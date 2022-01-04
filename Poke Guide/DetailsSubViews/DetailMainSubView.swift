@@ -19,6 +19,7 @@ class DetailMainSubView: UIView {
     
     @IBOutlet var backgroundView: UIView!
     @IBOutlet var mainImage: UIImageView!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var rightView: UIView!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var subNameLabel: UILabel!
@@ -47,6 +48,7 @@ class DetailMainSubView: UIView {
         layer.shadowOffset = CGSize(width: 0, height: 3)
         layer.masksToBounds = false
         
+        self.activityIndicator.startAnimating()
         self.tryGetImage(id: String(pokemon.data.id))
         mainImage.layer.shadowColor = UIColor.black.cgColor
         mainImage.layer.shadowRadius = 4.0
@@ -143,8 +145,12 @@ class DetailMainSubView: UIView {
         
         if let img = pokeImageArray.first(where: { $0.id == id }) {
             self.mainImage.image = img.image
+            self.activityIndicator.stopAnimating()
         }
         else {
+            self.mainImage.image = nil
+            self.activityIndicator.startAnimating()
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                 self.tryGetImage(id: id)
             })

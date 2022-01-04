@@ -95,6 +95,9 @@ class SuggestedButtonCell: UICollectionViewCell {
             self.cellIcon.image = img.image
         }
         else {
+            self.cellIcon.image = nil
+            self.activityIndicator.startAnimating()
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                 self.tryGetImage()
             })

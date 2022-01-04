@@ -81,6 +81,8 @@ class RemoveFavoriteTableCell: UITableViewCell {
             pokemonIcon.image = img.image
         }
         else {
+            pokemonIcon.image = nil
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                 self.tryGetImage(id: id)
             })

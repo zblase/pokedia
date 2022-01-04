@@ -9,10 +9,7 @@
 /* Begin PBXBuildFile section */
 		860358EE26F3E4CC00EAA2AA /* TypeAttributes.json in Resources */ = {isa = PBXBuildFile; fileRef = 860358ED26F3E4CC00EAA2AA /* TypeAttributes.json */; };
 		860358F626F578F000EAA2AA /* DetailWeakSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860358F526F578F000EAA2AA /* DetailWeakSubView.swift */; };
-		860358F826F57AAF00EAA2AA /* WeakEffectCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860358F726F57AAF00EAA2AA /* WeakEffectCollectionView.swift */; };
-		860358FA26F57AFD00EAA2AA /* WeakSuggestedCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860358F926F57AFD00EAA2AA /* WeakSuggestedCollectionView.swift */; };
 		860358FC26F57DE800EAA2AA /* WeakEffectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860358FB26F57DE800EAA2AA /* WeakEffectCell.swift */; };
-		860358FE26F582B500EAA2AA /* WeakSuggestedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860358FD26F582B500EAA2AA /* WeakSuggestedCell.swift */; };
 		8603590026F97E8300EAA2AA /* PokemonDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860358FF26F97E8300EAA2AA /* PokemonDM.swift */; };
 		8603590226F97E9400EAA2AA /* TypeDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603590126F97E9400EAA2AA /* TypeDM.swift */; };
 		8603590426F97EA400EAA2AA /* MoveDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603590326F97EA400EAA2AA /* MoveDM.swift */; };
@@ -85,10 +82,7 @@
 /* Begin PBXFileReference section */
 		860358ED26F3E4CC00EAA2AA /* TypeAttributes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TypeAttributes.json; sourceTree = "<group>"; };
 		860358F526F578F000EAA2AA /* DetailWeakSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWeakSubView.swift; sourceTree = "<group>"; };
-		860358F726F57AAF00EAA2AA /* WeakEffectCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakEffectCollectionView.swift; sourceTree = "<group>"; };
-		860358F926F57AFD00EAA2AA /* WeakSuggestedCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakSuggestedCollectionView.swift; sourceTree = "<group>"; };
 		860358FB26F57DE800EAA2AA /* WeakEffectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakEffectCell.swift; sourceTree = "<group>"; };
-		860358FD26F582B500EAA2AA /* WeakSuggestedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakSuggestedCell.swift; sourceTree = "<group>"; };
 		860358FF26F97E8300EAA2AA /* PokemonDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDM.swift; sourceTree = "<group>"; };
 		8603590126F97E9400EAA2AA /* TypeDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeDM.swift; sourceTree = "<group>"; };
 		8603590326F97EA400EAA2AA /* MoveDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveDM.swift; sourceTree = "<group>"; };
@@ -193,10 +187,7 @@
 				8693921926F073B500694069 /* SuggestedCell.swift */,
 				8606ACC526F2E9D6000D53A9 /* ToggleViewButton.swift */,
 				860358F526F578F000EAA2AA /* DetailWeakSubView.swift */,
-				860358F726F57AAF00EAA2AA /* WeakEffectCollectionView.swift */,
-				860358F926F57AFD00EAA2AA /* WeakSuggestedCollectionView.swift */,
 				860358FB26F57DE800EAA2AA /* WeakEffectCell.swift */,
-				860358FD26F582B500EAA2AA /* WeakSuggestedCell.swift */,
 				86780D0C26FD4D5000512D06 /* DetailMovesetSubView.swift */,
 			);
 			path = DetailsSubViews;
@@ -436,7 +427,6 @@
 				8611641C26C586D500295333 /* DetailEvolutionsSubView.swift in Sources */,
 				8611641826C44FDC00295333 /* DetailStatsSubView.swift in Sources */,
 				863AB629272DD0910083ABFA /* LoadingViewController.swift in Sources */,
-				860358F826F57AAF00EAA2AA /* WeakEffectCollectionView.swift in Sources */,
 				86AB198F26C0FA2200AAB46E /* MyCollectionViewCell.swift in Sources */,
 				8611641A26C4D70D00295333 /* StatCollectionViewCell.swift in Sources */,
 				8656389C26BCE0780082D528 /* HomeCollectionViewController.swift in Sources */,
@@ -449,13 +439,11 @@
 				8611641E26C5DEB500295333 /* DetailStrongSubView.swift in Sources */,
 				8603590026F97E8300EAA2AA /* PokemonDM.swift in Sources */,
 				8603590226F97E9400EAA2AA /* TypeDM.swift in Sources */,
-				860358FE26F582B500EAA2AA /* WeakSuggestedCell.swift in Sources */,
 				86AB199326C1B2D200AAB46E /* DetailsViewController.swift in Sources */,
 				860CC509270113DC0060BEED /* TypeEffectCellAttack.swift in Sources */,
 				860CC50526FFC59F0060BEED /* TypeDetailCollectionHeader.swift in Sources */,
 				8693921A26F073B500694069 /* SuggestedCell.swift in Sources */,
 				8656386E26BCD60C0082D528 /* SceneDelegate.swift in Sources */,
-				860358FA26F57AFD00EAA2AA /* WeakSuggestedCollectionView.swift in Sources */,
 				860CC50326FFBE450060BEED /* TypeCellButton.swift in Sources */,
 				8611641626C44CE300295333 /* DetailMainSubView.swift in Sources */,
 				86841AE0270D00BC00F78F0E /* SuggestedButtonCell.swift in Sources */,

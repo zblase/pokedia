@@ -289,7 +289,7 @@ class DetailMovesetSubView: ToggleViewButton, UICollectionViewDataSource, UIColl
             return self.suggestedPokemon.count
         }
         else {
-            return self.moveTypes.count
+            return 18
         }
     }
     
@@ -320,7 +320,8 @@ class DetailMovesetSubView: ToggleViewButton, UICollectionViewDataSource, UIColl
         }
         else {
             let tCell = cell as! TypeButtonCell
-            let type = moveTypes[indexPath.row]
+            //let type = moveTypes[indexPath.row]
+            let type = typeDict[typeNames[indexPath.row]]!
             tCell.configure(type: type, isSel: self.selectedTypes.contains(where: { $0.appearance.name == type.appearance.name }), sFunc: self.detailVC.toggleTypeCell(cell:))
             tCell.configureToggle(type: type)
         }
