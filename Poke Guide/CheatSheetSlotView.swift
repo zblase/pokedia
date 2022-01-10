@@ -149,6 +149,8 @@ class CheatSheetSlotView: UIView, UICollectionViewDataSource, UICollectionViewDe
     
     func formatTypes(typeStack: UIStackView, typeNames: [String]) {
         
+        typeStack.superview!.subviews[1].isHidden = true
+        
         for v in typeStack.subviews {
             v.isHidden = true
         }
@@ -158,13 +160,18 @@ class CheatSheetSlotView: UIView, UICollectionViewDataSource, UICollectionViewDe
             hConstraint.constant = size
         }
         
-        for i in 0...typeNames.count - 1 {
-            let circle = typeStack.subviews[i].subviews[0] as! UIImageView
-            let icon = typeStack.subviews[i].subviews[1] as! UIImageView
-            circle.tintColor = typeDict[typeNames[i]]?.appearance.getColor()
-            icon.image = typeDict[typeNames[i]]?.appearance.getImage()
-            
-            typeStack.subviews[i].isHidden = false
+        if typeNames.count > 0 {
+            for i in 0...typeNames.count - 1 {
+                let circle = typeStack.subviews[i].subviews[0] as! UIImageView
+                let icon = typeStack.subviews[i].subviews[1] as! UIImageView
+                circle.tintColor = typeDict[typeNames[i]]?.appearance.getColor()
+                icon.image = typeDict[typeNames[i]]?.appearance.getImage()
+                
+                typeStack.subviews[i].isHidden = false
+            }
+        }
+        else {
+            typeStack.superview!.subviews[1].isHidden = false
         }
     }
     
@@ -227,13 +234,32 @@ class CheatSheetSlotView: UIView, UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         //let size = min(collectionView.frame.size.width / 4 - 3, collectionView.frame.size.height / 2 - 2)
-        let size = (collectionView.frame.size.width / 4)
+        var size = (collectionView.frame.size.width / 4)
+        
+        if (collectionView.tag == 6 && strongEffects.count > 8) || (collectionView.tag == 7 && weakEffects.count > 8) {
+            size = collectionView.frame.size.height / 3
+        }
         
         return CGSize(width: size, height: size)
         
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return -2
-    } 
+        
+        if (collectionView.tag == 6 && strongEffects.count > 8) || (collectionView.tag == 7 && weakEffects.count > 8) {
+            return 2
+        }
+        else {
+            return -2
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        if (collectionView.tag == 6 && strongEffects.count < 9) || (collectionView.tag == 7 && weakEffects.count < 9) {
+            return (collectionView.frame.size.height - (collectionView.frame.size.width / 2)) - 4
+        }
+        else {
+            return -1
+        }
+    }
 }

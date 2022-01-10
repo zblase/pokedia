@@ -389,7 +389,7 @@ class PokemonDataController {
                 
                 //let blackList: [Int] = []
                 
-                let hyphNames: [String] = ["porygon-z", "ho-oh", "mr-mime", "nidoran-f", "nidoran-m", "pumpkaboo-average", "zamazenta-hero", "zacian-hero"]
+                let hyphNames: [String] = ["porygon-z", "ho-oh", "mr-mime", "nidoran-f", "nidoran-m", "pumpkaboo-average", "zamazenta-hero", "zacian-hero", "giratina-altered", "giratina-origin"]
                 
                 pokeUrlArray?.urlArray.removeAll(where: { $0.name.contains("-gmax") || $0.name.contains("-totem")})
                 
