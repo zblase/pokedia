@@ -7,24 +7,21 @@
 
 import UIKit
 
-class TypeDetailCollectionHeader: UICollectionReusableView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
+class TypeDetailCollectionHeader: UIView {
     
     static let identifier = "TypeDetailCollectionHeader"
     
+    @IBOutlet var mainView: UIView!
     @IBOutlet var defView: UIView!
     @IBOutlet var atkView: UIView!
-    @IBOutlet var defCollection: UICollectionView!
-    @IBOutlet var atkCollection: UICollectionView!
-    //@IBConstraint var test: NSLayoutConstraint!
-    @IBOutlet var defHeight: NSLayoutConstraint!
     
     var type: TypeStruct?
     
     var defEffects: [TypeEffect] = []
     var atkEffects: [TypeEffect] = []
-    var selectFunc: ((TypeButtonCell) -> Void)!
+    var selectFunc: ((TypeCellButton) -> Void)!
     
-    func configure(type: TypeStruct, sFunc: @escaping (TypeButtonCell) -> Void) {
+    func configure(type: TypeStruct, sFunc: @escaping (TypeCellButton) -> Void) {
         
         self.type = type
         self.selectFunc = sFunc
@@ -35,15 +32,18 @@ class TypeDetailCollectionHeader: UICollectionReusableView, UICollectionViewData
         layer.shadowOffset = CGSize(width: 0, height: 3)
         layer.masksToBounds = false
         
-        defView.backgroundColor = UIColor.clear
-        defView.layer.borderColor = type.appearance.getColor().cgColor
+        defView.backgroundColor = type.appearance.getColor().withAlphaComponent(0.1)
+        defView.layer.borderColor = type.appearance.getColor().withAlphaComponent(0.5).cgColor
         defView.layer.borderWidth = 1
-        defView.layer.cornerRadius = 10
+        defView.layer.cornerRadius = 12
         
-        atkView.backgroundColor = UIColor.clear
-        atkView.layer.borderColor = type.appearance.getColor().cgColor
+        atkView.backgroundColor = type.appearance.getColor().withAlphaComponent(0.1)
+        atkView.layer.borderColor = type.appearance.getColor().withAlphaComponent(0.5).cgColor
         atkView.layer.borderWidth = 1
-        atkView.layer.cornerRadius = 10
+        atkView.layer.cornerRadius = 12
+        
+        defView.viewWithTag(5)!.backgroundColor = type.appearance.getColor().withAlphaComponent(0.15)
+        atkView.viewWithTag(5)!.backgroundColor = type.appearance.getColor().withAlphaComponent(0.15)
         
         for rel in self.type!.data.damage_relations.no_damage_from {
             defEffects.append(TypeEffect(name: rel.name, value: 0))
@@ -55,6 +55,9 @@ class TypeDetailCollectionHeader: UICollectionReusableView, UICollectionViewData
             defEffects.append(TypeEffect(name: rel.name, value: 200))
         }
         
+        formatTypes(stackView: self.viewWithTag(1) as! UIStackView, effects: self.defEffects.filter({ $0.value < 100 }), attack: false)
+        formatTypes(stackView: self.viewWithTag(2) as! UIStackView, effects: self.defEffects.filter({ $0.value > 100 }), attack: false)
+        
         for rel in self.type!.data.damage_relations.double_damage_to {
             atkEffects.append(TypeEffect(name: rel.name, value: 200))
         }
@@ -65,55 +68,55 @@ class TypeDetailCollectionHeader: UICollectionReusableView, UICollectionViewData
             atkEffects.append(TypeEffect(name: rel.name, value: 0))
         }
         
-        let dNib = UINib(nibName: "TypeButtonCell", bundle: nil)
-        self.defCollection.register(dNib, forCellWithReuseIdentifier: "TypeButtonCell")
-        defCollection.dataSource = self
-        defCollection.delegate = self
+        formatTypes(stackView: self.viewWithTag(3) as! UIStackView, effects: self.atkEffects.filter({ $0.value > 100 }), attack: true)
+        formatTypes(stackView: self.viewWithTag(4) as! UIStackView, effects: self.atkEffects.filter({ $0.value < 100 }), attack: true)
         
-        let aNib = UINib(nibName: "TypeButtonCell", bundle: nil)
-        self.atkCollection.register(aNib, forCellWithReuseIdentifier: "TypeButtonCell")
-        atkCollection.delegate = self
-        atkCollection.dataSource = self
+        var viewHeight = max(self.defEffects.filter({ $0.value < 100 }).count / 2, self.defEffects.filter({ $0.value > 100 }).count / 2)
+        viewHeight += max(self.atkEffects.filter({ $0.value < 100 }).count / 2, self.atkEffects.filter({ $0.value > 100 }).count / 2)
         
-        let defRows = ceil(Double(defEffects.count) / 4)
-        //print(defRows)
-        let cellHeight = 25.0
-        
-        defHeight.constant = defRows * cellHeight + ((defRows - 1) * 8) + 38
+        //return CGFloat(viewHeight + 30)
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == self.defCollection {
-            return self.defEffects.count
+    func formatTypes(stackView: UIStackView, effects: [TypeEffect], attack: Bool) {
+        for subView in stackView.subviews {
+            subView.subviews[0].isHidden = true
+            subView.subviews[1].isHidden = true
+            subView.isHidden = true
         }
-        else {
-            return self.atkEffects.count
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        return collectionView.dequeueReusableCell(withReuseIdentifier: "TypeButtonCell", for: indexPath) as! TypeButtonCell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.frame.size.width - 30) / 4, height: 25)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        let tCell = cell as! TypeButtonCell
+        if effects.count == 0 {
+            return
+        }
         
-        if collectionView == self.defCollection {
-            let type = typeDict[defEffects[indexPath.row].name]!
-            tCell.configure(type: type, isSel: true, sFunc: self.selectFunc)
-            let color = self.defEffects[indexPath.row].value > 100 ? UIColor.systemRed : UIColor.systemGreen
-            tCell.configureEffect(value: "\(Int(self.defEffects[indexPath.row].value))%", type: type, labelCol: color)
+        for i in 0...effects.count - 1 {
+            let type = typeDict[effects[i].name]!
+            let subViewIndex: Int = i / 2
+            let typeViewIndex: Int = i % 2
+            
+            let subView = stackView.subviews[subViewIndex]
+            let typeView = subView.subviews[typeViewIndex]
+            
+            subView.isHidden = false
+            typeView.isHidden = false
+            
+            (typeView.subviews[2] as! TypeCellButton).type = type
+            
+            typeView.layer.cornerRadius = typeView.frame.size.height / 2
+            typeView.layer.borderWidth = 1.5
+            typeView.layer.borderColor = type.appearance.getColor().cgColor
+            let typeImgView = typeView.subviews[0] as! UIImageView
+            typeImgView.image = type.appearance.getImage().withRenderingMode(.alwaysTemplate)
+            typeImgView.tintColor = type.appearance.getColor()
+            
+            let valueLabel = typeView.subviews[1] as! UILabel
+            valueLabel.text = "\(Int(effects[i].value))%"
+            
+            typeView.backgroundColor = valueLabel.tintColor.withAlphaComponent(0.075)
         }
-        else {
-            let type = typeDict[atkEffects[indexPath.row].name]!
-            tCell.configure(type: type, isSel: true, sFunc: self.selectFunc)
-            let color = self.atkEffects[indexPath.row].value < 100 ? UIColor.systemRed : UIColor.systemGreen
-            tCell.configureEffect(value: "\(Int(self.atkEffects[indexPath.row].value))%", type: type, labelCol: color)
-        }
+    }
+    
+    @IBAction func cellTapped(_ sender: Any) {
+        let typeButton = sender as! TypeCellButton
+        self.selectFunc(typeButton)
     }
 }

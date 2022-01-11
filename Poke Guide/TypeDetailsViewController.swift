@@ -12,9 +12,15 @@ class TypeDetailsViewController: UIViewController, UICollectionViewDataSource, U
     
     @IBOutlet var collectionView: UICollectionView!
     
+    @IBOutlet var defView: UIView!
+    @IBOutlet var atkView: UIView!
     
     var type: TypeStruct?
-    var headerHeight: CGFloat = 70
+    
+    var defEffects: [TypeEffect] = []
+    var atkEffects: [TypeEffect] = []
+    
+    var headerHeight: Int = 90
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,42 +44,84 @@ class TypeDetailsViewController: UIViewController, UICollectionViewDataSource, U
         
         self.navigationItem.titleView = navView
         
+        for rel in self.type!.data.damage_relations.no_damage_from {
+            defEffects.append(TypeEffect(name: rel.name, value: 0))
+        }
+        for rel in self.type!.data.damage_relations.half_damage_from {
+            defEffects.append(TypeEffect(name: rel.name, value: 50))
+        }
+        for rel in self.type!.data.damage_relations.double_damage_from {
+            defEffects.append(TypeEffect(name: rel.name, value: 200))
+        }
+        for rel in self.type!.data.damage_relations.double_damage_to {
+            atkEffects.append(TypeEffect(name: rel.name, value: 200))
+        }
+        for rel in self.type!.data.damage_relations.half_damage_to {
+            atkEffects.append(TypeEffect(name: rel.name, value: 50))
+        }
+        for rel in self.type!.data.damage_relations.no_damage_to {
+            atkEffects.append(TypeEffect(name: rel.name, value: 0))
+        }
+        print("---\(self.type!.appearance.name)---")
+        print(self.headerHeight)
+        var maxDef = max(self.defEffects.filter({ $0.value < 100 }).count, self.defEffects.filter({ $0.value > 100 }).count)
+        print(maxDef)
+        maxDef += maxDef % 2
+        print(maxDef)
+        maxDef /= 2
+        print(maxDef)
+        self.headerHeight += maxDef * 30
+        print(self.headerHeight)
+        
+        var maxAtk = max(self.atkEffects.filter({ $0.value < 100 }).count, self.atkEffects.filter({ $0.value > 100 }).count)
+        print(maxAtk)
+        maxAtk += maxAtk % 2
+        print(maxAtk)
+        maxAtk /= 2
+        print(maxAtk)
+        self.headerHeight += maxAtk * 30
+        print(self.headerHeight)
+        print("----------")
+        
         let sNib = UINib(nibName: "MainButtonCell", bundle: nil)
         self.collectionView.register(sNib, forCellWithReuseIdentifier: "MainButtonCell")
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.layer.masksToBounds = false
     }
     
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TypeDetailCollectionHeader.identifier, for: indexPath) as! TypeDetailCollectionHeader
-        header.configure(type: type!, sFunc: self.typeCellTapped(cell:))
-        return header
-    }
-
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return type!.data.pokemon.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCell(withReuseIdentifier: "MainButtonCell", for: indexPath) as! MainButtonCell
-        /*let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyCollectionViewCell.identifier, for: indexPath) as! MyCollectionViewCell
-        
-        if indexPath.row < type!.data.pokemon.count {
-            cell.configureCellIdentity(pokeUrl: type!.data.pokemon[indexPath.row].pokemon)
+        if indexPath.row == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EffectsCell", for: indexPath)
+            let mainView = cell.contentView.subviews[0] as! TypeDetailCollectionHeader
+            mainView.configure(type: self.type!, sFunc: self.typeCellTapped(cell:))
+            cell.contentView.layer.masksToBounds = false
+            cell.layer.masksToBounds = false
+            return cell
         }
-        
-        return cell*/
+        else {
+            return collectionView.dequeueReusableCell(withReuseIdentifier: "MainButtonCell", for: indexPath) as! MainButtonCell
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.frame.size.width - 70) / 3, height: (collectionView.frame.size.width - 70) / 3)
+        if indexPath.row == 0 {
+            return CGSize(width: collectionView.frame.size.width - 28, height: CGFloat(self.headerHeight))
+        }
+        else {
+            return CGSize(width: (collectionView.frame.size.width - 70) / 3, height: (collectionView.frame.size.width - 70) / 3)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        let pCell = cell as! MainButtonCell
-        //pCell.configureCellIdentity(pokeUrl: self.type!.data.pokemon[indexPath.row].pokemon)
-        pCell.testConfig(pokeUrl: self.type!.data.pokemon[indexPath.row].pokemon)
+        if indexPath.row != 0 {
+            let pCell = cell as! MainButtonCell
+            pCell.testConfig(pokeUrl: self.type!.data.pokemon[indexPath.row].pokemon)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -85,32 +133,7 @@ class TypeDetailsViewController: UIViewController, UICollectionViewDataSource, U
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        
-        //var height: CGFloat = 76 + (self.view.frame.size.width / 3.5)
-        
-        let cellHeight = 25.0
-        
-        let defEffects = type!.data.damage_relations.double_damage_from + type!.data.damage_relations.half_damage_from + type!.data.damage_relations.no_damage_from
-        let defRows = ceil(Double(defEffects.count) / 4)
-        let defHeight = defRows * cellHeight + ((defRows - 1) * 8) + 38
-        
-        let atkEffects = type!.data.damage_relations.double_damage_to + type!.data.damage_relations.half_damage_to + type!.data.damage_relations.no_damage_to
-        let atkRows = ceil(Double(atkEffects.count) / 4)
-        print(atkRows)
-        let atkHeight = atkRows * cellHeight + ((atkRows - 1) * 8) + 38
-        
-        /*if (type!.data.damage_relations.double_damage_from + type!.data.damage_relations.half_damage_from + type!.data.damage_relations.no_damage_from).count > 7 {
-            height += (self.view.frame.size.width / 7) - 2
-        }
-        if (type!.data.damage_relations.double_damage_to + type!.data.damage_relations.half_damage_to + type!.data.damage_relations.no_damage_to).count > 7 {
-            height += (self.view.frame.size.width / 7) - 2
-        }*/
-        
-        return CGSize(width: self.collectionView.frame.size.width, height: defHeight + atkHeight + 26)
-    }
-    
-    func typeCellTapped(cell: TypeButtonCell) {
+    func typeCellTapped(cell: TypeCellButton) {
         
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "TypeDetailsViewController") as? TypeDetailsViewController {
             vc.type = cell.type
